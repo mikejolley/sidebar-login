@@ -1,0 +1,126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sidebar-login\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-03 11:43+0100\n"
+"PO-Revision-Date: 2011-06-17 07:58+0530\n"
+"Last-Translator: Ashish Jha <ashish@outshinesolutions.com>\n"
+"Language-Team: Outshine Solutions <ash.pr@outshinesolutions.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Hindi\n"
+"X-Poedit-Country: INDIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: sidebar-login.php:14
+#: sidebar-login.php:57
+msgid "Sidebar Login"
+msgstr "साइडबार लॉगिन"
+
+#: sidebar-login.php:46
+msgid "<p>Changes saved</p>"
+msgstr "<p>परिवर्तन सहेजे</p>"
+
+#: sidebar-login.php:62
+msgid "Login redirect URL"
+msgstr "लॉगिन यूआरएल अनुप्रेषित"
+
+#: sidebar-login.php:63
+msgid "Url to redirect the user to after login. Leave blank to use their current page."
+msgstr "Url प्रवेश के बाद  से उपयोगकर्ता अनुप्रेषित करने के लिए.  अपने वर्तमान  पृष्ठ का उपयोग करें रिक्त छोड़ दें."
+
+#: sidebar-login.php:66
+msgid "Logout redirect URL"
+msgstr "लॉगआउट रीडायरेक्ट URL"
+
+#: sidebar-login.php:67
+msgid "Url to redirect the user to after logout. Leave blank to use their current page."
+msgstr "Url लॉगआउट  करने के बाद उपयोगकर्ता अनुप्रेषित करने के लिए.  अपने वर्तमान  पृष्ठ का उपयोग  करने  के लिए रिक्त छोड़ दें."
+
+#: sidebar-login.php:70
+msgid "Show Register Link"
+msgstr " रजिस्टर लिंक दिखाएँ"
+
+#: sidebar-login.php:72
+#: sidebar-login.php:79
+msgid "Yes"
+msgstr "हां"
+
+#: sidebar-login.php:73
+#: sidebar-login.php:80
+msgid "No"
+msgstr "नहीं"
+
+#: sidebar-login.php:74
+msgid "User registrations must also be turned on for this to work ('Anyone can register' checkbox in settings)."
+msgstr "उपयोगकर्ता पंजीकरण भी इस ('कोई भी पंजीकृत कर सकते हैं'चेकबॉक्स सेटिंग्स में) काम करने के लिए  पर कर दिया जाना  चाहिए."
+
+#: sidebar-login.php:77
+msgid "Show Lost Password Link"
+msgstr " खोया लिंक पासवर्ड  दिखाएँ"
+
+#: sidebar-login.php:84
+msgid "Logged in links"
+msgstr "लिंक में लॉग इन"
+
+#: sidebar-login.php:85
+msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users. Default: <br/>&lt;a href=\""
+msgstr "एक पंक्ति पर एक लिंक. नोट: लॉगआउट कड़ी हमेशा परवाह दिखाएगा. सुझाव: जोड़ें<code>|True</code> पैरा únicamente mostrarlo एक administradores  संयुक्त राष्ट्र लिंक डे después. डिफ़ॉल्ट: <br/>&lt;a href=\""
+
+#: sidebar-login.php:89
+msgid "Save Changes"
+msgstr "परिवर्तन सहेजें"
+
+#: sidebar-login.php:120
+msgid "Login"
+msgstr "लॉग इन"
+
+#: sidebar-login.php:121
+msgid "Welcome"
+msgstr "आपका स्वागत है"
+
+#: sidebar-login.php:122
+msgid "Username:"
+msgstr "प्रयोक्ता नाम:"
+
+#: sidebar-login.php:123
+msgid "Password:"
+msgstr "पासवर्ड:"
+
+#: sidebar-login.php:124
+msgid "Remember me"
+msgstr "मुझे याद रखें"
+
+#: sidebar-login.php:125
+msgid "Register"
+msgstr "रजिस्टर"
+
+#: sidebar-login.php:126
+msgid "Password Lost and Found"
+msgstr "पासवर्ड खोया और पाया"
+
+#: sidebar-login.php:127
+msgid "Lost your password?"
+msgstr "अपना कूटशब्द खो गया?"
+
+#: sidebar-login.php:128
+msgid "Logout"
+msgstr "लॉगआउट"
+
+#: sidebar-login.php:246
+msgid "Dashboard"
+msgstr "डैशबोर्ड"
+
+#: sidebar-login.php:246
+msgid "Profile"
+msgstr "प्रोफ़ाइल"
+
+#: sidebar-login.php:292
+msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use WordPress."
+msgstr "<strong>ERROR</strong>:कुकीज़ या अवरुद्ध कर रहे हैं आपके ब्राउज़र द्वारा समर्थित नहीं है. तुम्हें चाहिए<a href=\"http://www.google.com/support/accounts/bin/answer.py?hl=es&answer=61416\"></a> WordPress करने के लिए कुकीज़ का उपयोग  कर सकें."
+
+#: sidebar-login.php:300
+msgid "<strong>ERROR</strong>: Please enter a username & password."
+msgstr "<strong>ERROR</strong>: एक उपयोगकर्ता नाम और पासवर्ड दर्ज करें."
+

@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sidebar-login\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-03 11:43+0100\n"
+"PO-Revision-Date: 2011-04-21 13:45+0200\n"
+"Last-Translator: Христо Панджаров <hristo.p@siteground.com>\n"
+"Language-Team: Bulgarian <hristo.p@siteground.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+
+#: sidebar-login.php:14
+#: sidebar-login.php:57
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: sidebar-login.php:46
+msgid "<p>Changes saved</p>"
+msgstr "<p>Промените записани</p>"
+
+#: sidebar-login.php:62
+msgid "Login redirect URL"
+msgstr "Адрес за пренасочване след вход"
+
+#: sidebar-login.php:63
+msgid "Url to redirect the user to after login. Leave blank to use their current page."
+msgstr "Адрес за пренасочване след вход. Оставете празно за да използвате същата страница."
+
+#: sidebar-login.php:66
+msgid "Logout redirect URL"
+msgstr "Адрес за пренасочване след изход"
+
+#: sidebar-login.php:67
+msgid "Url to redirect the user to after logout. Leave blank to use their current page."
+msgstr "Адрес за пренасочване след изход. Оставете празно за да използвате същата страница."
+
+#: sidebar-login.php:70
+msgid "Show Register Link"
+msgstr "Покажи връзка за регистрация"
+
+#: sidebar-login.php:72
+#: sidebar-login.php:79
+msgid "Yes"
+msgstr "Да"
+
+#: sidebar-login.php:73
+#: sidebar-login.php:80
+msgid "No"
+msgstr "Не"
+
+#: sidebar-login.php:74
+msgid "User registrations must also be turned on for this to work ('Anyone can register' checkbox in settings)."
+msgstr "Регистрациите трябва да бъдат включени преди това да работи ('Всеки може да се регистрира' чекбокса в настройките)."
+
+#: sidebar-login.php:77
+msgid "Show Lost Password Link"
+msgstr "Покажи връзка за Изгубена парола"
+
+#: sidebar-login.php:84
+msgid "Logged in links"
+msgstr "Връзка за успешно влезнали"
+
+#: sidebar-login.php:85
+msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users. Default: <br/>&lt;a href=\""
+msgstr "Един линк на ред. Забележка: Линковете за изход ще се показват независимо от тази опция. Подсказка: Добавете <code>|true</code> след линк за да го покажите само на администратори. По подразбиране: <br/>&lt;a href=\""
+
+#: sidebar-login.php:89
+msgid "Save Changes"
+msgstr "Запази промените"
+
+#: sidebar-login.php:120
+msgid "Login"
+msgstr "Вход"
+
+#: sidebar-login.php:121
+msgid "Welcome"
+msgstr "Добре дошли"
+
+#: sidebar-login.php:122
+msgid "Username:"
+msgstr "Потребител:"
+
+#: sidebar-login.php:123
+msgid "Password:"
+msgstr "Парола:"
+
+#: sidebar-login.php:124
+msgid "Remember me"
+msgstr "Запомни ме"
+
+#: sidebar-login.php:125
+msgid "Register"
+msgstr "Регистрирай се"
+
+#: sidebar-login.php:126
+msgid "Password Lost and Found"
+msgstr "Изгубена и намерена парола"
+
+#: sidebar-login.php:127
+msgid "Lost your password?"
+msgstr "Загубена парола?"
+
+#: sidebar-login.php:128
+msgid "Logout"
+msgstr "Изход"
+
+#: sidebar-login.php:246
+msgid "Dashboard"
+msgstr "Табло"
+
+#: sidebar-login.php:246
+msgid "Profile"
+msgstr "Профил"
+
+#: sidebar-login.php:292
+msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use WordPress."
+msgstr "<strong>ГРЕШКА</strong>: Кукитата са блокирани или не се поддържат от вашия браузър. Трябва да <a href=\"http://www.google.com/support/accounts/bin/answer.py?hl=ca&answer=61416\">вклютите кукитата</a> за да използвате WordPress."
+
+#: sidebar-login.php:300
+msgid "<strong>ERROR</strong>: Please enter a username & password."
+msgstr "<strong>ГРЕШКА</strong>: Моля, въведете потребителско име и парола"
+

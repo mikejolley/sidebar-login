@@ -47,6 +47,10 @@ You can configure the plugin in <code>Admin > Appearance > Sidebar Login</code> 
 *	Indonesian (2) translation by Hendry Lee (http://kelayang.com)
 *	Lithuanian translation by Justas Kalinauskas
 *	Hebrew translation by Yosi (http://www.thefinancialchef.com/blog/)
+*	Latvian translation by Reinis
+*	Hindi translation by Outshine Solutions (http://outshinesolutions.com/web-hosting/web-hosting-india.html)
+*	Bulgarian translation by Siteground (http://www.siteground.com)
+*	Greek translation by Meet-sos (wptips.thetida.gr)
 
 Note: Those with more than one translation are found in langs/alternate/. To use the alternatives move them from /alternate/ into /langs/.
 

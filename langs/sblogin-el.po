@@ -1,0 +1,155 @@
+# Translation of the WordPress plugin Sidebar Login 2.2.10 by Mike Jolley.
+# Copyright (C) 2010 Mike Jolley
+# This file is distributed under the same license as the Sidebar Login package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar Login 2.2.10\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
+"POT-Creation-Date: 2010-05-16 10:55+0000\n"
+"PO-Revision-Date: 2011-02-12 00:43+0200\n"
+"Last-Translator: Meet <meet-sos@freemail.gr>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. #-#-#-#-#  plugin.pot (Sidebar Login 2.2.10)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: sidebar-login.php:22
+#: sidebar-login.php:51
+#: sidebar-login.php:289
+msgid "Sidebar Login"
+msgstr ""
+
+#: sidebar-login.php:40
+msgid "<p>Changes saved</p>"
+msgstr "<p>Οι αλλαγές αποθηκεύθηκαν</p>"
+
+#: sidebar-login.php:56
+msgid "Login redirect URL"
+msgstr "URL ανακατέυθυνσης σύνδεσης"
+
+#: sidebar-login.php:57
+msgid "Url to redirect the user to after login. Leave blank to use their current page."
+msgstr "Το Url στο οποίο θα ανακατευθένεται ο χρήστης αφότου συνδεθεί. Αφήστε το κενό άμα θέλετε να παραμείνει στην ίδια σελίδα."
+
+#: sidebar-login.php:60
+msgid "Logout redirect URL"
+msgstr "URL ανακατέυθυνσης αποσύνδεσης"
+
+#: sidebar-login.php:61
+msgid "Url to redirect the user to after logout. Leave blank to use their current page."
+msgstr "Το Url στο οποίο θα ανακατευθένεται ο χρήστης αφότου αποσυνδεθεί. Αφήστε το κενό άμα θέλετε να παραμείνει στην ίδια σελίδα."
+
+#: sidebar-login.php:64
+msgid "Show Register Link"
+msgstr "Να δείχνει το λινκ εγγραφής νέου χρήστη"
+
+#: sidebar-login.php:66
+#: sidebar-login.php:73
+msgid "Yes"
+msgstr "Ναι"
+
+#: sidebar-login.php:67
+#: sidebar-login.php:74
+msgid "No"
+msgstr "Όχι"
+
+#: sidebar-login.php:68
+msgid "User registrations must also be turned on for this to work ('Anyone can register' checkbox in settings)."
+msgstr "Οι εγγραφές χρηστών θα πρέπει να είναι ανοικτές για να λειτουργήσει αυτό (η επιλογή \"επιτρέπεται η εγγραφή μελών\" πρέπει να είναι ενεργοποιημένη στις ρυθμίσεις)."
+
+#: sidebar-login.php:71
+msgid "Show Lost Password Link"
+msgstr "Να δείχνει το link επανάκτησης κωδικού"
+
+#: sidebar-login.php:78
+msgid "Logged in links"
+msgstr ""
+
+#: sidebar-login.php:79
+msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users. If you add a further <code>|USER LEVEL</code> the link will only be shown to users with levels equal to or greater than those defined. See <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> for more info on roles and Capabilities.<br/> You can also type <code>%USERNAME%</code> and <code>%USERID%</code> which will be replaced by the user info. Default:"
+msgstr "Ενα link ανά γραμμή. Σημείωση: Το link της αποσύνδεσης θα φαίνεται ούτως ή άλλως. Κόλπο: προσθέστε <code>|true</code> έπειτα από κάποιο link για να φαίνεται μόνο στους διαχειριστές.Αν προσθέσετε ένα επιπλέον <code>|USER LEVEL</code> , το link θα φαίνεται μόνον στους χρήστες με αυτόν τον ρόλο ή ανώτερο αυτού. Δείτε στο <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> για περισσότερες λεπτομέρειες στα θέματα των ρόλων.<br/>Μπορείτε επίσης να γράψετε <code>%USERNAME%</code> και <code>%USERID%</code> τα οποία θα αντικατασταθούν από τις πληροφορίες του χρήστη. Προεπιλογή:"
+
+#: sidebar-login.php:83
+msgid "Save Changes"
+msgstr "Αποθήκευση αλλαγών"
+
+#: sidebar-login.php:114
+msgid "Login"
+msgstr "Σύνδεση"
+
+#: sidebar-login.php:115
+msgid "Welcome"
+msgstr "Καλωσήλθες"
+
+#: sidebar-login.php:116
+msgid "Username:"
+msgstr "Όνομα χρήστη:"
+
+#: sidebar-login.php:117
+msgid "Password:"
+msgstr "Κωδικός:"
+
+#: sidebar-login.php:118
+msgid "Remember me"
+msgstr "Να με θυμάσαι"
+
+#: sidebar-login.php:119
+msgid "Register"
+msgstr "Εγγραφή"
+
+#: sidebar-login.php:120
+msgid "Password Lost and Found"
+msgstr "Κωδικός χάθηκε και βρέθηκε"
+
+#: sidebar-login.php:121
+msgid "Lost your password?"
+msgstr "Χάσατε τον κωδικό σας;"
+
+#: sidebar-login.php:122
+msgid "Logout"
+msgstr "Αποσύνδεση"
+
+#: sidebar-login.php:188
+msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use WordPress."
+msgstr "<strong>ΣΦΑΛΜΑ</strong>: Τα Cookies είναι μπλοκαρισμένα ή δεν υποστηρίζονται από τον browser σας. Θα χρειαστεί να <a href='http://www.google.com/cookies.html'>ενεργοποιήσετε τα cookies</a> για να χρησιμοποιήσετε το wordpress."
+
+#: sidebar-login.php:227
+msgid "Or login using an <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
+msgstr "ή συνδεθείτε μέσω ενός <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
+
+#: sidebar-login.php:288
+msgid "Sidebar Login."
+msgstr ""
+
+#: sidebar-login.php:318
+msgid "Dashboard"
+msgstr "Πίνακας ελέγχου"
+
+#: sidebar-login.php:318
+msgid "Profile"
+msgstr "Προφίλ"
+
+#: sidebar-login.php:368
+msgid "<strong>ERROR</strong>: Please enter a username & password."
+msgstr "<strong>ΣΑΛΜΑ</strong>: Παρακαλώ εισάγετε όνομα χρήστη και κωδικό."
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/sidebar-login/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Adds a sidebar widget to let users login"
+msgstr "Προσθέτε μία μονάδα (widget) στην μπάρα για την σύνδεση των χρηστών"
+
+#. Author of the plugin/theme
+msgid "Mike Jolley"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://blue-anvil.com"
+msgstr ""
+
