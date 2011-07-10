@@ -24,3 +24,45 @@
 	border-top: 1px solid #999; 
 	height: 1px;
 }
+.widget_wp_sidebarlogin #openid_field {
+	background-image:url(../openid/f/openid.gif);
+	background-position:3px 50%;
+	background-repeat:no-repeat;
+	padding-left:21px !important;
+}
+.widget_wp_sidebarlogin ul.sidebarlogin_otherlinks {
+	margin-left: 0 !important;
+}
+.widget_wp_sidebarlogin .login_error {
+	color: #ae121e;
+	background-color: #fbb1b7;
+	border: 1px solid;
+	margin: 1em 0;
+	padding: 1em;
+	font-size: 13px;
+}
+.widget_wp_sidebarlogin .login_error a {
+	color: #ae121e;
+}
+.widget_wp_sidebarlogin form {
+	margin: 1em 0;
+}
+.widget_wp_sidebarlogin form p {
+	margin: .5em 0;
+}
+.widget_wp_sidebarlogin form input.text {
+	width: 100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+/* ie7 */
+*:first-child+html .widget_wp_sidebarlogin form input.text {
+	width: 90%;
+}
+.widget_wp_sidebarlogin label {
+	display: block;
+}
+.widget_wp_sidebarlogin .rememberme label {
+	display: inline;
+}
