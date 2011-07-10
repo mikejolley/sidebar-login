@@ -1,0 +1,198 @@
+# Translation of the WordPress plugin Sidebar Login 2.2.10 by Mike Jolley.
+# Copyright (C) 2010 Mike Jolley
+# This file is distributed under the same license as the Sidebar Login package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar Login 2.2.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-01 20:45+0200\n"
+"PO-Revision-Date: 2011-01-01 20:51+0200\n"
+"Last-Translator: Yosi tsitsu <yositsitsu@gmail.com>\n"
+"Language-Team: Yositsitsu <yositsitsu@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Hebrew\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: D:\\Downloads\\WP\\!!! mine\\sidebar-login\n"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:22
+#: mine\sidebar-login/sidebar-login.php:59
+#: mine\sidebar-login/sidebar-login.php:320
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:44
+msgid "<p>Changes saved</p>"
+msgstr "<p>השינויים נשמרו</p>"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:65
+msgid "Logged out Heading"
+msgstr "כותרת למשתמשים מחוברים"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:66
+msgid "Widget heading."
+msgstr "כותרת הוידג'ט."
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:69
+msgid "Logged in Heading"
+msgstr "כותרת למשתמשים מחוברים"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:70
+msgid "Heading for widget when user is logged in. <code>%username%</code> shows username."
+msgstr "כותרת לוידג'ט עבור משתמשים מחוברים.  <code>%username%</code> מציג את שם המשתמש."
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:74
+msgid "Login redirect URL"
+msgstr "קישור להעברה בעת כניסה"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:75
+msgid "Url to redirect the user to after login. Leave blank to use their current page."
+msgstr "הקישור שאליו יועבר המשתמש לאחר כניסה. השאר ריק לשימוש בדף הנוכחי שלו."
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:78
+msgid "Logout redirect URL"
+msgstr "קישור להעברה בעת יציאה"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:79
+msgid "Url to redirect the user to after logout. Leave blank to use their current page."
+msgstr "הקישור שאליו יועבר המשתמש לאחר יציאה. השאר ריק לשימוש בדף הנוכחי שלו."
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:82
+msgid "Show Register Link"
+msgstr "הצג קישור הרשמה"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:84
+#: mine\sidebar-login/sidebar-login.php:91
+#: mine\sidebar-login/sidebar-login.php:103
+msgid "Yes"
+msgstr "כן"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:85
+#: mine\sidebar-login/sidebar-login.php:92
+#: mine\sidebar-login/sidebar-login.php:104
+msgid "No"
+msgstr "לא"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:86
+msgid "User registrations must also be turned on for this to work ('Anyone can register' checkbox in settings)."
+msgstr "רישום של משתמשים צריך להיות מאופשר בשביל שזה יעבוד ('כל אחד יכול להרשם' הגדרות כלליות)"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:89
+msgid "Show Lost Password Link"
+msgstr "הצג קישור לסיסמה שנשכחה"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:96
+msgid "Logged in links"
+msgstr "קישורים למשתמשים מחוברים"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:97
+msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users or alternatively use a <code>|user_capability</code> and the link will only be shown to users with that capability. See <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> for more info on roles and Capabilities.<br/> You can also type <code>%USERNAME%</code> and <code>%USERID%</code> which will be replaced by the user info. Default:"
+msgstr "קישור אחד בשורה. שים לב: הקישור ליציאה יוצג בכל מקרה. טיפ: הוסף <code>|true</code> אחרי הקישור על מנת להציג אותו למשתמשים שהינם מנהלים בלבד. אם תוסיף בהמשך גם <code>|USER LEVEL</code> הקישור יוצג למשתמשים שרמותיהם גבוהות או שוות לאלו של המוגדרים כאן. ראה <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> למידע נוסף על תפקידים ויכולות.<br/> אתה יכול גם להשתמש ב<code>%USERNAME%</code> ו <code>%USERID%</code> שיוחלפו ע\"י המידע של המשתמש. ברירת המחדל:"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:98
+#: mine\sidebar-login/sidebar-login.php:352
+msgid "Dashboard"
+msgstr "לוח בקרה"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:98
+#: mine\sidebar-login/sidebar-login.php:352
+msgid "Profile"
+msgstr "פרופיל"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:101
+msgid "Show Logged in Avatar"
+msgstr "הצג אבטר עבור המשתמש המחובר"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:109
+msgid "Save Changes"
+msgstr "שמור שינויים"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:142
+msgid "Username:"
+msgstr "שם משתמש:"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:143
+msgid "Password:"
+msgstr "סיסמה:"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:144
+msgid "Remember me"
+msgstr "לזכור אותי"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:145
+msgid "Register"
+msgstr "להרשם"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:146
+msgid "Password Lost and Found"
+msgstr "סיסמה אבדה ונמצאה"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:147
+msgid "Lost your password?"
+msgstr "שכחת את הסיסמה שלך?"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:148
+msgid "Logout"
+msgstr "לצאת"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:219
+msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use WordPress."
+msgstr "<strong>שגיאה</strong>: עוגיות חסומות או לא נתמכות ע\"י הסייר שלך. עליך <a href='http://www.google.com/cookies.html'>לאפשר עוגיות</a> על מנת להשתמש בוורדפרס."
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:258
+msgid "Or login using an <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
+msgstr "או שכנס בעזרת <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:319
+msgid "Sidebar Login."
+msgstr "כניסה בסרגל הצד."
+
+#: D:\Downloads\WP\!!!
+#: mine\sidebar-login/sidebar-login.php:405
+msgid "<strong>ERROR</strong>: Please enter a username &amp; password."
+msgstr "<strong>שגיאה</strong>: עליך להזין את שם המשתמש והסיסמה שלך."
+
+#~ msgid "Login"
+#~ msgstr "כניסה"
+
+#~ msgid "Welcome"
+#~ msgstr "ברוך הבא"
+
+#~ msgid "Adds a sidebar widget to let users login"
+#~ msgstr "מוסיף ויד'גט לסרגל הצד על מנת לאפשר כניסה למשתמשים "

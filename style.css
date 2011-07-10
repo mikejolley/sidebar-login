@@ -1,0 +1,26 @@
+/* Basic styling for login widget
+   This styling aligns the gravtar left, the links right.*/
+.widget_wp_sidebarlogin, #sidebar-login {
+	overflow: hidden;
+}
+.widget_wp_sidebarlogin .avatar_container, #sidebar-login .avatar_container {
+	float:left;
+}
+.widget_wp_sidebarlogin ul {
+	list-style: none outside !important;
+}
+.widget_wp_sidebarlogin .avatar_container img, #sidebar-login .avatar_container img {
+	padding: 3px;
+	border: 1px solid #ddd;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin-right: 8px;
+	margin-top: 5px;
+}
+.widget_wp_sidebarlogin hr {
+	display: block;
+	clear: both; 
+	border: 0; 
+	border-top: 1px solid #999; 
+	height: 1px;
+}

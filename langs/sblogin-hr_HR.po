@@ -1,0 +1,193 @@
+# Translation of the WordPress plugin Sidebar Login 2.2.10 by Mike Jolley.
+# Copyright (C) 2010 Mike Jolley
+# This file is distributed under the same license as the Sidebar Login package.
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+# Žarko <zarko.pintar@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar Login 2.2.10\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
+"POT-Creation-Date: 2010-05-16 10:55+0000\n"
+"PO-Revision-Date: 2010-08-24 22:43+0200\n"
+"Last-Translator: Žarko <zarko.pintar@gmail.com>\n"
+"Language-Team: Croatian <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.1\n"
+"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. #-#-#-#-#  plugin.pot (Sidebar Login 2.2.10)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: sidebar-login.php:22 sidebar-login.php:51 sidebar-login.php:289
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: sidebar-login.php:40
+msgid "<p>Changes saved</p>"
+msgstr "<p>Promjene su spremljene</p>"
+
+#: sidebar-login.php:56
+msgid "Login redirect URL"
+msgstr "URL preusmjeravanja kod prijave"
+
+#: sidebar-login.php:57
+msgid ""
+"Url to redirect the user to after login. Leave blank to use their current "
+"page."
+msgstr ""
+"URL na koji će biti preusmjeren korisnik nakon prijave. Ostaviti prazno za "
+"za korištenje trenutne stranice."
+
+#: sidebar-login.php:60
+msgid "Logout redirect URL"
+msgstr "URL preusmjeravanja kod odjave"
+
+#: sidebar-login.php:61
+msgid ""
+"Url to redirect the user to after logout. Leave blank to use their current "
+"page."
+msgstr ""
+"URL na koji će biti preusmjeren korisnik nakon odjave. Ostaviti prazno za "
+"za korištenje trenutne stranice."
+
+#: sidebar-login.php:64
+msgid "Show Register Link"
+msgstr "Prikaži registracijsku poveznicu"
+
+#: sidebar-login.php:66 sidebar-login.php:73
+msgid "Yes"
+msgstr "Da"
+
+#: sidebar-login.php:67 sidebar-login.php:74
+msgid "No"
+msgstr "Ne"
+
+#: sidebar-login.php:68
+msgid ""
+"User registrations must also be turned on for this to work ('Anyone can "
+"register' checkbox in settings)."
+msgstr ""
+"Registracija korisnika mora biti uključena da bi ovo radilo ('Svi se mogu registrirati' odabirni okvir u postavkama)."
+
+#: sidebar-login.php:71
+msgid "Show Lost Password Link"
+msgstr "Prikaži poveznicu izgubljene zaporke"
+
+#: sidebar-login.php:78
+msgid "Logged in links"
+msgstr "Poveznice prijava"
+
+#: sidebar-login.php:79
+msgid ""
+"One link per line. Note: Logout link will always show regardless. Tip: Add "
+"<code>|true</code> after a link to only show it to admin users. If you add a "
+"further <code>|USER LEVEL</code> the link will only be shown to users with "
+"levels equal to or greater than those defined. See <a href='http://codex."
+"wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress."
+"org/Roles_and_Capabilities</a> for more info on roles and Capabilities.<br/> "
+"You can also type <code>%USERNAME%</code> and <code>%USERID%</code> which "
+"will be replaced by the user info. Default:"
+msgstr ""
+"Jedna poveznica po liniji. Bilješka: Odjavna poveznice će uvijek biti prikazana. Savjet: dodati "
+"<code>|true</code> nakon poveznice za prikazati samo admin korisnicima.Ako dodate daljni kod "
+"<code>|USER LEVEL</code> poveznica će biti prikazana samo korisnicima sa jednakom ili većom "
+"korisničkom razinom. Pogledati <a href='http://codex."
+"wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress."
+"org/Roles_and_Capabilities</a> za više informacija o ulogama i mogućnostima.<br/> "
+"Također možete unjeti <code>%USERNAME%</code> i <code>%USERID%</code> koji će biti "
+"zamjenjeni sa podacima o korisniku. Zadano:"
+
+#: sidebar-login.php:83
+msgid "Save Changes"
+msgstr "Spremi promjene"
+
+#: sidebar-login.php:114
+msgid "Login"
+msgstr "Prijava"
+
+#: sidebar-login.php:115
+msgid "Welcome"
+msgstr "Pozdrav,"
+
+#: sidebar-login.php:116
+msgid "Username:"
+msgstr "Korisničko ime:"
+
+#: sidebar-login.php:117
+msgid "Password:"
+msgstr "Zaporka:"
+
+#: sidebar-login.php:118
+msgid "Remember me"
+msgstr "Zapamti me"
+
+#: sidebar-login.php:119
+msgid "Register"
+msgstr "Registracija"
+
+#: sidebar-login.php:120
+msgid "Password Lost and Found"
+msgstr "Zaporka izgubljeno/nađeno"
+
+#: sidebar-login.php:121
+msgid "Lost your password?"
+msgstr "Izgubili ste zaporku?"
+
+#: sidebar-login.php:122
+msgid "Logout"
+msgstr "Odjava"
+
+#: sidebar-login.php:188
+msgid ""
+"<strong>ERROR</strong>: Cookies are blocked or not supported by your "
+"browser. You must <a href='http://www.google.com/cookies.html'>enable "
+"cookies</a> to use WordPress."
+msgstr ""
+"<strong>POGREŠKA</strong>: Kolačići su blokirani ili nisu podržani od strane "
+"vašeg preglednika. Morate <a href='http://www.google.com/cookies.html'>omogućiti"
+"kolačiće</a> za korištenje WordPress-a."
+
+#: sidebar-login.php:227
+msgid ""
+"Or login using an <a href=\"http://openid.net/what/\" title=\"Learn about "
+"OpenID\">OpenID</a>"
+msgstr ""
+"Ili prijava koristeći <a href=\"http://openid.net/what/\" title=\"Learn about "
+"OpenID\">OpenID</a>"
+
+#: sidebar-login.php:288
+msgid "Sidebar Login."
+msgstr "Sidebar Login"
+
+#: sidebar-login.php:318
+msgid "Dashboard"
+msgstr "Nadzorna ploča"
+
+#: sidebar-login.php:318
+msgid "Profile"
+msgstr "Profil"
+
+#: sidebar-login.php:368
+msgid "<strong>ERROR</strong>: Please enter a username & password."
+msgstr "<strong>POGREŠKA</strong>: Molim, unesite korisničko ime i zaporku.."
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/sidebar-login/"
+msgstr "http://wordpress.org/extend/plugins/sidebar-login/"
+
+#. Description of the plugin/theme
+msgid "Adds a sidebar widget to let users login"
+msgstr "Dodaj bočni widget kako bi se korisnici prijavili"
+
+#. Author of the plugin/theme
+msgid "Mike Jolley"
+msgstr "Mike Jolley"
+
+#. Author URI of the plugin/theme
+msgid "http://blue-anvil.com"
+msgstr "http://blue-anvil.com"
+
+

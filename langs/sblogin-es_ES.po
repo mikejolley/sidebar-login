@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sidebar-login\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-03 11:43+0100\n"
+"PO-Revision-Date: 2009-07-17 15:40-0600\n"
+"Last-Translator: tribak <tribak.zero@gmail.com>\n"
+"Language-Team: Español <tribak.zero@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: MEXICO\n"
+
+#: sidebar-login.php:14
+#: sidebar-login.php:57
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: sidebar-login.php:46
+msgid "<p>Changes saved</p>"
+msgstr "<p>Cambios guardados</p>"
+
+#: sidebar-login.php:62
+msgid "Login redirect URL"
+msgstr "URL para redireccionar al iniciar sesión"
+
+#: sidebar-login.php:63
+msgid "Url to redirect the user to after login. Leave blank to use their current page."
+msgstr "URL a la que se redireccionará al usuario después de iniciar sesión. Dejar en blanco para la pagina actual."
+
+#: sidebar-login.php:66
+msgid "Logout redirect URL"
+msgstr "URL para redireccionar al cerrar sesión"
+
+#: sidebar-login.php:67
+msgid "Url to redirect the user to after logout. Leave blank to use their current page."
+msgstr "URL a la que se redireccionará al usuario después de cerrar sesión. Dejar en blanco para pagina actual."
+
+#: sidebar-login.php:70
+msgid "Show Register Link"
+msgstr "Mostrar enlace de registro"
+
+#: sidebar-login.php:72
+#: sidebar-login.php:79
+msgid "Yes"
+msgstr "Sí"
+
+#: sidebar-login.php:73
+#: sidebar-login.php:80
+msgid "No"
+msgstr "No"
+
+#: sidebar-login.php:74
+msgid "User registrations must also be turned on for this to work ('Anyone can register' checkbox in settings)."
+msgstr "El registro de usuarios debe estar activado para que esto funcione (Casilla 'Todos pueden registrarse' en configuación)."
+
+#: sidebar-login.php:77
+msgid "Show Lost Password Link"
+msgstr "Mostrar enlace para recuperar contraseña perdida"
+
+#: sidebar-login.php:84
+msgid "Logged in links"
+msgstr "Enlaces para usuarios registrados"
+
+#: sidebar-login.php:85
+msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users. Default: <br/>&lt;a href=\""
+msgstr "Un link por línea. Nota: El link de cerrar sesión siempre se mostrara. Tip: Agrega <code>|True</code> después de un link para mostrarlo únicamente a administradores. Default: <br/>&lt;a href=\""
+
+#: sidebar-login.php:89
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: sidebar-login.php:120
+msgid "Login"
+msgstr "Entrar"
+
+#: sidebar-login.php:121
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: sidebar-login.php:122
+msgid "Username:"
+msgstr "Usuario:"
+
+#: sidebar-login.php:123
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: sidebar-login.php:124
+msgid "Remember me"
+msgstr "Recordarme"
+
+#: sidebar-login.php:125
+msgid "Register"
+msgstr "Registrarme"
+
+#: sidebar-login.php:126
+msgid "Password Lost and Found"
+msgstr "Contraseña recuperada"
+
+#: sidebar-login.php:127
+msgid "Lost your password?"
+msgstr "Perdió su contraseña?"
+
+#: sidebar-login.php:128
+msgid "Logout"
+msgstr "Salir"
+
+#: sidebar-login.php:246
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: sidebar-login.php:246
+msgid "Profile"
+msgstr "Perfil"
+
+#: sidebar-login.php:292
+msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use WordPress."
+msgstr "<strong>ERROR</strong>:Su navegador no permite cookies. Usted debe<a href=\"http://www.google.com/support/accounts/bin/answer.py?hl=es&answer=61416\">habilitar las cookies</a> para usar WordPress."
+
+#: sidebar-login.php:300
+msgid "<strong>ERROR</strong>: Please enter a username & password."
+msgstr "<strong>ERROR</strong>: Por favor escriba su usuario y contraseña."
+

@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar Login Russian Support\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-04 01:18+0300\n"
+"PO-Revision-Date: 2010-08-04 01:18+0300\n"
+"Last-Translator: boris <_boris_sv@mail.ru>\n"
+"Language-Team: Borje <b.portu@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: ../sidebar-login.php:22
+#: ../sidebar-login.php:53
+#: ../sidebar-login.php:299
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: ../sidebar-login.php:41
+msgid "<p>Changes saved</p>"
+msgstr "<p>Изменения сохранены</p>"
+
+#: ../sidebar-login.php:58
+msgid "Login redirect URL"
+msgstr "Перенаправление на URL после входа"
+
+#: ../sidebar-login.php:59
+msgid "Url to redirect the user to after login. Leave blank to use their current page."
+msgstr "URL, на который перейдёт пользователь после входа. Оставьте пустым, чтобы пользователь возвращался на текущую страницу."
+
+#: ../sidebar-login.php:62
+msgid "Logout redirect URL"
+msgstr "Перенаправление на URL после выхода"
+
+#: ../sidebar-login.php:63
+msgid "Url to redirect the user to after logout. Leave blank to use their current page."
+msgstr "URL, на который перейдёт пользователь после выхода. Оставьте пустым, чтобы пользователь возвращался на текущую страницу."
+
+#: ../sidebar-login.php:66
+msgid "Show Register Link"
+msgstr "Показывать ссылку \"Регистрация\""
+
+#: ../sidebar-login.php:68
+#: ../sidebar-login.php:75
+#: ../sidebar-login.php:87
+msgid "Yes"
+msgstr "Да"
+
+#: ../sidebar-login.php:69
+#: ../sidebar-login.php:76
+#: ../sidebar-login.php:88
+msgid "No"
+msgstr "Нет"
+
+#: ../sidebar-login.php:70
+msgid "User registrations must also be turned on for this to work ('Anyone can register' checkbox in settings)."
+msgstr "Регистрация пользователей должна быть также включена, чтобы это работало. (Параметры --> Общие --> опция \"Любой может зарегистрироваться\")."
+
+#: ../sidebar-login.php:73
+msgid "Show Lost Password Link"
+msgstr "Показывать ссылку для восстановления пароля"
+
+#: ../sidebar-login.php:80
+msgid "Logged in links"
+msgstr "Ссылки, отображаемые после входа"
+
+#: ../sidebar-login.php:81
+msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users. If you add a further <code>|USER LEVEL</code> the link will only be shown to users with levels equal to or greater than those defined. See <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> for more info on roles and Capabilities.<br/> You can also type <code>%USERNAME%</code> and <code>%USERID%</code> which will be replaced by the user info. Default:"
+msgstr "Одна ссылка на каждую строку. Примечание: Ссылка \"Выйти\" будет отображаться в любом случае. Подсказка: добавьте <code>|true</code> после ссылки, которую нужно показывать только пользователям с административными привилегиями. Если вы добавите <code>|USER LEVEL</code>, то ссылка будет показана только пользователям с уровнем прав, равным или большим, чем вы укажите. Смотрите <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> для получения более полной информации о ролях и привилегиях. <br/> Также вы можете использовать <code>%USERNAME%</code> и <code>%USERID%</code>, что будет заменено информацией о пользователе. По умолчанию: "
+
+#: ../sidebar-login.php:85
+msgid "Show Logged in Avatar"
+msgstr "Показывать аватар после входа"
+
+#: ../sidebar-login.php:93
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: ../sidebar-login.php:124
+msgid "Login"
+msgstr "Войти"
+
+#: ../sidebar-login.php:125
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: ../sidebar-login.php:126
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#: ../sidebar-login.php:127
+msgid "Password:"
+msgstr "Пароль:"
+
+#: ../sidebar-login.php:128
+msgid "Remember me"
+msgstr "Запомнить меня"
+
+#: ../sidebar-login.php:129
+msgid "Register"
+msgstr "Регистрация"
+
+#: ../sidebar-login.php:130
+msgid "Password Lost and Found"
+msgstr "Восстановление пароля"
+
+#: ../sidebar-login.php:131
+msgid "Lost your password?"
+msgstr "Забыли пароль?"
+
+#: ../sidebar-login.php:132
+msgid "Logout"
+msgstr "Выйти"
+
+#: ../sidebar-login.php:198
+msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use WordPress."
+msgstr "<strong>ОШИБКА</strong>: Cookies отключены или не поддерживаются вашим браузером. Вы должны <a href='http://www.google.de/cookies.html'>включить cookies</a>, чтобы использовать WordPress."
+
+#: ../sidebar-login.php:237
+msgid "Or login using an <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
+msgstr "Или войдите, используя <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
+
+#: ../sidebar-login.php:298
+msgid "Sidebar Login."
+msgstr "Sidebar Login."
+
+#: ../sidebar-login.php:328
+msgid "Dashboard"
+msgstr "Панель"
+
+#: ../sidebar-login.php:328
+msgid "Profile"
+msgstr "Профиль"
+
+#: ../sidebar-login.php:381
+msgid "<strong>ERROR</strong>: Please enter a username & password."
+msgstr "<strong>ОШИБКА</strong>: Пожалуйста, введите имя пользователя и пароль."
+
+#~ msgid ""
+#~ "One link per line. Note: Logout link will always show regardless. Tip: "
+#~ "Add <code>|true</code> after a link to only show it to admin users. "
+#~ "Default: <br/>&lt;a href=\""
+#~ msgstr ""
+#~ "Одна ссылка на каждую строку. Примечание: Ссылка \"Выйти\" будет "
+#~ "отображаться в любом случае. Подсказка: добавьте <code>|true</code> после "
+#~ "ссылки, которая должна отображаться для пользователей с административными "
+#~ "привилегиями. По умолчанию: <br/>&lt;a href=\""
