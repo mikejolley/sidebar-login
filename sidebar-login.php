@@ -248,7 +248,7 @@ function widget_wp_sidebarlogin_check() {
 		// Show result based on whether its by ajax or not
 		if (sidebar_login_is_ajax()) :
 			if ( !is_wp_error($user) ) :
-				echo 'SUCCESS';
+				echo 'SBL_SUCCESS';
 			else :
 				foreach ($user->errors as $error) {
 					echo $error[0];

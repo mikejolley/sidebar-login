@@ -81,6 +81,8 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 = 2.3 =
 *	Put the project on GitHub
 *	Added new localisations
+*	New options panel
+* 	AJAX Login
 
 = 2.2.15 =
 *	FORCE_SSL_LOGIN/ADMIN double login issue fix (Thanks to bmaupin)

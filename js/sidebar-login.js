@@ -14,7 +14,7 @@ jQuery(function(){
 			success: function( result ) {
 				jQuery('.login_error').remove();
 				result = jQuery.trim( result );
-				if (result=='SUCCESS') {
+				if (result=='SBL_SUCCESS' || result.indexOf( 'SBL_SUCCESS' ) > 0) {
 					window.location = jQuery(thisform).attr('action');
 				} else {
 					jQuery(thisform).prepend('<p class="login_error">' + result + '</p>');
