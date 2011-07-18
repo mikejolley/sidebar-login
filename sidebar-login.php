@@ -3,7 +3,7 @@
 Plugin Name: Sidebar Login
 Plugin URI: http://wordpress.org/extend/plugins/sidebar-login/
 Description: Adds a sidebar widget to let users login
-Version: 2.3
+Version: 2.3.1
 Author: Mike Jolley
 Author URI: http://mikejolley.com
 */
@@ -109,8 +109,9 @@ function widget_wp_sidebarlogin($args) {
 
 		if ( is_wp_error($login_errors) && $login_errors->get_error_code() ) {
 			
-			foreach ($user->errors as $error) {
-				echo '<div class="login_error">' . $error[0] . "</div>\n";
+			foreach ($login_errors->get_error_messages() as $error) {
+				$error = apply_filters('sidebar_login_error', $error);
+				echo '<div class="login_error">' . $error . "</div>\n";
 				break;
 			}
 				
