@@ -3,7 +3,7 @@
 Plugin Name: Sidebar Login
 Plugin URI: http://wordpress.org/extend/plugins/sidebar-login/
 Description: Adds a sidebar widget to let users login
-Version: 2.3.1
+Version: 2.3.2
 Author: Mike Jolley
 Author URI: http://mikejolley.com
 */
@@ -116,6 +116,17 @@ function widget_wp_sidebarlogin($args) {
 			}
 				
 		}
+		
+		// Get redirect URL
+		$redirect_to = trim(stripslashes(get_option('sidebarlogin_login_redirect')));
+		
+		if (empty($redirect_to)) :
+			if (isset($_REQUEST['redirect_to'])) 
+				$redirect_to = $_REQUEST['redirect_to'];
+			else
+				$redirect_to = sidebar_login_current_url('nologout');
+		endif;
+		
 		// login form
 		if (force_ssl_login() || force_ssl_admin()) $sidebarlogin_post_url = str_replace('http://', 'https://', sidebar_login_current_url()); else $sidebarlogin_post_url = sidebar_login_current_url();
 		?>
@@ -141,7 +152,7 @@ function widget_wp_sidebarlogin($args) {
 			
 			<p class="submit">
 				<input type="submit" name="wp-submit" id="wp-submit" value="<?php _e('Login &raquo;', 'sblogin'); ?>" />
-				<input type="hidden" name="redirect_to" class="redirect_to" value="<?php echo sidebar_login_current_url(); ?>" />
+				<input type="hidden" name="redirect_to" class="redirect_to" value="<?php echo $redirect_to; ?>" />
 				<input type="hidden" name="sidebarlogin_posted" value="1" />
 				<input type="hidden" name="testcookie" value="1" />
 			</p>
