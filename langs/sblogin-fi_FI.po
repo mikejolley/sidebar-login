@@ -33,7 +33,7 @@ msgstr "Näytä linkki rekisteröitymiseen"
 #: admin.php:62
 #@ sblogin
 msgid "Show Lost Password Link"
-msgstr "Näytä 'Unohtunut salasana' linkki"
+msgstr "Näytä 'Salasana hukassa' linkki"
 
 #: admin.php:76
 #@ sblogin
@@ -83,7 +83,7 @@ msgstr "Salasana kadonnut"
 #: sidebar-login.php:44
 #@ sblogin
 msgid "Lost your password?"
-msgstr "Unohtunut salasana?"
+msgstr "Salasana hukassa?"
 
 #: sidebar-login.php:45
 #@ sblogin
