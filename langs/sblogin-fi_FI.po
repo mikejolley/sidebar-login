@@ -19,185 +19,182 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#. #-#-#-#-#  plugin.pot (Sidebar Login 2.2.15)  #-#-#-#-#
-#. Plugin Name of the plugin/theme
-#: sidebar-login.php:22 sidebar-login.php:59 sidebar-login.php:324
+#: admin.php:106
+#: sidebar-login.php:210
 #@ sblogin
 msgid "Sidebar Login"
 msgstr "Sidebar Login"
 
-#: sidebar-login.php:44
-#@ sblogin
-msgid "<p>Changes saved</p>"
-msgstr "<p>Muutokset tallennettu</p>"
-
-#: sidebar-login.php:65
-#@ sblogin
-msgid "Logged out Heading"
-msgstr "Kirjautumattoman otsikko"
-
-#: sidebar-login.php:66
-#@ sblogin
-msgid "Widget heading."
-msgstr "Vimpaimen otsikko."
-
-#: sidebar-login.php:69
-#@ sblogin
-msgid "Logged in Heading"
-msgstr "Kirjautuneen otsikko"
-
-#: sidebar-login.php:70
-#@ sblogin
-msgid "Heading for widget when user is logged in. <code>%username%</code> shows username."
-msgstr "Vimpainen otsikko käyttäjän ollessa kirjautuneena. <code>%username%</code> näyttää käyttäjänimen."
-
-#: sidebar-login.php:74
-#@ sblogin
-msgid "Login redirect URL"
-msgstr "Kirjautumisen uudelleenohjaus"
-
-#: sidebar-login.php:75
-#@ sblogin
-msgid "Url to redirect the user to after login. Leave blank to use their current page."
-msgstr "Osoite johon käyttäjä uudelleenohjataan kirjautumisen jälkeen. Jätä tyhjäksi käyttääksesi sen hetkistä sivua."
-
-#: sidebar-login.php:78
-#@ sblogin
-msgid "Logout redirect URL"
-msgstr "Ulos kirjautumisen uudelleenohjaus"
-
-#: sidebar-login.php:79
-#@ sblogin
-msgid "Url to redirect the user to after logout. Leave blank to use their current page."
-msgstr "Osoite johon käyttäjä uudelleenohjataan ulos kirjautumisen jälkeen. Jätä tyhjäksi käyttääksesi sen hetkistä sivua."
-
-#: sidebar-login.php:82
+#: admin.php:55
 #@ sblogin
 msgid "Show Register Link"
 msgstr "Näytä linkki rekisteröitymiseen"
 
-#: sidebar-login.php:84 sidebar-login.php:91 sidebar-login.php:103
-#@ sblogin
-msgid "Yes"
-msgstr "Kyllä"
-
-#: sidebar-login.php:85 sidebar-login.php:92 sidebar-login.php:104
-#@ sblogin
-msgid "No"
-msgstr "Ei"
-
-#: sidebar-login.php:86
-#@ sblogin
-msgid "User registrations must also be turned on for this to work ('Anyone can register' checkbox in settings)."
-msgstr "Valinta <a href=\"%s\" target=\"_blank\">'Kuka tahansa voi rekisteröityä'</a> täytyy olla käytössä, jotta tämä asetus toimii."
-
-#: sidebar-login.php:89
+#: admin.php:62
 #@ sblogin
 msgid "Show Lost Password Link"
 msgstr "Näytä 'Unohtunut salasana' linkki"
 
-#: sidebar-login.php:96
+#: admin.php:76
 #@ sblogin
 msgid "Logged in links"
 msgstr "Sisäänkirjautuneen linkit"
 
-#: sidebar-login.php:97
-#@ sblogin
-msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users or alternatively use a <code>|user_capability</code> and the link will only be shown to users with that capability. See <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> for more info on roles and Capabilities.<br/> You can also type <code>%USERNAME%</code> and <code>%USERID%</code> which will be replaced by the user info. Default:"
-msgstr "Yksi linkki per rivi. Huom: Kirjaudu ulos linkki näytetään aina. Vinkki: Lisää <code>|true</code> linkin perään näyttääksesi vain ylläpitäjille tai vaihtoehtoisesti käytä <code>|user_capability</code> näyttääksesi linkin niille kenellä on määrittelemäsi oikeudet (Katso <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>Roolit ja oikeudet (englanniksi)</a>).<br/> Voit myös kirjoittaa <code>%%USERNAME%%</code> ja/tai <code>%%USERID%%</code>, jotka korvataan käyttäjän tiedoilla. Oletus:"
-
-#: sidebar-login.php:98 sidebar-login.php:356
+#: admin.php:75
 #@ sblogin
 msgid "Dashboard"
 msgstr "Ohjausnäkymä"
 
-#: sidebar-login.php:98 sidebar-login.php:356
+#: admin.php:75
 #@ sblogin
 msgid "Profile"
 msgstr "Profiili"
 
-#: sidebar-login.php:101
+#: admin.php:69
 #@ sblogin
 msgid "Show Logged in Avatar"
 msgstr "Näytä kirjautuneen avatar"
 
-#: sidebar-login.php:109
-#@ sblogin
-msgid "Save Changes"
-msgstr "Tallenna muutokset"
-
-#: sidebar-login.php:142
+#: sidebar-login.php:39
 #@ sblogin
 msgid "Username:"
 msgstr "Käyttäjänimi"
 
-#: sidebar-login.php:143
+#: sidebar-login.php:40
 #@ sblogin
 msgid "Password:"
 msgstr "Salasana"
 
-#: sidebar-login.php:144
+#: sidebar-login.php:41
 #@ sblogin
 msgid "Remember me"
 msgstr "Muista minut"
 
-#: sidebar-login.php:145
+#: sidebar-login.php:42
 #@ sblogin
 msgid "Register"
 msgstr "Rekisteröidy"
 
-#: sidebar-login.php:146
+#: sidebar-login.php:43
 #@ sblogin
 msgid "Password Lost and Found"
 msgstr "Salasana kadonnut"
 
-#: sidebar-login.php:147
+#: sidebar-login.php:44
 #@ sblogin
 msgid "Lost your password?"
 msgstr "Unohtunut salasana?"
 
-#: sidebar-login.php:148
+#: sidebar-login.php:45
 #@ sblogin
 msgid "Logout"
 msgstr "Kirjaudu ulos"
 
-#: sidebar-login.php:219
-#@ sblogin
-msgid "<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use WordPress."
-msgstr "<strong>VIRHE</strong>: Evästeet ovat blokattu tai selaimesi ei tue niitä. Sinun täytyy <a href='https://www.google.com/support/websearch/bin/answer.py?hl=fi&answer=35851'>sallia evästeet</a> voidaksesi käyttää WordPress:iä."
-
-#: sidebar-login.php:262
+#: sidebar-login.php:144
 #@ sblogin
 msgid "Or login using an <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
 msgstr "Tai kirjaudu käyttäen  <a href=\"http://openid.net/what/\" title=\"Mikä on OpenID?\">OpenID:tä</a>"
 
-#: sidebar-login.php:323
+#: sidebar-login.php:209
 #@ sblogin
 msgid "Sidebar Login."
 msgstr "Sidebar Login."
 
-#: sidebar-login.php:409
+#: admin.php:18
 #@ sblogin
-msgid "<strong>ERROR</strong>: Please enter a username &amp; password."
-msgstr "<strong>VIRHE</strong>: Ole hyvä ja kirjoita käyttäjänimi &amp; salasana."
+msgid "Login"
+msgstr "Kirjaudu"
 
-#. Plugin URI of the plugin/theme
+#: admin.php:19
 #@ sblogin
-msgid "http://wordpress.org/extend/plugins/sidebar-login/"
-msgstr "http://wordpress.org/extend/plugins/sidebar-login/"
+msgid "Logged out heading"
+msgstr "Kirjautumattoman otsikko"
 
-#. Description of the plugin/theme
+#: admin.php:20
 #@ sblogin
-msgid "Adds a sidebar widget to let users login"
-msgstr "Lisää sivupalkkiin vimpainen joka mahdollistaa sisäänkirjautumisen"
+msgid "Heading for the widget when the user is logged out."
+msgstr "Vimpaimen otsikko käyttäjän ollessa kirjautumaton."
 
-#. Author of the plugin/theme
+#: admin.php:24
+#, php-format
 #@ sblogin
-msgid "Mike Jolley"
-msgstr "Mike Jolley"
+msgid "Welcome %username%"
+msgstr "Tervetuloa %username%"
 
-#. Author URI of the plugin/theme
+#: admin.php:25
 #@ sblogin
-msgid "http://blue-anvil.com"
-msgstr "http://blue-anvil.com"
+msgid "Logged in heading"
+msgstr "Kirjautuneen otiskko"
+
+#: admin.php:26
+#@ sblogin
+msgid "Heading for the widget when the user is logged in."
+msgstr "Vimpaimen otsikko käyttäjän ollessa kirjautuneena."
+
+#: admin.php:31
+#@ sblogin
+msgid "Redirects"
+msgstr "Uudelleenohjaukset"
+
+#: admin.php:36
+#@ sblogin
+msgid "Login redirect"
+msgstr "Sisäänkirjautumisen uudelleenohjaus"
+
+#: admin.php:37
+#@ sblogin
+msgid "Url to redirect the user to after login. Leave blank to use the current page."
+msgstr "URL johon käyttäjä siirretään sisäänkirjautumisen jälkeen. Jätä tyhjäksi käyttääksesi nykyistä sivua."
+
+#: admin.php:43
+#@ sblogin
+msgid "Logout redirect"
+msgstr "Uloskirjautumisen uudelleenohjaus"
+
+#: admin.php:44
+#@ sblogin
+msgid "Url to redirect the user to after logout. Leave blank to use the current page."
+msgstr "URL johon käyttäjä siirretään uloskirjautumisen jälkeen. Jätä tyhjäksi käyttääksesi nykyistä sivua."
+
+#: admin.php:50
+#@ sblogin
+msgid "Links"
+msgstr "Linkit"
+
+#: admin.php:56
+#, php-format
+#@ sblogin
+msgid "The <a href=\"%s\" target=\"_blank\">'Anyone can register'</a> setting must be turned on for this option to work."
+msgstr "Valinta <a href=\"%s\" target=\"_blank\">'Kuka tahansa voi rekisteröityä'</a> täytyy olla käytössä, jotta tämä asetus toimii."
+
+#: admin.php:77
+#, php-format
+#@ sblogin
+msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users or alternatively use a <code>|user_capability</code> and the link will only be shown to users with that capability (see <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>Roles and Capabilities</a>).<br/> You can also type <code>%%USERNAME%%</code> and <code>%%USERID%%</code> which will be replaced by the user's info. Default: <br/>&lt;a href=\"%s/wp-admin/\"&gt;Dashboard&lt;/a&gt;<br/>&lt;a href=\"%s/wp-admin/profile.php\"&gt;Profile&lt;/a&gt;"
+msgstr "Yksi linkki per rivi. Huom: Kirjaudu ulos linkki näytetään aina. Vinkki: Lisää <code>|true</code> linkin perään näyttääksesi vain ylläpitäjille tai vaihtoehtoisesti käytä <code>|user_capability</code> näyttääksesi linkin niille kenellä on määrittelemäsi oikeudet (Katso <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>Roolit ja oikeudet (englanniksi)</a>).<br/> Voit myös kirjoittaa <code>%%USERNAME%%</code> ja/tai <code>%%USERID%%</code>, jotka korvataan käyttäjän tiedoilla. Oletus:<br/>&lt;a href=\"%s/wp-admin/\"&gt;Dashboard&lt;/a&gt;<br/>&lt;a href=\"%s/wp-admin/profile.php\"&gt;Profile&lt;/a&gt;"
+
+#: admin.php:119
+#@ sblogin
+msgid "Sidebar Login Options"
+msgstr "Sidebar Login asetukset"
+
+#: admin.php:175
+#@ sblogin
+msgid "Save Options"
+msgstr "Tallenna asetukset"
+
+#: sidebar-login.php:154
+#@ sblogin
+msgid "Login &raquo;"
+msgstr "Kirjaudu &raquo;"
+
+#: sidebar-login.php:254
+#@ sblogin
+msgid "<strong>ERROR</strong>: Please enter a username."
+msgstr "<strong>VIRHE</strong>: Ole hyvä ja kirjoita käyttäjänimi"
+
+#: sidebar-login.php:257
+#@ sblogin
+msgid "<strong>ERROR</strong>: Please enter your password."
+msgstr "<strong>VIRHE</strong>: Ole hyvä ja kirjoita salasanasi."
 
