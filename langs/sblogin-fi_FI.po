@@ -28,7 +28,7 @@ msgstr "Sidebar Login"
 #: admin.php:55
 #@ sblogin
 msgid "Show Register Link"
-msgstr "Näytä linkki rekisteröitymiseen"
+msgstr "Näytä 'Rekisteröidy' linkki"
 
 #: admin.php:62
 #@ sblogin
@@ -53,7 +53,7 @@ msgstr "Profiili"
 #: admin.php:69
 #@ sblogin
 msgid "Show Logged in Avatar"
-msgstr "Näytä kirjautuneen avatar"
+msgstr "Näytä käyttäjän avatar"
 
 #: sidebar-login.php:39
 #@ sblogin
@@ -78,7 +78,7 @@ msgstr "Rekisteröidy"
 #: sidebar-login.php:43
 #@ sblogin
 msgid "Password Lost and Found"
-msgstr "Salasana kadonnut"
+msgstr "Salasana hukassa"
 
 #: sidebar-login.php:44
 #@ sblogin
@@ -124,7 +124,7 @@ msgstr "Tervetuloa %username%"
 #: admin.php:25
 #@ sblogin
 msgid "Logged in heading"
-msgstr "Kirjautuneen otiskko"
+msgstr "Kirjautuneen otsikko"
 
 #: admin.php:26
 #@ sblogin
