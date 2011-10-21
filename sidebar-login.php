@@ -245,7 +245,7 @@ function widget_wp_sidebarlogin_check() {
 		endif;
 
 		// Check for Secure Cookie
-		if ( is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) ) $secure_cookie = false; else $secure_cookie = '';
+		if ( is_ssl() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) ) $secure_cookie = false; else $secure_cookie = '';
 
 		// Login
 		$user = wp_signon('', $secure_cookie);
@@ -290,9 +290,10 @@ function sidebar_login_ajax_process() {
 	$creds['user_login'] 	= esc_attr($_POST['user_login']);
 	$creds['user_password'] = esc_attr($_POST['user_password']);
 	$creds['remember'] 		= esc_attr($_POST['remember']);
+	$redirect_to 			= esc_attr($_POST['redirect_to']);
 	
 	// Check for Secure Cookie
-	if ( force_ssl_login() ) $secure_cookie = true; else $secure_cookie = false;
+	if ( is_ssl() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) ) $secure_cookie = false; else $secure_cookie = '';
 
 	// Login
 	$user = wp_signon($creds, $secure_cookie);

@@ -83,6 +83,7 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 *	wp_lostpassword_url() for lost password link
 *	sanitized user_login
 *	Uses wp_ajax for ajax login instead of init functions
+* 	Secure cookie logic change
 
 = 2.3.2 = 
 *	Login redirect fix

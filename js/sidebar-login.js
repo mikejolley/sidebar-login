@@ -15,7 +15,8 @@ jQuery(function(){
 			security: 		sidebar_login_params.login_nonce,
 			user_login: 	jQuery('input[name="log"]', thisform).val(),
 			user_password: 	jQuery('input[name="pwd"]', thisform).val(),
-			remember: 		jQuery('input[name="rememberme"]', thisform).val()
+			remember: 		jQuery('input[name="rememberme"]', thisform).val(),
+			redirect_to:	jQuery('.redirect_to:eq(0)', thisform).val()
 		};
 		
 		// Ajax action
