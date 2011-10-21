@@ -83,8 +83,8 @@ function widget_wp_sidebarlogin($args) {
 					}
 				}
 				// Parse %USERNAME%
-				$link[0] = str_replace('%USERNAME%',$current_user->user_login,$link[0]);
-				$link[0] = str_replace('%username%',$current_user->user_login,$link[0]);
+				$link[0] = str_replace('%USERNAME%',sanitize_title($current_user->user_login),$link[0]);
+				$link[0] = str_replace('%username%',sanitize_title($current_user->user_login),$link[0]);
 				// Parse %USERID%
 				$link[0] = str_replace('%USERID%',$current_user->ID,$link[0]);
 				$link[0] = str_replace('%userid%',$current_user->ID,$link[0]);
