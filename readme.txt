@@ -80,6 +80,7 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 
 = 2.3.3 =
 *	Removed a link after request from WordPress.org staff
+*	wp_lostpassword_url() for lost password link
 
 = 2.3.2 = 
 *	Login redirect fix

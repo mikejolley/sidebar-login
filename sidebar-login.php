@@ -177,7 +177,7 @@ function widget_wp_sidebarlogin($args) {
 		}
 		if (get_option('sidebarlogin_forgotton_link')=='1') : 
 			
-			$links .= '<li><a href="'.get_bloginfo('wpurl').'/wp-login.php?action=lostpassword" rel="nofollow">'. $thelostpass .'</a></li>';
+			$links .= '<li><a href="'.wp_lostpassword_url().'" rel="nofollow">'. $thelostpass .'</a></li>';
 
 		endif; 
 		if ($links) echo '<ul class="sidebarlogin_otherlinks">'.$links.'</ul>';	
