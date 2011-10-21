@@ -203,6 +203,13 @@ function widget_wp_sidebarlogin_init() {
 	wp_enqueue_script('blockui');
 	wp_enqueue_script('sidebar-login');
 	
+	// Pass variables to script
+	$sidebar_login_params = array(
+		'ajax_url' 				=> admin_url('admin-ajax.php'),
+		'login_nonce' 			=> wp_create_nonce("sidebar-login-action")
+	);
+	wp_localize_script( 'sidebar-login', 'sidebar_login_params', $sidebar_login_params );
+	
 	// Register widget
 	class SidebarLoginMultiWidget extends WP_Widget {
 	    function SidebarLoginMultiWidget() {  
@@ -238,16 +245,14 @@ function widget_wp_sidebarlogin_check() {
 		endif;
 
 		// Check for Secure Cookie
-		if ( is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) ) $secure_cookie = false;
-		else $secure_cookie = '';
+		if ( is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) ) $secure_cookie = false; else $secure_cookie = '';
 
 		// Login
 		$user = wp_signon('', $secure_cookie);
 
 		// Redirect filter
 		if ( $secure_cookie && false !== strpos($redirect_to, 'wp-admin') ) $redirect_to = preg_replace('|^http://|', 'https://', $redirect_to);
-		$redirect_to = apply_filters('login_redirect', $redirect_to, isset( $redirect_to ) ? $redirect_to : '', $user);
-
+		
 		// Check the username
 		if ( !$_POST['log'] ) :
 			$user = new WP_Error();
@@ -256,23 +261,11 @@ function widget_wp_sidebarlogin_check() {
 			$user = new WP_Error();
 			$user->add('empty_username', __('<strong>ERROR</strong>: Please enter your password.', 'sblogin'));
 		endif;
-
-		// Show result based on whether its by ajax or not
-		if (sidebar_login_is_ajax()) :
-			if ( !is_wp_error($user) ) :
-				echo 'SBL_SUCCESS';
-			else :
-				foreach ($user->errors as $error) {
-					echo $error[0];
-					break;
-				}
-			endif;
+		
+		// Redirect if successful
+		if ( !is_wp_error($user) ) :
+			wp_safe_redirect( apply_filters('login_redirect', $redirect_to, isset( $redirect_to ) ? $redirect_to : '', $user) );
 			exit;
-		else :
-			if ( !is_wp_error($user) ) :
-				wp_safe_redirect($redirect_to);
-				exit;
-			endif;
 		endif;
 		
 		$login_errors = $user;
@@ -282,12 +275,41 @@ function widget_wp_sidebarlogin_check() {
 add_action('init', 'widget_wp_sidebarlogin_check', 0);
 
 
-/* Detect AJAX login */
-if (!function_exists('sidebar_login_is_ajax')) {
-	function sidebar_login_is_ajax() {
-		if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') return true; else return false;
-	}
+/**
+ * Process ajax login
+ */
+add_action('wp_ajax_sidebar_login_process', 'sidebar_login_ajax_process');
+add_action('wp_ajax_nopriv_sidebar_login_process', 'sidebar_login_ajax_process');
+
+function sidebar_login_ajax_process() {
+
+	check_ajax_referer( 'sidebar-login-action', 'security' );
+	
+	// Get post data
+	$creds = array();
+	$creds['user_login'] 	= esc_attr($_POST['user_login']);
+	$creds['user_password'] = esc_attr($_POST['user_password']);
+	$creds['remember'] 		= esc_attr($_POST['remember']);
+	
+	// Check for Secure Cookie
+	if ( force_ssl_login() ) $secure_cookie = true; else $secure_cookie = false;
+
+	// Login
+	$user = wp_signon($creds, $secure_cookie);
+	
+	// Result
+	if ( !is_wp_error($user) ) :
+		echo '1';
+	else :
+		foreach ($user->errors as $error) {
+			echo $error[0];
+			break;
+		}
+	endif;
+
+	die();
 }
+
 
 /* Get Current URL */
 if ( !function_exists('sidebar_login_current_url') ) {
