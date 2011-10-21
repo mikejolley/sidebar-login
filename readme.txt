@@ -4,7 +4,7 @@ Donate link: http://mikejolley.com/projects/sidebar-login-for-wordpress/
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 2.8
 Tested up to: 3.2
-Stable tag: 2.3.2
+Stable tag: 2.3.3
 
 Adds a sidebar widget to let users login. Displayed links can be changed from the <a href="options-general.php?page=Sidebar%20Login">settings page</a>.
 
@@ -31,7 +31,7 @@ Added localizations are listed below. If you want to contribute or improve a loc
 *	Italian Translation by Alessandro Spadavecchia
 *	Hungarian translation by Laszlo Dvornik
 *	Hungarian (2) translation by Balint Vereskuti
-*	Russian translation by Fat Cow (http://www.fatcow.com)
+*	Russian translation by Fat Cow
 *	Romanian translation by Victor Osorhan
 *	Spanish translation by Tribak (http://blog.tribak.org/sidebar-login-es_es/)
 *	Spanish (2) translation by Ricardo Vilella (http://www.ifconfig.com.ar/general/traduccion-al-espanol-del-plugin-sidebar-login-para-wordpress/)
@@ -77,6 +77,9 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 2. After Login
 
 == Changelog ==
+
+= 2.3.3 =
+*	Removed a link after request from WordPress.org staff
 
 = 2.3.2 = 
 *	Login redirect fix

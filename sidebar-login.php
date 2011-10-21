@@ -3,7 +3,7 @@
 Plugin Name: Sidebar Login
 Plugin URI: http://wordpress.org/extend/plugins/sidebar-login/
 Description: Adds a sidebar widget to let users login
-Version: 2.3.2
+Version: 2.3.3
 Author: Mike Jolley
 Author URI: http://mikejolley.com
 */
