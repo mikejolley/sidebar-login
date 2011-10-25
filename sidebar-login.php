@@ -245,7 +245,21 @@ function widget_wp_sidebarlogin_check() {
 		endif;
 
 		// Check for Secure Cookie
-		if ( is_ssl() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) ) $secure_cookie = false; else $secure_cookie = '';
+		$secure_cookie = '';
+		
+		// If the user wants ssl but the session is not ssl, force a secure cookie.
+		if ( !empty($_POST['log']) && !force_ssl_admin() ) {
+			$user_name = sanitize_user($_POST['log']);
+			if ( $user = get_userdatabylogin($user_name) ) {
+				if ( get_user_option('use_ssl', $user->ID) ) {
+					$secure_cookie = true;
+					force_ssl_admin(true);
+				}
+			}
+		}
+		
+		if ( !$secure_cookie && is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) )
+		$secure_cookie = false;
 
 		// Login
 		$user = wp_signon('', $secure_cookie);
@@ -293,20 +307,43 @@ function sidebar_login_ajax_process() {
 	$redirect_to 			= esc_attr($_POST['redirect_to']);
 	
 	// Check for Secure Cookie
-	if ( is_ssl() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) ) $secure_cookie = false; else $secure_cookie = '';
+	$secure_cookie = '';
+	
+	// If the user wants ssl but the session is not ssl, force a secure cookie.
+	if ( !empty($_POST['log']) && !force_ssl_admin() ) {
+		$user_name = sanitize_user($_POST['log']);
+		if ( $user = get_userdatabylogin($user_name) ) {
+			if ( get_user_option('use_ssl', $user->ID) ) {
+				$secure_cookie = true;
+				force_ssl_admin(true);
+			}
+		}
+	}
+	
+	if ( !$secure_cookie && is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) )
+	$secure_cookie = false;
 
 	// Login
 	$user = wp_signon($creds, $secure_cookie);
 	
+	// Redirect filter
+	if ( $secure_cookie && false !== strpos($redirect_to, 'wp-admin') ) $redirect_to = preg_replace('|^http://|', 'https://', $redirect_to);
+
 	// Result
+	$result = array();
+	
 	if ( !is_wp_error($user) ) :
-		echo '1';
+		$result['success'] = 1;
+		$result['redirect'] = $redirect_to;
 	else :
+		$result['success'] = 0;
 		foreach ($user->errors as $error) {
-			echo $error[0];
+			$result['error'] = $error[0];
 			break;
 		}
 	endif;
+	
+	echo json_encode($result);
 
 	die();
 }
