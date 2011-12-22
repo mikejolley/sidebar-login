@@ -2,8 +2,8 @@
 /*
 Plugin Name: Sidebar Login
 Plugin URI: http://wordpress.org/extend/plugins/sidebar-login/
-Description: Adds a sidebar widget to let users login
-Version: 2.3.3
+Description: Easily add an ajax-enhanced login widget to your site's sidebar.
+Version: 2.3.4
 Author: Mike Jolley
 Author URI: http://mikejolley.com
 */
@@ -127,6 +127,8 @@ function widget_wp_sidebarlogin($args) {
 				$redirect_to = sidebar_login_current_url('nologout');
 		endif;
 		
+		if ( force_ssl_admin() ) $redirect_to = str_replace( 'http:', 'https:', $redirect_to );
+		
 		// login form
 		if (force_ssl_login() || force_ssl_admin()) $sidebarlogin_post_url = str_replace('http://', 'https://', sidebar_login_current_url()); else $sidebarlogin_post_url = sidebar_login_current_url();
 		?>
@@ -190,29 +192,26 @@ function widget_wp_sidebarlogin($args) {
 /* Init widget/styles/scripts */
 function widget_wp_sidebarlogin_init() {
 	
+	$plugin_url = (is_ssl()) ? str_replace('http://','https://', WP_PLUGIN_URL) : WP_PLUGIN_URL;
+	
 	// CSS
-	if (is_ssl()) $myStyleFile = str_replace('http://','https://', WP_PLUGIN_URL) . '/sidebar-login/style.css';
-    else $myStyleFile = WP_PLUGIN_URL . '/sidebar-login/style.css';
-    wp_register_style('wp_sidebarlogin_css_styles', $myStyleFile);
+	$sidebar_login_css = $plugin_url . '/sidebar-login/style.css';
+    wp_register_style('wp_sidebarlogin_css_styles', $sidebar_login_css);
     wp_enqueue_style('wp_sidebarlogin_css_styles');
     
 	// Scripts
-	if (is_ssl()) {
-	    $blockuiScript = str_replace('http://','https://', WP_PLUGIN_URL) . '/sidebar-login/js/blockui.js';
-	    $sidebarLoginScript = str_replace('http://','https://', WP_PLUGIN_URL) . '/sidebar-login/js/sidebar-login.js';
-	} else {
-        $blockuiScript = WP_PLUGIN_URL . '/sidebar-login/js/blockui.js';
-        $sidebarLoginScript = WP_PLUGIN_URL . '/sidebar-login/js/sidebar-login.js';
-	}
-	wp_register_script('blockui', $blockuiScript, array('jquery'), '1.0' );
-	wp_register_script('sidebar-login', $sidebarLoginScript, array('jquery', 'blockui'), '1.0' );
+	$block_ui = $plugin_url . '/sidebar-login/js/blockui.js';
+	$sidebar_login_script = $plugin_url . '/sidebar-login/js/sidebar-login.js';
+	
+	wp_register_script('blockui', $block_ui, array('jquery'), '1.0' );
+	wp_register_script('sidebar-login', $sidebar_login_script, array('jquery', 'blockui'), '1.0' );
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('blockui');
 	wp_enqueue_script('sidebar-login');
 	
 	// Pass variables to script
 	$sidebar_login_params = array(
-		'ajax_url' 				=> admin_url('admin-ajax.php'),
+		'ajax_url' 				=> (is_ssl()) ? str_replace('http:', 'https:', admin_url('admin-ajax.php')) : str_replace('https:', 'http:', admin_url('admin-ajax.php')),
 		'login_nonce' 			=> wp_create_nonce("sidebar-login-action")
 	);
 	wp_localize_script( 'sidebar-login', 'sidebar_login_params', $sidebar_login_params );
@@ -265,14 +264,14 @@ function widget_wp_sidebarlogin_check() {
 			}
 		}
 		
-		if ( !$secure_cookie && is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) )
-		$secure_cookie = false;
+		if ( force_ssl_admin() ) $secure_cookie = true;
+		if ( $secure_cookie=='' && force_ssl_login() ) $secure_cookie = false;
 
 		// Login
 		$user = wp_signon('', $secure_cookie);
 
 		// Redirect filter
-		if ( $secure_cookie && false !== strpos($redirect_to, 'wp-admin') ) $redirect_to = preg_replace('|^http://|', 'https://', $redirect_to);
+		if ( $secure_cookie && strstr($redirect_to, 'wp-admin') ) $redirect_to = str_replace('http:', 'https:', $redirect_to);
 		
 		// Check the username
 		if ( !$_POST['log'] ) :
@@ -327,14 +326,14 @@ function sidebar_login_ajax_process() {
 		}
 	}
 	
-	if ( !$secure_cookie && is_ssl() && force_ssl_login() && !force_ssl_admin() && ( 0 !== strpos($redirect_to, 'https') ) && ( 0 === strpos($redirect_to, 'http') ) )
-	$secure_cookie = false;
+	if ( force_ssl_admin() ) $secure_cookie = true;
+	if ( $secure_cookie=='' && force_ssl_login() ) $secure_cookie = false;
 
 	// Login
 	$user = wp_signon($creds, $secure_cookie);
 	
 	// Redirect filter
-	if ( $secure_cookie && false !== strpos($redirect_to, 'wp-admin') ) $redirect_to = preg_replace('|^http://|', 'https://', $redirect_to);
+	if ( $secure_cookie && strstr($redirect_to, 'wp-admin') ) $redirect_to = str_replace('http:', 'https:', $redirect_to);
 
 	// Result
 	$result = array();
@@ -363,7 +362,7 @@ if ( !function_exists('sidebar_login_current_url') ) {
 		$pageURL  = 'http://';
 		$pageURL .= $_SERVER['HTTP_HOST'];
 		$pageURL .= $_SERVER['REQUEST_URI'];
-		if ( force_ssl_login() || force_ssl_admin() ) $pageURL = str_replace( 'http://', 'https://', $pageURL );
+		if ( force_ssl_admin() ) $pageURL = str_replace( 'http:', 'https:', $pageURL );
 	
 		if ($url != "nologout") {
 			if (!strpos($pageURL,'_login=')) {

@@ -1,12 +1,12 @@
 === Plugin Name ===
-Contributors: jolley_small
+Contributors: mikejolley
 Donate link: http://mikejolley.com/projects/sidebar-login-for-wordpress/
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 2.8
 Tested up to: 3.2
-Stable tag: 2.3.3
+Stable tag: 2.3.4
 
-Adds a sidebar widget to let users login. Displayed links can be changed from the <a href="options-general.php?page=Sidebar%20Login">settings page</a>.
+Easily add an ajax-enhanced login widget to your site's sidebar.
 
 == Description ==
 
@@ -22,7 +22,6 @@ If you'd like to contribute to the plugin you can find it on GitHub: https://git
 
 Added localizations are listed below. If you want to contribute or improve a localisation, please contribute via GitHub (https://github.com/mikejolley/sidebar-login).
 
-*	Czech Translation - http://wordpress.blog.mantlik.cz/plugins/sblogin-cs/
 *	Catalan Translation by Marc Vinyals
 *	French Translation by Andy
 *	Estonian Translation by Marko Punnar
@@ -33,8 +32,8 @@ Added localizations are listed below. If you want to contribute or improve a loc
 *	Hungarian (2) translation by Balint Vereskuti
 *	Russian translation by Fat Cow
 *	Romanian translation by Victor Osorhan
-*	Spanish translation by Tribak (http://blog.tribak.org/sidebar-login-es_es/)
-*	Spanish (2) translation by Ricardo Vilella (http://www.ifconfig.com.ar/general/traduccion-al-espanol-del-plugin-sidebar-login-para-wordpress/)
+*	Spanish translation by Tribak
+*	Spanish (2) translation by Ricardo Vilella
 *	Danish translation by Per Bovbjerg
 *	Portuguese translation by Alvaro Becker
 *	Polish translation by merito
@@ -42,19 +41,19 @@ Added localizations are listed below. If you want to contribute or improve a loc
 *	Icelandic translation by Hákon Ásgeirsson
 *	Arabic translation by khalid
 *	Turkish translation by Muzo B
-*	Chinese translation by seven - http://www.anchuang.org
+*	Chinese translation by seven
 *	Persian by Gonahkar
 *	Persian (farsi, alt) translation Amir Beitollahi
 *	Russian translation by Vorotnikov Boris
 *	Croatian translation by Zarko Pintar
-*	Indonesian translation by Masino Sinaga (http://www.masinosinaga.com)
-*	Indonesian (2) translation by Hendry Lee (http://kelayang.com)
+*	Indonesian translation by Masino Sinaga 
+*	Indonesian (2) translation by Hendry Lee
 *	Lithuanian translation by Justas Kalinauskas
-*	Hebrew translation by Yosi (http://www.thefinancialchef.com/blog/)
+*	Hebrew translation by Yosi
 *	Latvian translation by Reinis
-*	Hindi translation by Outshine Solutions (http://outshinesolutions.com/web-hosting/web-hosting-india.html)
-*	Bulgarian translation by Siteground (http://www.siteground.com)
-*	Greek translation by Meet-sos (wptips.thetida.gr)
+*	Hindi translation by Outshine Solutions
+*	Bulgarian translation by Siteground
+*	Greek translation by Meet-sos
 
 Note: Those with more than one translation are found in langs/alternate/. To use the alternatives move them from /alternate/ into /langs/.
 
@@ -77,6 +76,10 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 2. After Login
 
 == Changelog ==
+
+= 2.3.4 =
+*	SSL URL tweak
+*	Better handling for force_ssl_login and force_ssl_admin
 
 = 2.3.3 =
 *	Removed a link after request from WordPress.org staff
