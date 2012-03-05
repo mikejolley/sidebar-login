@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Sidebar Login v2.3.4\n"
+"Project-Id-Version: sidebar_login\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-24 12:11+0100\n"
+"POT-Creation-Date: 2012-03-05 10:44+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Damjan Gerl <damjan@damjan.net>\n"
-"Language-Team: \n"
+"Last-Translator: Marco Solazzi - Intesys Srl <marco.solazzi@intesys.it>\n"
+"Language-Team: Marco Solazzi - Intesys Srl <marco.solazzi@intesys.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
 
 #: admin.php:18
 msgid "Login"
@@ -23,31 +23,31 @@ msgstr "Connettiti"
 
 #: admin.php:19
 msgid "Logged out heading"
-msgstr "Testata per non autenticato"
+msgstr "Intestazione da sloggato"
 
 #: admin.php:20
 msgid "Heading for the widget when the user is logged out."
-msgstr "Testata per il widget quando un utente è autenticato."
+msgstr "Intestazione per il widget quando l'utente è sloggato."
 
 #: admin.php:24
 msgid "Welcome %username%"
-msgstr "Benvenuto/-a %username%"
+msgstr "Benvenuto %username%"
 
 #: admin.php:25
 msgid "Logged in heading"
-msgstr "Testata per autenticato"
+msgstr "Intestazione da loggato"
 
 #: admin.php:26
 msgid "Heading for the widget when the user is logged in."
-msgstr "Testata per il widget quando un utente è autenticato."
+msgstr "Intestazione per il widget quando l'utente è loggato."
 
 #: admin.php:31
 msgid "Redirects"
-msgstr "Ridirezionamenti"
+msgstr "Redirects"
 
 #: admin.php:36
 msgid "Login redirect"
-msgstr "Ridirezionamento per la connessione"
+msgstr "URL di ridirezionamento per la connessione"
 
 #: admin.php:37
 msgid "Url to redirect the user to after login. Leave blank to use the current page."
@@ -55,7 +55,7 @@ msgstr "Url per ridirezionare l'utente dopo la connessione. Lascia vuoto per usa
 
 #: admin.php:43
 msgid "Logout redirect"
-msgstr "Ridirezionamento per la disconnessione"
+msgstr "URL di ridirezionamento della disconnessione"
 
 #: admin.php:44
 msgid "Url to redirect the user to after logout. Leave blank to use the current page."
@@ -72,7 +72,7 @@ msgstr "Mostra il collegamento per la registrazione"
 #: admin.php:56
 #, php-format
 msgid "The <a href=\"%s\" target=\"_blank\">'Anyone can register'</a> setting must be turned on for this option to work."
-msgstr "Il settaggio <a href=\"%s\" target=\"_blank\">'Chiunque può registrarsi'</a> deve essere abilitato perché quesa opzione funzioni."
+msgstr "L'impostazione <a href=\"%s\" target=\"_blank\">'Chiunque può registrarsi'</a> deve essere abilitata affinché questa opzione funzioni."
 
 #: admin.php:62
 msgid "Show Lost Password Link"
@@ -80,11 +80,11 @@ msgstr "Mostra collegamento per il recupero della parola chiave"
 
 #: admin.php:69
 msgid "Show Logged in Avatar"
-msgstr "Mostra avatar dei registrati"
+msgstr "Mostra l'avatar dell'utente loggato"
 
 #: admin.php:75
 msgid "Dashboard"
-msgstr "Bacheca"
+msgstr "Pannello di controllo"
 
 #: admin.php:75
 msgid "Profile"
@@ -97,20 +97,20 @@ msgstr "Collegamento registrati"
 #: admin.php:77
 #, php-format
 msgid "One link per line. Note: Logout link will always show regardless. Tip: Add <code>|true</code> after a link to only show it to admin users or alternatively use a <code>|user_capability</code> and the link will only be shown to users with that capability (see <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>Roles and Capabilities</a>).<br/> You can also type <code>%%USERNAME%%</code> and <code>%%USERID%%</code> which will be replaced by the user's info. Default: <br/>&lt;a href=\"%s/wp-admin/\"&gt;Dashboard&lt;/a&gt;<br/>&lt;a href=\"%s/wp-admin/profile.php\"&gt;Profile&lt;/a&gt;"
-msgstr "Un collegamento per linea. Nota: Il collegamento per la disconnessione sarà sempre mostrato. Suggerimento: Aggiungi <code>|true</code> dopo un collegamento da mostrare solo agli amministratori oppure usa <code>|user_capability</code> ed il collegamento verrà mostrato solamente agli utenti di livello uguale a quello definito (vedi <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a>.<br/> Puoi anche scrivere <code>%%USERNAME%%</code> e/o <code>%%USERID%%</code> che saranno sostituiti con i dati del utente. Impostazione predefinita:<br/>&lt;a href=\"%s/wp-admin/\"&gt;Amministra sito&lt;/a&gt;<br/>&lt;a href=\"%s/wp-admin/profile.php\"&gt;Profilo&lt;/a&gt;"
+msgstr "Un link per riga. Nota: il link di logout viene comunque mostrato. Tip: aggiungi <code>|true</code> dopo un link per mostrarlo solo agli amministratori o, in alternativa, usa <code>|user_capability</code> per mostrare il link solo agli utenti con la cabapility corrispondente (vedi <a href='http://codex.wordpress.org/Roles_and_Capabilities' target='_blank'>Roles and Capabilities</a>).<br/> Puoi anche scrivere<code>%%USERNAME%%</code> e <code>%%USERID%%</code> che verranno sostituiti con i dati dell'utente. Default: <br/>&lt;a href=\"%s/wp-admin/\"&gt;Dashboard&lt;/a&gt;<br/>&lt;a href=\"%s/wp-admin/profile.php\"&gt;Profile&lt;/a&gt;"
 
 #: admin.php:106
-#: sidebar-login.php:223
+#: sidebar-login.php:217
 msgid "Sidebar Login"
 msgstr "Sidebar Login"
 
 #: admin.php:119
 msgid "Sidebar Login Options"
-msgstr "Opzioni di Sidebar Login"
+msgstr "Opzioni Sidebar Login"
 
 #: admin.php:175
 msgid "Save Options"
-msgstr "Salva opzioni"
+msgstr "Salva le opzioni"
 
 #: sidebar-login.php:39
 msgid "Username:"
@@ -118,7 +118,7 @@ msgstr "Nome utente:"
 
 #: sidebar-login.php:40
 msgid "Password:"
-msgstr "Parola chiave:"
+msgstr "Password:"
 
 #: sidebar-login.php:41
 msgid "Remember me"
@@ -134,37 +134,34 @@ msgstr "Parola chiave persa e recuperata"
 
 #: sidebar-login.php:44
 msgid "Lost your password?"
-msgstr "Hai perso la parola chiave?"
+msgstr "Hai perso la parola chiave ?"
 
 #: sidebar-login.php:45
 msgid "Logout"
-msgstr "Esci da questo account"
+msgstr "Disconnettiti"
 
-#: sidebar-login.php:146
+#: sidebar-login.php:144
 msgid "Or login using an <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
-msgstr "Oppure effettuare il login usando una <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
+msgstr "O entra usando un <a href=\"http://openid.net/what/\" title=\"Learn about OpenID\">OpenID</a>"
 
-#: sidebar-login.php:156
+#: sidebar-login.php:154
 msgid "Login &raquo;"
-msgstr "Collegati &raquo;"
+msgstr "Login &raquo;"
 
-#: sidebar-login.php:222
+#: sidebar-login.php:216
 msgid "Sidebar Login."
 msgstr "Sidebar Login."
 
-#: sidebar-login.php:279
+#: sidebar-login.php:273
 msgid "<strong>ERROR</strong>: Please enter a username."
-msgstr "<strong>ERRORE</strong>: Inserisci nome utente."
+msgstr "<strong>ERRORE</strong>: Inserisci il nome utente."
 
-#: sidebar-login.php:282
+#: sidebar-login.php:276
 msgid "<strong>ERROR</strong>: Please enter your password."
-msgstr "<strong>ERRORE</strong>: Inserisci parola chiave."
+msgstr "<strong>ERRORE</strong>: Inserisci la tua password."
 
 #~ msgid "<p>Changes saved</p>"
 #~ msgstr "<p>Cambiamenti salvati</p>"
-
-#~ msgid "Widget heading."
-#~ msgstr "Testata del widget."
 
 #~ msgid "Yes"
 #~ msgstr "Sì"
@@ -179,57 +176,6 @@ msgstr "<strong>ERRORE</strong>: Inserisci parola chiave."
 #~ "Le registrazioni dell'utente devono essere abilitate affinché funzioni "
 #~ "(funzione 'Tutti possono registrarsi' abilitata) "
 
-#~ msgid "Save Changes"
-#~ msgstr "Salva i cambiamenti"
-
-#~ msgid ""
-#~ "<strong>ERROR</strong>: Cookies are blocked or not supported by your "
-#~ "browser. You must <a href='http://www.google.com/cookies.html'>enable "
-#~ "cookies</a> to use WordPress."
-#~ msgstr ""
-#~ "<strong>ERRORE</strong>: I <i>cookies</i> sono bloccati o non supportati. "
-#~ "Devi  <a href='http://www.google.com/cookies.html'>abilitare i "
-#~ "<i>cookies</i></a> per usare WordPress."
-
-#~ msgid "<strong>ERROR</strong>: Please enter a username &amp; password."
-#~ msgstr "<strong>ERRORE</strong>: Inserisci nome utente e parola chiave."
-
-#~ msgid ""
-#~ "One link per line. Note: Logout link will always show regardless. Tip: "
-#~ "Add <code>|true</code> after a link to only show it to admin users. If "
-#~ "you add a further <code>|USER LEVEL</code> the link will only be shown to "
-#~ "users with levels equal to or greater than those defined. See <a "
-#~ "href='http://codex.wordpress.org/Roles_and_Capabilities' "
-#~ "target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> for "
-#~ "more info on roles and Capabilities.<br/> You can also type <code>%"
-#~ "USERNAME%</code> which will be replaced by the user's username. Default:"
-#~ msgstr ""
-#~ "Un collegamento per linea. Nota: Il collegamento per la disconnessione "
-#~ "sarà sempre mostrato. Suggerimento: Aggiungi <code>|true</code> dopo un "
-#~ "collegamento da mostrare solo agli amministratori. Se aggiungi un altro "
-#~ "<code>|USER LEVEL</code> il collegamento verrà mostrato solamente agli "
-#~ "utenti di livello uguale o superiore di quello definito. Vedi <a "
-#~ "href='http://codex.wordpress.org/Roles_and_Capabilities' "
-#~ "target='_blank'>http://codex.wordpress.org/Roles_and_Capabilities</a> per "
-#~ "maggiori informazione sui ruoli e capacità.<br/> Puoi anche scrivere "
-#~ "<code>%USERNAME%</code> che sarà sostituito dal nome utente. Impostazione "
-#~ "predefinita:"
-
-#~ msgid "Welcome"
-#~ msgstr "Benvenuto/a"
-
-#~ msgid "http://wordpress.org/extend/plugins/sidebar-login/"
-#~ msgstr "http://wordpress.org/extend/plugins/sidebar-login/"
-
-#~ msgid "Adds a sidebar widget to let users login"
-#~ msgstr "Aggiunge"
-
-#~ msgid "Mike Jolley"
-#~ msgstr "Mike Jolley"
-
-#~ msgid "http://blue-anvil.com"
-#~ msgstr "http://blue-anvil.com"
-
 #~ msgid ""
 #~ "One link per line. Note: Logout link will always show regardless. Tip: "
 #~ "Add <code>|true</code> after a link to only show it to admin users. "
@@ -239,6 +185,21 @@ msgstr "<strong>ERRORE</strong>: Inserisci parola chiave."
 #~ "sarà sempre mostrato. Un suggerimento : Aggiungi <code>|true</code>  dopo "
 #~ "un collegamento da mostrare solo agli amministratori. Impostazione "
 #~ "predefinita: <br/>&lt;a href=\""
+
+#~ msgid "Save Changes"
+#~ msgstr "Salva i cambiamenti"
+
+#~ msgid "Welcome"
+#~ msgstr "Benvenuto/a"
+
+#~ msgid ""
+#~ "<strong>ERROR</strong>: Cookies are blocked or not supported by your "
+#~ "browser. You must <a href='http://www.google.com/cookies.html'>enable "
+#~ "cookies</a> to use WordPress."
+#~ msgstr ""
+#~ "<strong>ERREUR</strong>: I <i>cookies</i> sono bloccati o non supportati. "
+#~ "Devi  <a href='http://www.google.com/cookies.html'>abilitare i "
+#~ "<i>cookies</i></a> per usare WordPress."
 
 #~ msgid ""
 #~ "One link per line. Note: Logout link will always show regardless. Tip: "
