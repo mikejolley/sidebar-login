@@ -10,12 +10,18 @@ jQuery(function(){
 	        opacity:         0.6 
 	    } });
 	    
+	    if ( jQuery('input[name="rememberme"]:checked', thisform ).size() > 0 ) {
+	    	remember = jQuery('input[name="rememberme"]:checked', thisform ).val();
+	    } else {
+	    	remember = '';
+	    }
+
 	    var data = {
 			action: 		'sidebar_login_process',
 			security: 		sidebar_login_params.login_nonce,
 			user_login: 	jQuery('input[name="log"]', thisform).val(),
 			user_password: 	jQuery('input[name="pwd"]', thisform).val(),
-			remember: 		jQuery('input[name="rememberme"]', thisform).val(),
+			remember: 		remember,
 			redirect_to:	jQuery('.redirect_to:eq(0)', thisform).val()
 		};
 		
