@@ -307,8 +307,8 @@ function sidebar_login_ajax_process() {
 	
 	// Get post data
 	$creds = array();
-	$creds['user_login'] 	= esc_attr($_POST['user_login']);
-	$creds['user_password'] = esc_attr($_POST['user_password']);
+	$creds['user_login'] 	= $_POST['user_login'];
+	$creds['user_password'] = $_POST['user_password'];
 	$creds['remember'] 		= esc_attr($_POST['remember']);
 	$redirect_to 			= esc_attr($_POST['redirect_to']);
 	
