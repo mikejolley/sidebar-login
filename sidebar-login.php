@@ -122,7 +122,7 @@ function widget_wp_sidebarlogin($args) {
 		
 		if (empty($redirect_to)) :
 			if (isset($_REQUEST['redirect_to'])) 
-				$redirect_to = $_REQUEST['redirect_to'];
+				$redirect_to = esc_url( $_REQUEST['redirect_to'] );
 			else
 				$redirect_to = sidebar_login_current_url('nologout');
 		endif;
@@ -245,7 +245,7 @@ function widget_wp_sidebarlogin_check() {
 		
 		if (empty($redirect_to)) :
 			if (isset($_REQUEST['redirect_to'])) 
-				$redirect_to = $_REQUEST['redirect_to'];
+				$redirect_to = esc_attr( $_REQUEST['redirect_to'] );
 			else
 				$redirect_to = sidebar_login_current_url('nologout');
 		endif;

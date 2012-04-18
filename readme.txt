@@ -79,6 +79,7 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 
 = 2.3.5 =
 * 	Fixed remember me logic (in js)
+*	Sanitize redirect url
 *	Updated french and italian langs
 * 	Added Swedish lang by Ove Kaufeldt 
 
