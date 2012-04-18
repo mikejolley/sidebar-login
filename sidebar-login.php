@@ -211,7 +211,7 @@ function widget_wp_sidebarlogin_init() {
 	
 	// Pass variables to script
 	$sidebar_login_params = array(
-		'ajax_url' 				=> (is_ssl()) ? str_replace('http:', 'https:', admin_url('admin-ajax.php')) : str_replace('https:', 'http:', admin_url('admin-ajax.php')),
+		'ajax_url' 				=> ( is_ssl() || force_ssl_admin() || force_ssl_login() ) ? str_replace('http:', 'https:', admin_url('admin-ajax.php')) : str_replace('https:', 'http:', admin_url('admin-ajax.php')),
 		'login_nonce' 			=> wp_create_nonce("sidebar-login-action")
 	);
 	wp_localize_script( 'sidebar-login', 'sidebar_login_params', $sidebar_login_params );
@@ -256,7 +256,7 @@ function widget_wp_sidebarlogin_check() {
 		// If the user wants ssl but the session is not ssl, force a secure cookie.
 		if ( !empty($_POST['log']) && !force_ssl_admin() ) {
 			$user_name = sanitize_user($_POST['log']);
-			if ( $user = get_userdatabylogin($user_name) ) {
+			if ( $user = get_user_by('login', $user_name) ) {
 				if ( get_user_option('use_ssl', $user->ID) ) {
 					$secure_cookie = true;
 					force_ssl_admin(true);
@@ -307,18 +307,18 @@ function sidebar_login_ajax_process() {
 	
 	// Get post data
 	$creds = array();
-	$creds['user_login'] 	= $_POST['user_login'];
-	$creds['user_password'] = $_POST['user_password'];
-	$creds['remember'] 		= esc_attr($_POST['remember']);
-	$redirect_to 			= esc_attr($_POST['redirect_to']);
+	$creds['user_login'] 	= $_REQUEST['user_login'];
+	$creds['user_password'] = $_REQUEST['user_password'];
+	$creds['remember'] 		= esc_attr($_REQUEST['remember']);
+	$redirect_to 			= esc_attr($_REQUEST['redirect_to']);
 	
 	// Check for Secure Cookie
 	$secure_cookie = '';
 	
 	// If the user wants ssl but the session is not ssl, force a secure cookie.
-	if ( !empty($_POST['log']) && !force_ssl_admin() ) {
-		$user_name = sanitize_user($_POST['log']);
-		if ( $user = get_userdatabylogin($user_name) ) {
+	if ( ! force_ssl_admin() ) {
+		$user_name = sanitize_user( $_REQUEST['user_login'] );
+		if ( $user = get_user_by('login',  $user_name ) ) {
 			if ( get_user_option('use_ssl', $user->ID) ) {
 				$secure_cookie = true;
 				force_ssl_admin(true);
@@ -343,13 +343,19 @@ function sidebar_login_ajax_process() {
 		$result['redirect'] = $redirect_to;
 	else :
 		$result['success'] = 0;
-		foreach ($user->errors as $error) {
-			$result['error'] = $error[0];
-			break;
+		if ( $user->errors ) {
+			foreach ($user->errors as $error) {
+				$result['error'] = $error[0];
+				break;
+			}
+		} else {
+			$result['error'] = __('Please enter your username and password to login.', 'sblogin');
 		}
 	endif;
 	
-	echo json_encode($result);
+	header('content-type: application/json; charset=utf-8');
+
+	echo $_GET['callback'] . '(' . json_encode($result) . ')';
 
 	die();
 }

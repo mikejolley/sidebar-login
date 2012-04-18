@@ -78,6 +78,7 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 == Changelog ==
 
 = 2.3.5 =
+* 	Use jsonp to enable login from http to https
 * 	Fixed remember me logic (in js)
 *	Sanitize redirect url
 *	Removed esc_attr from username and password to prevent breaking login

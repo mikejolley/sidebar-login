@@ -26,18 +26,23 @@ jQuery(function(){
 		};
 		
 		// Ajax action
-		jQuery.post( sidebar_login_params.ajax_url, data, function(response) {
-			jQuery('.login_error').remove();
-			
-			result = jQuery.parseJSON( response );
-			
-			if (result.success==1) {
-				window.location = result.redirect;
-			} else {
-				jQuery(thisform).prepend('<p class="login_error">' + result.error + '</p>');
-				jQuery(thisform).unblock();
+		jQuery.ajax({
+			url: sidebar_login_params.ajax_url,
+			data: data,
+			type: 'GET',
+			dataType: 'jsonp',
+			success: function( result ) {
+				jQuery('.login_error').remove();
+				
+				if (result.success==1) {
+					window.location = result.redirect;
+				} else {
+					jQuery(thisform).prepend('<p class="login_error">' + result.error + '</p>');
+					jQuery(thisform).unblock();
+				}
 			}
-		});
+			
+		});			
 		
 		return false;
 	});
