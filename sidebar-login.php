@@ -62,7 +62,7 @@ function widget_wp_sidebarlogin($args) {
 		
 		if (get_option('sidebar_login_avatar')=='1') echo '<div class="avatar_container">'.get_avatar($user_ID, $size = '38').'</div>';
 		
-		echo '<ul class="pagenav">';
+		echo '<ul class="sidebarlogin_pagenav">';
 		
 		if(isset($current_user->user_level) && $current_user->user_level) $level = $current_user->user_level;
 				
@@ -88,14 +88,14 @@ function widget_wp_sidebarlogin($args) {
 				// Parse %USERID%
 				$link[0] = str_replace('%USERID%',$current_user->ID,$link[0]);
 				$link[0] = str_replace('%userid%',$current_user->ID,$link[0]);
-				echo '<li class="page_item">'.$link[0].'</li>';
+				echo '<li class="sidebarlogin_page_item">'.$link[0].'</li>';
 			}
 		}
 		
 		$redir = trim(stripslashes(get_option('sidebarlogin_logout_redirect')));
 		if (!$redir || empty($redir)) $redir = sidebar_login_current_url('nologout');
 		
-		echo '<li class="page_item"><a href="'.wp_logout_url($redir).'">'.$thelogout.'</a></li></ul>';
+		echo '<li class="sidebarlogin_page_item"><a href="'.wp_logout_url($redir).'">'.$thelogout.'</a></li></ul>';
 		
 	} else {
 	
@@ -132,32 +132,32 @@ function widget_wp_sidebarlogin($args) {
 		// login form
 		if (force_ssl_login() || force_ssl_admin()) $sidebarlogin_post_url = str_replace('http://', 'https://', sidebar_login_current_url()); else $sidebarlogin_post_url = sidebar_login_current_url();
 		?>
-		<form method="post" action="<?php echo $sidebarlogin_post_url; ?>">
+		<form method="post" action="<?php echo $sidebarlogin_post_url; ?>" class="sidebarlogin">
 		
-			<p><label for="user_login"><?php echo $theusername; ?></label> <input name="log" value="<?php if (isset($_POST['log'])) echo esc_attr(stripslashes($_POST['log'])); ?>" class="text" id="user_login" type="text" /></p>
-			<p><label for="user_pass"><?php echo $thepassword; ?></label> <input name="pwd" class="text" id="user_pass" type="password" /></p>			
+			<div id="sidebarlogin_username"><label id="sidebarlogin_usernamelabel" for="user_login"><?php echo $theusername; ?></label> <input name="log" value="<?php if (isset($_POST['log'])) echo esc_attr(stripslashes($_POST['log'])); ?>" class="text" id="user_login" type="text" /></div>
+			<div id="sidebarlogin_password"><label id="sidebarlogin_passwordlabel" for="user_pass"><?php echo $thepassword; ?></label> <input name="pwd" class="text" id="user_pass" type="password" /></div>			
 	
 			<?php
 				// OpenID Plugin (http://wordpress.org/extend/plugins/openid/) Integration
 				if (function_exists('openid_wp_login_form')) :
 					echo '
 						<hr id="openid_split" />
-						<p>
+						<div class="openid">
 							<label for="openid_field">' . __('Or login using an <a href="http://openid.net/what/" title="Learn about OpenID">OpenID</a>', 'sblogin') . '</label>
 							<input type="text" name="openid_identifier" id="openid_field" class="input mid" value="" /></label>
-						</p>
+						</div>
 					';		
 				endif;
 			?>
 			
-			<p class="rememberme"><input name="rememberme" class="checkbox" id="rememberme" value="forever" type="checkbox" /> <label for="rememberme"><?php echo $theremember; ?></label></p>
-			
-			<p class="submit">
+			<div class="rememberme"><input name="rememberme" class="checkbox" id="rememberme" value="forever" type="checkbox" /> <label for="rememberme"><?php echo $theremember; ?></label></div>
+
+			<div class="submit">
 				<input type="submit" name="wp-submit" id="wp-submit" value="<?php _e('Login &raquo;', 'sblogin'); ?>" />
 				<input type="hidden" name="redirect_to" class="redirect_to" value="<?php echo $redirect_to; ?>" />
 				<input type="hidden" name="sidebarlogin_posted" value="1" />
 				<input type="hidden" name="testcookie" value="1" />
-			</p>
+			</div>
 			
 			<?php if (function_exists('fbc_init_auth')) do_action('fbc_display_login_button'); // Facebook Plugin ?>
 		
