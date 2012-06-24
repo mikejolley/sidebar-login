@@ -1,7 +1,7 @@
 /* Basic styling for login widget
    This styling aligns the gravtar left, the links right.*/
 .widget_wp_sidebarlogin, #sidebar-login {
-	overflow: hidden;
+
 }
 .widget_wp_sidebarlogin .avatar_container, #sidebar-login .avatar_container {
 	float:left;
@@ -50,19 +50,10 @@
 .widget_wp_sidebarlogin form p {
 	margin: .5em 0;
 }
-.widget_wp_sidebarlogin form input.text {
+.widget_wp_sidebarlogin form .input {
 	width: 100%;
+	margin: 2px;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
-}
-/* ie7 */
-*:first-child+html .widget_wp_sidebarlogin form input.text {
-	width: 90%;
-}
-.widget_wp_sidebarlogin label {
-	display: block;
-}
-.widget_wp_sidebarlogin .rememberme label {
-	display: inline;
 }

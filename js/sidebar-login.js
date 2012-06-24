@@ -22,7 +22,7 @@ jQuery(function(){
 			user_login: 	jQuery('input[name="log"]', thisform).val(),
 			user_password: 	jQuery('input[name="pwd"]', thisform).val(),
 			remember: 		remember,
-			redirect_to:	jQuery('.redirect_to:eq(0)', thisform).val()
+			redirect_to:	jQuery('input[name="redirect_to"]', thisform).val()
 		};
 		
 		// Ajax action
