@@ -3,8 +3,8 @@ Contributors: mikejolley
 Donate link: http://mikejolley.com/projects/sidebar-login-for-wordpress/
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 2.8
-Tested up to: 3.3
-Stable tag: 2.3.6
+Tested up to: 3.4
+Stable tag: 2.3.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -78,6 +78,10 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 2. After Login
 
 == Changelog ==
+
+= 2.3.7 =
+*	XSS Fix
+*	Added classes to tags in widget
 
 = 2.3.6 =
 *	Sanitize REQUEST_URI/$pageURL

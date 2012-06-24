@@ -95,7 +95,7 @@ function widget_wp_sidebarlogin($args) {
 		$redir = trim(stripslashes(get_option('sidebarlogin_logout_redirect')));
 		if (!$redir || empty($redir)) $redir = sidebar_login_current_url('nologout');
 		
-		echo '<li class="page_item"><a href="'.wp_logout_url($redir).'">'.$thelogout.'</a></li></ul>';
+		echo '<li class="page_item"><a href=" ' . wp_logout_url( $redir ) . '">' . $thelogout . '</a></li></ul>';
 		
 	} else {
 	
@@ -132,10 +132,10 @@ function widget_wp_sidebarlogin($args) {
 		// login form
 		if (force_ssl_login() || force_ssl_admin()) $sidebarlogin_post_url = str_replace('http://', 'https://', sidebar_login_current_url()); else $sidebarlogin_post_url = sidebar_login_current_url();
 		?>
-		<form method="post" action="<?php echo $sidebarlogin_post_url; ?>">
+		<form method="post" action="<?php echo esc_attr( $sidebarlogin_post_url ); ?>">
 		
-			<p><label for="user_login"><?php echo $theusername; ?></label> <input name="log" value="<?php if (isset($_POST['log'])) echo esc_attr(stripslashes($_POST['log'])); ?>" class="text" id="user_login" type="text" /></p>
-			<p><label for="user_pass"><?php echo $thepassword; ?></label> <input name="pwd" class="text" id="user_pass" type="password" /></p>			
+			<p class="user_login"><label for="user_login"><?php echo $theusername; ?></label> <input name="log" value="<?php if (isset($_POST['log'])) echo esc_attr(stripslashes($_POST['log'])); ?>" class="text" id="user_login" type="text" /></p>
+			<p class="user_pass"><label for="user_pass"><?php echo $thepassword; ?></label> <input name="pwd" class="text" id="user_pass" type="password" /></p>			
 	
 			<?php
 				// OpenID Plugin (http://wordpress.org/extend/plugins/openid/) Integration
@@ -154,7 +154,7 @@ function widget_wp_sidebarlogin($args) {
 			
 			<p class="submit">
 				<input type="submit" name="wp-submit" id="wp-submit" value="<?php _e('Login &raquo;', 'sblogin'); ?>" />
-				<input type="hidden" name="redirect_to" class="redirect_to" value="<?php echo $redirect_to; ?>" />
+				<input type="hidden" name="redirect_to" class="redirect_to" value="<?php echo esc_attr( $redirect_to ); ?>" />
 				<input type="hidden" name="sidebarlogin_posted" value="1" />
 				<input type="hidden" name="testcookie" value="1" />
 			</p>
@@ -284,7 +284,7 @@ function widget_wp_sidebarlogin_check() {
 		
 		// Redirect if successful
 		if ( !is_wp_error($user) ) :
-			wp_safe_redirect( apply_filters('login_redirect', $redirect_to, isset( $redirect_to ) ? $redirect_to : '', $user) );
+			wp_safe_redirect( esc_attr( apply_filters('login_redirect', $redirect_to, $user ) ) );
 			exit;
 		endif;
 		
@@ -377,6 +377,6 @@ if ( !function_exists('sidebar_login_current_url') ) {
 			}	
 		}
 		
-		return $pageURL;
+		return strip_tags( $pageURL );
 	}
 }
