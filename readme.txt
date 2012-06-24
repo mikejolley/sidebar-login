@@ -82,6 +82,7 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 = 2.3.7 =
 *	XSS Fix
 *	Added classes to tags in widget
+*	Improved/filtered register and lost password links
 
 = 2.3.6 =
 *	Sanitize REQUEST_URI/$pageURL

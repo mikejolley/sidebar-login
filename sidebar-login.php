@@ -165,24 +165,23 @@ function widget_wp_sidebarlogin($args) {
 		<?php 			
 		// Output other links
 		$links = '';	
-		if (get_option('users_can_register') && get_option('sidebarlogin_register_link')=='1') { 
+		if ( get_option('users_can_register') && get_option('sidebarlogin_register_link') == '1' ) { 
 
-			if (!is_multisite()) {
-				
-				$links .= '<li><a href="'.get_bloginfo('wpurl').'/wp-login.php?action=register" rel="nofollow">'.$theregister.'</a></li>';
+			if ( ! is_multisite() ) {
+			
+				$links .= '<li><a href="' . apply_filters( 'sidebar_login_register_url', site_url('wp-login.php?action=register', 'login') ) . '" rel="nofollow">' . $theregister . '</a></li>';
 
 			} else {
 				
-				$links .= '<li><a href="'.get_bloginfo('wpurl').'/wp-signup.php" rel="nofollow">'.$theregister.'</a></li>';
+				$links .= '<li><a href="' . apply_filters( 'sidebar_login_register_url', site_url('wp-signup.php', 'login') ) . '" rel="nofollow">' . $theregister . '</a></li>';
 
 			}
 		}
-		if (get_option('sidebarlogin_forgotton_link')=='1') : 
-			
-			$links .= '<li><a href="'.wp_lostpassword_url().'" rel="nofollow">'. $thelostpass .'</a></li>';
+		if ( get_option( 'sidebarlogin_forgotton_link' ) == '1' )
+			$links .= '<li><a href="' . apply_filters( 'sidebar_login_lostpassword_url', wp_lostpassword_url() ) . '" rel="nofollow">' . $thelostpass . '</a></li>';
 
-		endif; 
-		if ($links) echo '<ul class="sidebarlogin_otherlinks">'.$links.'</ul>';	
+		if ($links)
+			echo '<ul class="sidebarlogin_otherlinks">' . $links . '</ul>';	
 	}		
 		
 	// echo widget closing tag
