@@ -177,16 +177,20 @@ function widget_wp_sidebarlogin_init() {
 	$plugin_url = (is_ssl()) ? str_replace('http://','https://', WP_PLUGIN_URL) : WP_PLUGIN_URL;
 	
 	// CSS
-	$sidebar_login_css = $plugin_url . '/sidebar-login/style.css';
-    wp_register_style('wp_sidebarlogin_css_styles', $sidebar_login_css);
-    wp_enqueue_style('wp_sidebarlogin_css_styles');
+	if ( false == get_option( 'sidebarlogin_disable_css' ) ) {
+		$sidebar_login_css = $plugin_url . '/sidebar-login/style.css';
+	    wp_register_style('wp_sidebarlogin_css_styles', $sidebar_login_css);
+	    wp_enqueue_style('wp_sidebarlogin_css_styles');
+	}
     
 	// Scripts
 	$block_ui = $plugin_url . '/sidebar-login/js/blockui.js';
 	$sidebar_login_script = $plugin_url . '/sidebar-login/js/sidebar-login.js';
+
+	$js_in_footer = (bool) get_option( 'sidebarlogin_js_in_footer' );
 	
-	wp_register_script('blockui', $block_ui, array('jquery'), '1.0' );
-	wp_register_script('sidebar-login', $sidebar_login_script, array('jquery', 'blockui'), '1.0' );
+	wp_register_script('blockui', $block_ui, array('jquery'), '1.0', $js_in_footer );
+	wp_register_script('sidebar-login', $sidebar_login_script, array('jquery', 'blockui'), '1.0', $js_in_footer );
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('blockui');
 	wp_enqueue_script('sidebar-login');

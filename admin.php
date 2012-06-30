@@ -78,6 +78,25 @@ $sidebar_login_options = (
 					'type' 		=> 'textarea'
 				),
 			)
+		),
+		array(
+			__('Misc', 'sblogin'), 
+			array(
+				array(
+					'name' 		=> 'sidebarlogin_js_in_footer', 
+					'std' 		=> '', 
+					'label' 	=> __('Load Javascript in footer', 'sblogin'),  
+					'desc'		=> __(' Load Javascript(s) in the footer instead of the header.', 'sblogin'),
+					'type'		=> 'checkbox'
+				),
+				array(
+					'name' 		=> 'sidebarlogin_disable_css', 
+					'std' 		=> '', 
+					'label' 	=> __('Disable CSS stylesheet', 'sblogin'),  
+					'desc'		=> __(' Disable loading the plugin\'s stylesheet.', 'sblogin'),
+					'type'		=> 'checkbox'
+				),
+			)
 		)
 	)
 );
