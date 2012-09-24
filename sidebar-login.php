@@ -82,12 +82,15 @@ function widget_wp_sidebarlogin($args) {
 						if (!current_user_can( $cap )) continue;
 					}
 				}
-				// Parse %USERNAME%
-				$link[0] = str_replace('%USERNAME%',sanitize_title($current_user->user_login),$link[0]);
-				$link[0] = str_replace('%username%',sanitize_title($current_user->user_login),$link[0]);
-				// Parse %USERID%
-				$link[0] = str_replace('%USERID%',$current_user->ID,$link[0]);
-				$link[0] = str_replace('%userid%',$current_user->ID,$link[0]);
+				// Parse %username%
+				$link[0] = preg_replace( '/%username%/i', sanitize_title($current_user->user_login ), $link[0]);
+				// Parse %userid%
+				$link[0] = preg_replace( '/%userid%/i', $current_user->ID, $link[0] );
+				// Parse %dashboard%
+				$link[0] = preg_replace( '/%dashboard%/i', '<a href="' . admin_url() . '">Dashboard</a>', $link[0] );
+				// Parse %profile%
+				$link[0] = preg_replace( '/%profile%/i', '<a href="' . admin_url('profile.php') . '">Profile</a>', $link[0] );
+				
 				echo '<li class="page_item">'.$link[0].'</li>';
 			}
 		}
