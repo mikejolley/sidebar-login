@@ -1,6 +1,6 @@
-=== Plugin Name ===
+=== Sidebar Login ===
 Contributors: mikejolley
-Donate link: http://mikejolley.com/projects/sidebar-login-for-wordpress/
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jolley@me.com&currency_code=&amount=&return=&item_name=Donation+for+Sidebar+Login
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 3.0
 Tested up to: 3.4
