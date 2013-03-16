@@ -1,8 +1,5 @@
 /* Basic styling for login widget
    This styling aligns the gravtar left, the links right.*/
-.widget_wp_sidebarlogin, #sidebar-login {
-
-}
 .widget_wp_sidebarlogin .avatar_container, #sidebar-login .avatar_container {
 	float:left;
 }
@@ -19,21 +16,15 @@
 }
 .widget_wp_sidebarlogin hr {
 	display: block;
-	clear: both; 
-	border: 0; 
-	border-top: 1px solid #999; 
+	clear: both;
+	border: 0;
+	border-top: 1px solid #999;
 	height: 1px;
 }
-.widget_wp_sidebarlogin #openid_field {
-	background-image:url(../openid/f/openid.gif);
-	background-position:3px 50%;
-	background-repeat:no-repeat;
-	padding-left:21px !important;
-}
-.widget_wp_sidebarlogin ul.sidebarlogin_otherlinks {
+.widget_wp_sidebarlogin ul.sidebar_login_links {
 	margin-left: 0 !important;
 }
-.widget_wp_sidebarlogin .login_error {
+.widget_wp_sidebarlogin .sidebar_login_error {
 	color: #ae121e;
 	background-color: #fbb1b7;
 	border: 1px solid;

@@ -3,8 +3,8 @@ Contributors: mikejolley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jolley@me.com&currency_code=&amount=&return=&item_name=Donation+for+Sidebar+Login
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 3.0
-Tested up to: 3.4
-Stable tag: 2.4
+Tested up to: 3.5
+Stable tag: 2.5.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,74 +12,71 @@ Easily add an ajax-enhanced login widget to your site's sidebar.
 
 == Description ==
 
-Sidebar-Login has both a widget and a template tag to allow you to have a login form in the sidebar of your wordpress powered blog.
+Sidebar-Login adds a useful login widget which you can use to login from in the sidebar of your WordPress powered blog.
 
-It lets users login, and then redirects them back to the page they logged in from rather than the backend, it also shows error messages.
-
-You can configure the plugin in <code>Admin > Settings > Sidebar Login</code> after installing it.
+Once a user logs in it then redirects them back to the page they logged in from rather than the admin panel (this is configurable).
 
 If you'd like to contribute to the plugin you can find it on GitHub: https://github.com/mikejolley/sidebar-login.
 
-== Localization ==
+= Usage =
 
-Added localizations are listed below. If you want to contribute or improve a localisation, please contribute via GitHub (https://github.com/mikejolley/sidebar-login).
+Simply go to `Appearance > Widgets` and drag "sidebar login" to the sidebar of your choice. Within the widget are several options you can use for changing the titles or the links displayed to the user.
 
-*	Catalan Translation by Marc Vinyals
-*	French Translation by Andy
-*	Estonian Translation by Marko Punnar
-*	Dutch Translation by Ruben Janssen
-*	German Translation by GhostLyrics
-*	Italian Translation by Alessandro Spadavecchia
-*	Hungarian translation by Laszlo Dvornik
-*	Hungarian (2) translation by Balint Vereskuti
-*	Russian translation by Fat Cow
-*	Romanian translation by Victor Osorhan
-*	Spanish translation by Tribak
-*	Spanish (2) translation by Ricardo Vilella
-*	Danish translation by Per Bovbjerg
-*	Portuguese translation by Alvaro Becker
-*	Polish translation by merito
-*	Polish (2) translation by Darek Wapinski
-*	Icelandic translation by Hákon Ásgeirsson
-*	Arabic translation by khalid
-*	Turkish translation by Muzo B
-*	Chinese translation by seven
-*	Persian by Gonahkar
-*	Persian (farsi, alt) translation Amir Beitollahi
-*	Russian translation by Vorotnikov Boris
-*	Croatian translation by Zarko Pintar
-*	Indonesian translation by Masino Sinaga 
-*	Indonesian (2) translation by Hendry Lee
-*	Lithuanian translation by Justas Kalinauskas
-*	Hebrew translation by Yosi
-*	Latvian translation by Reinis
-*	Hindi translation by Outshine Solutions
-*	Bulgarian translation by Siteground
-*	Greek translation by Meet-sos
+To use this widget in a template, use [the `the_widget()` function](http://codex.wordpress.org/Function_Reference/the_widget) which WordPress provides.
 
-Note: Those with more than one translation are found in langs/alternate/. To use the alternatives move them from /alternate/ into /langs/.
+= Tags for titles + links =
 
-== Installation ==
+These tags can be used in the widget settings for titles + links and will be replaced at runtime.
 
-= First time installation instructions =
+* `%username%` - logged in users display name
+* `%userid%` - logged in users ID
+* `%admin_url%` - url to WP admin
+* `%logout_url%` - logout url
 
-   1. Unzip and upload the php file to your wordpress plugin directory
-   2. Activate the plugin
-   3. For a sidebar widget: Goto the design > widgets tab - Drag the widget into a sidebar and save!
-   4. To use the template tag: Add &lt;?php sidebarlogin(); ?&gt; to your template.
-   
-= Configuration =
+= Filter Reference =
 
-You will find a config page in tools/settings > Sidebar Login. Here you can set links and redirects up.
+* `sidebar_login_js_in_footer` - return true to show JS file in the footer instead of the header
+* `sidebar_login_include_css` - return false to not include the CSS stylesheet
+* `sidebar_login_widget_logged_in_links` - An array of links shown when logged in.
+* `sidebar_login_widget_logged_out_links` - An array of links shown when logged out.
+* `sidebar_login_widget_display` - Return false to hide the widget.
+* `sidebar_login_widget_logged_in_title` - The widget title shown when logged in.
+* `sidebar_login_widget_avatar_size` - The avatar size - defaulted to 38 (thats in px)
+* `sidebar_login_widget_logged_out_title` - The widget title shown when logged out.
+* `sidebar_login_widget_form_args` - Arguments for the wp_login_form function.
+* `sidebar_login_widget_login_redirect` - Redirect URL after login.
+* `sidebar_login_widget_logout_redirect` - the redirect after logging out.
+* `sidebar_login_widget_register_url` - The URL for registration links.
+* `sidebar_login_widget_lost_password_url` - The URL for lost password links.
+
+= Action Reference =
+
+* `sidebar_login_widget_start` - Fired before the widget.
+* `sidebar_login_widget_{logged_in || logged_out}_content_start` - Fired before the widget content.
+* `sidebar_login_widget_before_{logged_in || logged_out}_links` - Fired before the links.
+* `sidebar_login_widget_after_{logged_in || logged_out}_links` - Fire after the links.
+* `sidebar_login_widget_{logged_in || logged_out}_content_end` - Fired after the widget content.
+* `sidebar_login_widget_end` - Fired after the widget.
+
+= Notes =
+
+* Due to AJAX not working across different domains (see [same_origin_policy](http://en.wikipedia.org/wiki/Same_origin_policy)), AJAX logins will be disabled if your site it non-SSL, but the FORCE_SSL_LOGIN constant is set to true. Instead it will fallback to a traditional POST.
 
 == Screenshots ==
 
-1. Login Form
-2. After Login
+1. The widget when logged in
+2. The widget when logged out
+3. Widget settings
 
 == Changelog ==
 
-= 2.4 =
+= 2.5.0 =
+*	Rewrite and code cleanup - class based.
+*	Optionless - Moved all settings to the widgets themselves rather than having a settings page.
+*	Removed all localisations (these are out of date, and need re-doing)
+*	Removed JSONP/GET request - although this allowed logins between urls of different origin, it poses a security risk as GET requests are logged.
+
+= 2.4.0 =
 *	XSS Fix
 *	Added classes to tags in widget
 *	Improved/filtered register and lost password links
@@ -95,7 +92,7 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 *	Sanitize redirect url
 *	Removed esc_attr from username and password to prevent breaking login
 *	Updated french and italian langs
-* 	Added Swedish lang by Ove Kaufeldt 
+* 	Added Swedish lang by Ove Kaufeldt
 
 = 2.3.4 =
 *	SSL URL tweak
@@ -108,10 +105,10 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 *	Uses wp_ajax for ajax login instead of init functions
 * 	Secure cookie logic change
 
-= 2.3.2 = 
+= 2.3.2 =
 *	Login redirect fix
 
-= 2.3.1 = 
+= 2.3.1 =
 *	Error loop fix
 *	Added filter for errors - sidebar_login_error
 
@@ -165,3 +162,8 @@ You will find a config page in tools/settings > Sidebar Login. Here you can set 
 *	%username% can be used in your custom links shown when logged in (gets replaced with username)
 *	WP-FacebookConnect (http://wordpress.org/extend/plugins/wp-facebookconnect/) integration (untested!)
 *	Minor fixes (worked through a big list of em!)
+
+== Upgrade Notice ==
+
+= 2.5.0 =
+Since this is a rewrite, you will need to re-setup your widget via Appearance > Widgets after upgrading.
