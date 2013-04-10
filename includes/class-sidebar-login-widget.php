@@ -134,7 +134,8 @@ class Sidebar_Login_Widget extends WP_Widget {
 		    $raw_links = array_map( 'trim', explode( "\n", $links ) );
 		    $links = array();
 		    foreach ( $raw_links as $link ) {
-		    	$link = array_map( 'trim', explode( '|', $link ) );
+		    	$link     = array_map( 'trim', explode( '|', $link ) );
+		    	$link_cap = '';
 
 		    	if ( sizeof( $link ) == 3 )
 					list( $link_text, $link_href, $link_cap ) = $link;
@@ -145,7 +146,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 
 				// Check capability
 				if ( ! empty( $link_cap ) )
-					if ( ! current_user_can( $link_cap ) )
+					if ( ! current_user_can( strtolower( $link_cap ) ) )
 						continue;
 
 				$links[ sanitize_title( $link_text ) ] = array(

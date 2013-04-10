@@ -74,6 +74,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 *	Filterable error classes
 *	Tweak to how SSL logins are handled.
 *	FR translation
+*	Fix $link_cap
 
 = 2.5.0 =
 *	Rewrite and code cleanup - class based.
