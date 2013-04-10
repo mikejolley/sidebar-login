@@ -9,7 +9,7 @@ Author URI: http://mikejolley.com
 Requires at least: 3.5
 Tested up to: 3.5
 
-	Copyright: © 2013 Mike Jolley.
+	Copyright: ï¿½ 2013 Mike Jolley.
 	License: GNU General Public License v3.0
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -56,13 +56,15 @@ class Sidebar_Login {
 	 */
 	public function enqueue() {
 
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
 		$js_in_footer = apply_filters( 'sidebar_login_js_in_footer', false );
 
 		// Register BLOCK UI
 		wp_register_script( 'jquery-blockui', plugins_url( 'assets/js/blockui.min.js', __FILE__ ), array( 'jquery' ), '2.57', $js_in_footer );
 
 		// Enqueue Sidebar Login JS
-		wp_enqueue_script( 'sidebar-login', plugins_url( 'assets/js/sidebar-login.min.js', __FILE__ ), array( 'jquery', 'jquery-blockui' ), $this->version, $js_in_footer );
+		wp_enqueue_script( 'sidebar-login', plugins_url( 'assets/js/sidebar-login' . $suffix . '.js', __FILE__ ), array( 'jquery', 'jquery-blockui' ), $this->version, $js_in_footer );
 
 		// Enqueue Styles
 		if ( apply_filters( 'sidebar_login_include_css', true ) ) {
@@ -77,7 +79,8 @@ class Sidebar_Login {
 			'force_ssl_admin'  => force_ssl_admin() ? 1 : 0,
 			'is_ssl'           => is_ssl() ? 1 : 0,
 			'i18n_username_required' => __( 'Please enter your username', 'sidebar_login' ),
-			'i18n_password_required' => __( 'Please enter your password', 'sidebar_login' )
+			'i18n_password_required' => __( 'Please enter your password', 'sidebar_login' ),
+			'error_class'      => apply_filters( 'sidebar_login_widget_error_class', 'sidebar_login_error' )
 		);
 
 		wp_localize_script( 'sidebar-login', 'sidebar_login_params', $sidebar_login_params );
