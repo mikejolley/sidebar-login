@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jol
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -69,6 +69,11 @@ These tags can be used in the widget settings for titles + links and will be rep
 3. Widget settings
 
 == Changelog ==
+
+= 2.5.1 =
+*	Filterable error classes
+*	Tweak to how SSL logins are handled.
+*	FR translation
 
 = 2.5.0 =
 *	Rewrite and code cleanup - class based.
