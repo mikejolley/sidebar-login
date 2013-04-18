@@ -70,6 +70,10 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
+= X =
+*	Latvian translation by Lana Mangusa
+*	German translation by Klaus-Peter
+
 = 2.5.1 =
 *	Filterable error classes
 *	Tweak to how SSL logins are handled.
