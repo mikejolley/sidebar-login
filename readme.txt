@@ -70,6 +70,8 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
+* Arabic translaction by Mamoun Elkheir
+
 = 2.5.2 =
 *	Latvian translation by Lana Mangusa
 *	German translation by Klaus-Peter
