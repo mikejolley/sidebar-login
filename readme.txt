@@ -70,111 +70,115 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
-* Arabic translaction by Mamoun Elkheir
+= 2.5.3 =
+* Removed nonce check on frontend due to conflict with caching scripts
+* Arabic translation by Mamoun Elkheir
+* Brazillian translation by Marco André Argenta
+* Italian translation by Adriano Calvitto
 
 = 2.5.2 =
-*	Latvian translation by Lana Mangusa
-*	German translation by Klaus-Peter
-* 	Wrapped response to prevent crap plugins breaking the response
+* Latvian translation by Lana Mangusa
+* German translation by Klaus-Peter
+* Wrapped response to prevent crap plugins breaking the response
 
 = 2.5.1 =
-*	Filterable error classes
-*	Tweak to how SSL logins are handled.
-*	FR translation
-*	Fix $link_cap
+* Filterable error classes
+* Tweak to how SSL logins are handled.
+* FR translation
+* Fix $link_cap
 
 = 2.5.0 =
-*	Rewrite and code cleanup - class based.
-*	Optionless - Moved all settings to the widgets themselves rather than having a settings page.
-*	Removed all localisations (these are out of date, and need re-doing)
-*	Removed JSONP/GET request - although this allowed logins between urls of different origin, it poses a security risk as GET requests are logged.
+* Rewrite and code cleanup - class based.
+* Optionless - Moved all settings to the widgets themselves rather than having a settings page.
+* Removed all localisations (these are out of date, and need re-doing)
+* Removed JSONP/GET request - although this allowed logins between urls of different origin, it poses a security risk as GET requests are logged.
 
 = 2.4.0 =
-*	XSS Fix
-*	Added classes to tags in widget
-*	Improved/filtered register and lost password links
-*	Removed the outdated openid/fb code. Hook it in if you want it.
-*	Removed markup in favour of wp_login_form()
+* XSS Fix
+* Added classes to tags in widget
+* Improved/filtered register and lost password links
+* Removed the outdated openid/fb code. Hook it in if you want it.
+* Removed markup in favour of wp_login_form()
 
 = 2.3.6 =
-*	Sanitize REQUEST_URI/$pageURL
+* Sanitize REQUEST_URI/$pageURL
 
 = 2.3.5 =
 * 	Use jsonp to enable login from http to https
 * 	Fixed remember me logic (in js)
-*	Sanitize redirect url
-*	Removed esc_attr from username and password to prevent breaking login
-*	Updated french and italian langs
+* Sanitize redirect url
+* Removed esc_attr from username and password to prevent breaking login
+* Updated french and italian langs
 * 	Added Swedish lang by Ove Kaufeldt
 
 = 2.3.4 =
-*	SSL URL tweak
-*	Better handling for force_ssl_login and force_ssl_admin
+* SSL URL tweak
+* Better handling for force_ssl_login and force_ssl_admin
 
 = 2.3.3 =
-*	Removed a link after request from WordPress.org staff
-*	wp_lostpassword_url() for lost password link
-*	sanitized user_login
-*	Uses wp_ajax for ajax login instead of init functions
+* Removed a link after request from WordPress.org staff
+* wp_lostpassword_url() for lost password link
+* sanitized user_login
+* Uses wp_ajax for ajax login instead of init functions
 * 	Secure cookie logic change
 
 = 2.3.2 =
-*	Login redirect fix
+* Login redirect fix
 
 = 2.3.1 =
-*	Error loop fix
-*	Added filter for errors - sidebar_login_error
+* Error loop fix
+* Added filter for errors - sidebar_login_error
 
 = 2.3 =
-*	Put the project on GitHub
-*	Added new localisations
-*	New options panel
+* Put the project on GitHub
+* Added new localisations
+* New options panel
 * 	AJAX Login
 
 = 2.2.15 =
-*	FORCE_SSL_LOGIN/ADMIN double login issue fix (Thanks to bmaupin)
-*	Only added openid styling if other plugin is installed
-*	Added more languages
+* FORCE_SSL_LOGIN/ADMIN double login issue fix (Thanks to bmaupin)
+* Only added openid styling if other plugin is installed
+* Added more languages
 
 = 2.2.14 =
-*	Further revised the |true / |user_capability code - only need to use one or the other now.
+* Further revised the |true / |user_capability code - only need to use one or the other now.
 
 = 2.2.13 =
-*	Updated translations
-*	Support for https and style.css
-*	is_date fix
-*	Added option for headings
-*	Removed attribute_escape for esc_attr - therefore this version needs wp 2.8 and above
-*	USER LEVEL option gone - replaced with USER CAPABILITY instead - use a capability like 'manage_options'
+* Updated translations
+* Support for https and style.css
+* is_date fix
+* Added option for headings
+* Removed attribute_escape for esc_attr - therefore this version needs wp 2.8 and above
+* USER LEVEL option gone - replaced with USER CAPABILITY instead - use a capability like 'manage_options'
 
 = 2.2.12 =
-*	Headers sent bugs fixed
-*	Avatar display option
+* Headers sent bugs fixed
+* Avatar display option
 
 = 2.2.11 =
-*	More/Updated langs
+* More/Updated langs
 
 = 2.2.10 =
-*	Moved settings to appearance menu
-*	Changed min user level to capilbilty 'manage_options'
-*	Fixed menu showing in wordpress 3.0
-*	Added %USERID% for links
-*	Fixed white space bug for link options
+* Moved settings to appearance menu
+* Changed min user level to capilbilty 'manage_options'
+* Fixed menu showing in wordpress 3.0
+* Added %USERID% for links
+* Fixed white space bug for link options
 
 = 2.2.8 =
-*	Min level setting for links. Add user level after |true when defining the logged in links.
-*	Moved 'settings' from tools to settings.
-*	Encoded ampersand for valid markup
-*	Moved Labels about
-*	Fixed SSL url
-*	Reusable widget
+* Min level setting for links. Add user level after |true when defining the logged in links.
+* Moved 'settings' from tools to settings.
+* Encoded ampersand for valid markup
+* Moved Labels about
+* Fixed SSL url
+* Reusable widget
 
 = 2.2.6 =
-*	Added changelog to readme.
-*	OpenID Plugin (http://wordpress.org/extend/plugins/openid/) Integration.
-*	%username% can be used in your custom links shown when logged in (gets replaced with username)
-*	WP-FacebookConnect (http://wordpress.org/extend/plugins/wp-facebookconnect/) integration (untested!)
-*	Minor fixes (worked through a big list of em!)
+* Added changelog to readme.
+* OpenID Plugin (http://wordpress.org/extend/plugins/openid/) Integration.
+* %username% can be used in your custom links shown when logged in (gets replaced with username)
+* WP-FacebookConnect (http://wordpress.org/extend/plugins/wp-facebookconnect/) integration (untested!)
+* Minor fixes (worked through a big list of em!)
 
 == Upgrade Notice ==
 

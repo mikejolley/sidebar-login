@@ -38,7 +38,6 @@ jQuery(function(){
 
 	    var data = {
 			action: 		'sidebar_login_process',
-			security: 		sidebar_login_params.login_nonce,
 			user_login: 	user_login,
 			user_password: 	user_password,
 			remember: 		remember,

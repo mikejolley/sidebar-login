@@ -3,7 +3,7 @@
 Plugin Name: Sidebar Login
 Plugin URI: http://wordpress.org/extend/plugins/sidebar-login/
 Description: Allows you to easily add an ajax-enhanced login widget to your WordPress blog sidebar.
-Version: 2.5.2
+Version: 2.5.3
 Author: Mike Jolley
 Author URI: http://mikejolley.com
 Requires at least: 3.5
@@ -19,7 +19,7 @@ Tested up to: 3.5
  */
 class Sidebar_Login {
 
-	private $version = '2.5.2';
+	private $version = '2.5.3';
 
 	/**
 	 * __construct function.
@@ -74,7 +74,6 @@ class Sidebar_Login {
 		// Pass variables
 		$sidebar_login_params = array(
 			'ajax_url'         => $this->ajax_url(),
-			'login_nonce'      => wp_create_nonce( "sidebar-login-action" ),
 			'force_ssl_login'  => force_ssl_login() ? 1 : 0,
 			'force_ssl_admin'  => force_ssl_admin() ? 1 : 0,
 			'is_ssl'           => is_ssl() ? 1 : 0,
@@ -118,13 +117,11 @@ class Sidebar_Login {
 	 */
 	public function ajax_handler() {
 
-		check_ajax_referer( 'sidebar-login-action', 'security' );
-
 		// Get post data
 		$creds                  = array();
-		$creds['user_login']    = $_POST['user_login'];
-		$creds['user_password'] = $_POST['user_password'];
-		$creds['remember']      = esc_attr( $_POST['remember'] );
+		$creds['user_login']    = stripslashes( trim( $_POST['user_login'] ) );
+		$creds['user_password'] = stripslashes( trim( $_POST['user_password'] ) );
+		$creds['remember']      = sanitize_text_field( $_POST['remember'] );
 		$redirect_to            = esc_url_raw( $_POST['redirect_to'] );
 		$secure_cookie          = null;
 
