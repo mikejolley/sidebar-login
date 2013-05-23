@@ -70,6 +70,9 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
+* Slovakian translation by Alexander Kriss
+* Swedish translation by Tommy Wahlund
+
 = 2.5.3 =
 * Removed nonce check on frontend due to conflict with caching scripts
 * Arabic translation by Mamoun Elkheir
