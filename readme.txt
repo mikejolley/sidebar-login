@@ -72,6 +72,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 * Slovakian translation by Alexander Kriss
 * Swedish translation by Tommy Wahlund
+* Dutch translation by Bert Smulders
 
 = 2.5.3 =
 * Removed nonce check on frontend due to conflict with caching scripts
