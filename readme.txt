@@ -73,6 +73,8 @@ These tags can be used in the widget settings for titles + links and will be rep
 * Slovakian translation by Alexander Kriss
 * Swedish translation by Tommy Wahlund
 * Dutch translation by Bert Smulders
+* Russian and Ukranian translation by Yarri
+* Polish translation by Czeslaw Liebert
 
 = 2.5.3 =
 * Removed nonce check on frontend due to conflict with caching scripts
