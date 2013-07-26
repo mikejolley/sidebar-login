@@ -105,6 +105,24 @@ class Sidebar_Login_Widget extends WP_Widget {
 		    	array( ucwords( $this->user->display_name ), $this->user->ID ),
 		    	$text
 		    );
+
+		    // Buddypress
+	    	if ( function_exists( 'bp_loggedin_user_domain' ) ) {
+	    		$text = str_replace(
+			    	array( '%buddypress_profile_url%' ),
+			    	array( bp_loggedin_user_domain() ),
+			    	$text
+			    );
+	    	}
+
+	    	// BBpress
+	    	if ( function_exists( 'bbp_get_user_profile_url' ) ) {
+	    		$text = str_replace(
+			    	array( '%bbpress_profile_url%' ),
+			    	array( bbp_get_user_profile_url( $this->user->ID ) ),
+			    	$text
+			    );
+	    	}
 	    }
 
 	    $logout_redirect = wp_logout_url( empty( $this->instance['logout_redirect_url'] ) ? $this->current_url( 'nologout' ) : $this->instance['logout_redirect_url'] );
