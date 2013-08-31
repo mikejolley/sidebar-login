@@ -1,86 +1,91 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: sidebar-login\n"
-"POT-Creation-Date: 2013-04-02 16:11+0100\n"
-"PO-Revision-Date: 2013-08-02 14:45+0100\n"
-"Last-Translator: Clickgnosis <bruno@clickgnosis.com>\n"
-"Language-Team: \n"
+"Project-Id-Version: Sidebar Login Ukrainian\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-12 01:18+0300\n"
+"PO-Revision-Date: 2013-08-28 15:28+0100\n"
+"Last-Translator: Frode J. Laugen <frode@laugen.net>\n"
+"Language-Team: Yarri <admin@yarri.com.ua>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
-"X-Poedit-KeywordsList: _e;__;_n\n"
+"X-Poedit-KeywordsList: __;_e;_c\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ../.\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Language: ua_UA\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: .\n"
 
 #: .././sidebar-login.php:79
 msgid "Please enter your username"
-msgstr "Renseignez votre identifiant s'il vous plait"
+msgstr "Vennligst skriv inn brukernavn"
 
 #: .././sidebar-login.php:80
 msgid "Please enter your password"
-msgstr "Renseignez votre mot de passe s'il vous plait"
+msgstr "Vennligst skriv inn passord"
 
 #: .././sidebar-login.php:166
 msgid "Please enter your username and password to login."
-msgstr "Renseignez votre identifiant et votre mot de passe s'il vous plait"
+msgstr "Vennligst skriv inn brukernavn og passord for å logge inn."
 
 #: .././includes/class-sidebar-login-widget.php:23
 msgid "Displays a login area in the sidebar."
-msgstr "Affiche une zone de connexion dans la sidebar."
+msgstr "Vis et innloggingsområde i sidebar"
 
 #: .././includes/class-sidebar-login-widget.php:26
 msgid "Sidebar Login"
-msgstr "Sidebar Connexion"
+msgstr "Sidebar innlogging"
 
 #: .././includes/class-sidebar-login-widget.php:39
 msgid "Logged-out title"
-msgstr "Titre (état déconnecté)"
+msgstr "Utlogget tittel"
 
 #: .././includes/class-sidebar-login-widget.php:40
 #: .././includes/class-sidebar-login-widget.php:225
 msgid "Login"
-msgstr "Connexion"
+msgstr "Logg inn"
 
 #: .././includes/class-sidebar-login-widget.php:44
 #: .././includes/class-sidebar-login-widget.php:74
 msgid "Links"
-msgstr "Liens"
+msgstr "Lenker"
 
 #: .././includes/class-sidebar-login-widget.php:44
 msgid "<code>Text | HREF</code>"
-msgstr "<code>Texte | HREF</code>"
+msgstr "<code>Tekst | HREF</code>"
 
 #: .././includes/class-sidebar-login-widget.php:49
 msgid "Show lost password link"
-msgstr "Montrer le lien mot de passe perdu"
+msgstr "Vis glemt passord-lenke"
 
 #: .././includes/class-sidebar-login-widget.php:54
 msgid "Show register link"
-msgstr "Montrer le lien d'enregistrement"
+msgstr "Vis lenke for registrering"
 
 #: .././includes/class-sidebar-login-widget.php:56
 #, php-format
 msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
-msgstr "<a href=\"%s\">Tout le monde peut s'enregister</a> doit être actif."
+msgstr "<a href=\"%s\">Aktiver at alle kan registrere seg </a>."
 
 #: .././includes/class-sidebar-login-widget.php:60
 msgid "Login Redirect URL"
-msgstr "URL de redirection (connexion)"
+msgstr "Login omdirigeringslenke"
 
 #: .././includes/class-sidebar-login-widget.php:69
 msgid "Logged-in title"
-msgstr "Titre (état connecté)"
+msgstr "Innlogget tittel"
 
 #: .././includes/class-sidebar-login-widget.php:70
 #: .././includes/class-sidebar-login-widget.php:224
 msgid "Welcome %username%"
-msgstr "Bienvenue %username%"
+msgstr "Velkommen %username%"
 
 #: .././includes/class-sidebar-login-widget.php:74
 msgid "<code>Text | HREF | Capability</code>"
-msgstr "<code>Texte | HREF | Capacité</code>"
+msgstr "<code>Tekst | HREF | Capability</code>"
 
 #: .././includes/class-sidebar-login-widget.php:75
 #, php-format
@@ -88,38 +93,38 @@ msgid ""
 "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
 "view the link."
 msgstr ""
-"<a href=\"%s\">Capacité</a> (optionnel) se base sur le type d'utilisateur "
-"qui peut voir le lien."
+"<a href=\"%s\">Capability</a> (valgfritt) refererer til typen brukere som "
+"kan se lenken."
 
 #: .././includes/class-sidebar-login-widget.php:80
 msgid "Show logged-in user avatar"
-msgstr "Montrer l'avatar de l'utilisateur connecté"
+msgstr "Vis avatar etter innlogging"
 
 #: .././includes/class-sidebar-login-widget.php:85
 msgid "Logout Redirect URL"
-msgstr "URL de redirection (déconnexion)"
+msgstr "Utlogget omdirigeringslenke"
 
 #: .././includes/class-sidebar-login-widget.php:164
 #: .././includes/class-sidebar-login-widget.php:171
 msgid "Register"
-msgstr "S'enregistrer"
+msgstr "Registrer"
 
 #: .././includes/class-sidebar-login-widget.php:181
 msgid "Lost Password"
-msgstr "Mot de passe perdu&nbsp;?"
+msgstr "Mistet passord"
 
 #: .././includes/class-sidebar-login-widget.php:271
 msgid "Username"
-msgstr "Identifiant"
+msgstr "Brukernavn"
 
 #: .././includes/class-sidebar-login-widget.php:272
 msgid "Password"
-msgstr "Mot de passe"
+msgstr "Passord"
 
 #: .././includes/class-sidebar-login-widget.php:273
 msgid "Remember Me"
-msgstr "Se souvenir de moi"
+msgstr "Husk meg"
 
 #: .././includes/class-sidebar-login-widget.php:274
 msgid "Login &rarr;"
-msgstr "Connexion &rarr;"
+msgstr "Logg inn &rarr;"
