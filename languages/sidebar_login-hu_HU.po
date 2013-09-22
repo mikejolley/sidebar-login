@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar Login v2.6.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-09-22 11:57:02+0000\n"
+"Last-Translator: admin-szilvabababutor <pummer.peter@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: includes/class-sidebar-login-widget.php:23
+#@ sidebar_login
+msgid "Displays a login area in the sidebar."
+msgstr "Bejelentkezés űrlap megjelenítése az oldalsávon."
+
+#: includes/class-sidebar-login-widget.php:26
+#@ sidebar_login
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: includes/class-sidebar-login-widget.php:39
+#@ sidebar_login
+msgid "Logged-out title"
+msgstr "Kijelentkezett cím"
+
+#: includes/class-sidebar-login-widget.php:40
+#: includes/class-sidebar-login-widget.php:244
+#@ sidebar_login
+msgid "Login"
+msgstr "Bejelntkezés"
+
+#: includes/class-sidebar-login-widget.php:44
+#: includes/class-sidebar-login-widget.php:74
+#@ sidebar_login
+msgid "Links"
+msgstr "Hivatkozások"
+
+#: includes/class-sidebar-login-widget.php:44
+#@ sidebar_login
+msgid "<code>Text | HREF</code>"
+msgstr "<code>Szöveg | HREF</code>"
+
+#: includes/class-sidebar-login-widget.php:49
+#@ sidebar_login
+msgid "Show lost password link"
+msgstr "Elveszett jelszó hivatkozás megjelenítése"
+
+#: includes/class-sidebar-login-widget.php:54
+#@ sidebar_login
+msgid "Show register link"
+msgstr "Regisztráció hivatkozás megjelenítése"
+
+#: includes/class-sidebar-login-widget.php:56
+#, php-format
+#@ sidebar_login
+msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
+msgstr "<a href=\"%s\">Bárki regisztrálhat</a> - engedélyezni kell."
+
+#: includes/class-sidebar-login-widget.php:60
+#@ sidebar_login
+msgid "Login Redirect URL"
+msgstr "Bejelentkezés utáni Átirányítás URL"
+
+#: includes/class-sidebar-login-widget.php:69
+#@ sidebar_login
+msgid "Logged-in title"
+msgstr "Bejelentkezett cím"
+
+#: includes/class-sidebar-login-widget.php:70
+#: includes/class-sidebar-login-widget.php:243
+#, php-format
+#@ sidebar_login
+msgid "Welcome %username%"
+msgstr "Üdvözlünk %username%"
+
+#: includes/class-sidebar-login-widget.php:74
+#@ sidebar_login
+msgid "<code>Text | HREF | Capability</code>"
+msgstr "<code>Szöveg | HREF | Engedély</code>"
+
+#: includes/class-sidebar-login-widget.php:75
+#, php-format
+#@ sidebar_login
+msgid "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can view the link."
+msgstr "<a href=\"%s\">Engedély</a> (opcionális) utal, hogy milyen típusú felhasználók, akik megtekinthetik a hivatkozást."
+
+#: includes/class-sidebar-login-widget.php:80
+#@ sidebar_login
+msgid "Show logged-in user avatar"
+msgstr "Bejelentkezett felhasználók avatar-jának megjelenítése"
+
+#: includes/class-sidebar-login-widget.php:85
+#@ sidebar_login
+msgid "Logout Redirect URL"
+msgstr "Kijelentkezés utáni Átirányítás URL"
+
+#: includes/class-sidebar-login-widget.php:183
+#: includes/class-sidebar-login-widget.php:190
+#@ sidebar_login
+msgid "Register"
+msgstr "Regisztráció"
+
+#: includes/class-sidebar-login-widget.php:200
+#@ sidebar_login
+msgid "Lost Password"
+msgstr "Elveszett Jelszó"
+
+#: includes/class-sidebar-login-widget.php:290
+#@ sidebar_login
+msgid "Username"
+msgstr "Felhasználónév"
+
+#: includes/class-sidebar-login-widget.php:291
+#@ sidebar_login
+msgid "Password"
+msgstr "Jelszó"
+
+#: includes/class-sidebar-login-widget.php:292
+#@ sidebar_login
+msgid "Remember Me"
+msgstr "Emlékezzen Rám"
+
+#: includes/class-sidebar-login-widget.php:293
+#@ sidebar_login
+msgid "Login &rarr;"
+msgstr "Bejelentkezés &rarr;"
+
+#: sidebar-login.php:80
+#@ sidebar_login
+msgid "Please enter your username"
+msgstr "Kérjük, adja meg felhasználónevét"
+
+#: sidebar-login.php:81
+#@ sidebar_login
+msgid "Please enter your password"
+msgstr "Kérjük, adja meg jelszavát"
+
+#: sidebar-login.php:166
+#@ sidebar_login
+msgid "Please enter your username and password to login."
+msgstr "Kérjük, adja meg felhasználónevét és jelszavát a bejelentkezéshez."
+
