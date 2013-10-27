@@ -72,6 +72,8 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
+* Turkish translation
+
 = 2.6.0 =
 * Support for Buddypress Profile URL via %buddypress_profile_url%. Thanks Tim Reeves.
 * Support for BBPress Profile URL via %bbpress_profile_url%.
