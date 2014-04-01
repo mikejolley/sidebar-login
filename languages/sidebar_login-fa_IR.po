@@ -1,87 +1,86 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sidebar-login\n"
-"POT-Creation-Date: 2013-05-10 16:11+0100\n"
-"PO-Revision-Date: 2014-03-31 22:25-0400\n"
-"Last-Translator: luisfel <luisfel@luisfel.cl>\n"
-"Language-Team: pt_BR\n"
+"POT-Creation-Date: 2013-04-02 16:11+0100\n"
+"PO-Revision-Date: 2014-02-07 01:56+0330\n"
+"Last-Translator: Mamoun Elkheir <krikabat@hotmail.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: _e;__;_n\n"
 "X-Poedit-Basepath: .\n"
-"Language: es_ES\n"
 "X-Poedit-SearchPath-0: ../.\n"
 "X-Poedit-SearchPath-1: .\n"
 
 #: .././sidebar-login.php:79
 msgid "Please enter your username"
-msgstr "Por favor, ingrese su usuario"
+msgstr "لطفا نام کاربری خود را ورد نمایید"
 
 #: .././sidebar-login.php:80
 msgid "Please enter your password"
-msgstr "Por favor, ingrese su clave"
+msgstr "لطفا رمز خود را وارد نمایید"
 
 #: .././sidebar-login.php:166
 msgid "Please enter your username and password to login."
-msgstr "Por favor, ingrese su usuario y clave para ingresar."
+msgstr "جهت ورود نام کاربری و رمز خود را وارد نمایید."
 
 #: .././includes/class-sidebar-login-widget.php:23
 msgid "Displays a login area in the sidebar."
-msgstr "Mostrar una área de registro en el sidebar"
+msgstr "نمایش ناحیه ورود در سایدبار"
 
 #: .././includes/class-sidebar-login-widget.php:26
 msgid "Sidebar Login"
-msgstr "Barra lateral de identificación"
+msgstr "Sidebar Login"
 
 #: .././includes/class-sidebar-login-widget.php:39
 msgid "Logged-out title"
-msgstr "Título de desconexión"
+msgstr "عنوان خروج"
 
 #: .././includes/class-sidebar-login-widget.php:40
 #: .././includes/class-sidebar-login-widget.php:225
 msgid "Login"
-msgstr "Identificación"
+msgstr "ورود"
 
 #: .././includes/class-sidebar-login-widget.php:44
 #: .././includes/class-sidebar-login-widget.php:74
 msgid "Links"
-msgstr "Vínculos"
+msgstr "پیوندها"
 
 #: .././includes/class-sidebar-login-widget.php:44
 msgid "<code>Text | HREF</code>"
-msgstr "<code>Texto | HREF</code>"
+msgstr "<code>متن | HREF</code>"
 
 #: .././includes/class-sidebar-login-widget.php:49
 msgid "Show lost password link"
-msgstr "Mostrar vínculo a pérdida de clave"
+msgstr "نمایش لینک بازیابی رمز"
 
 #: .././includes/class-sidebar-login-widget.php:54
 msgid "Show register link"
-msgstr "Mostrar vínculo de registro"
+msgstr "نمایش لینک عضویت"
 
 #: .././includes/class-sidebar-login-widget.php:56
 #, php-format
 msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
-msgstr "<a href=\"%s\">Cualquiera puede registrarse</a> debe estar activado."
+msgstr "<a href=\"%s\">عضویت عمومی</a> باید فعال شود."
 
 #: .././includes/class-sidebar-login-widget.php:60
 msgid "Login Redirect URL"
-msgstr "URL de redireccionamiento"
+msgstr "آدرس انتقال پس از ورود"
 
 #: .././includes/class-sidebar-login-widget.php:69
 msgid "Logged-in title"
-msgstr "Título de conectado"
+msgstr "عنوان ورود"
 
 #: .././includes/class-sidebar-login-widget.php:70
 #: .././includes/class-sidebar-login-widget.php:224
 msgid "Welcome %username%"
-msgstr "Bienvenido %username%"
+msgstr "خوش آمدید %username%"
 
 #: .././includes/class-sidebar-login-widget.php:74
 msgid "<code>Text | HREF | Capability</code>"
-msgstr "<code>Texto | HREF | Característica </code>"
+msgstr "<code>متن | HREF | توانایی</code>"
 
 #: .././includes/class-sidebar-login-widget.php:75
 #, php-format
@@ -89,38 +88,38 @@ msgid ""
 "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
 "view the link."
 msgstr ""
-"<a href=\"%s\"> Característica </a> (opcional) Se refiere al tipo de usuario "
-"que puede ver este vínculo."
+"<a href=\"%s\">توانایی</a> (اختیاری) اشاره به نوع کاربری که می تواند لینک را "
+"ببیند."
 
 #: .././includes/class-sidebar-login-widget.php:80
 msgid "Show logged-in user avatar"
-msgstr "Mostrar avatar de usuario conectado"
+msgstr "نمایش تصویر پروفایل کاربر"
 
 #: .././includes/class-sidebar-login-widget.php:85
 msgid "Logout Redirect URL"
-msgstr "URL de redireccionamento de desconexión"
+msgstr "آدرس انتقال پس از خروج"
 
 #: .././includes/class-sidebar-login-widget.php:164
 #: .././includes/class-sidebar-login-widget.php:171
 msgid "Register"
-msgstr "Registrarse"
+msgstr "عضویت"
 
 #: .././includes/class-sidebar-login-widget.php:181
 msgid "Lost Password"
-msgstr "Perdió su clave?"
+msgstr "بازیابی رمزعبور"
 
 #: .././includes/class-sidebar-login-widget.php:271
 msgid "Username"
-msgstr "Nome de usuario"
+msgstr "نام کاربری"
 
 #: .././includes/class-sidebar-login-widget.php:272
 msgid "Password"
-msgstr "Clave"
+msgstr "رمز عبور"
 
 #: .././includes/class-sidebar-login-widget.php:273
 msgid "Remember Me"
-msgstr "Recuérdame"
+msgstr "بخاطر سپاری"
 
 #: .././includes/class-sidebar-login-widget.php:274
 msgid "Login &rarr;"
-msgstr "Acceder &rarr;"
+msgstr "ورود &rarr;"
