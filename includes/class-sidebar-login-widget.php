@@ -56,6 +56,11 @@ class Sidebar_Login_Widget extends WP_Widget {
 				'description'     => sprintf( __( '<a href="%s">Anyone can register</a> must be enabled.', 'sidebar_login' ), admin_url('options-general.php') ),
 				'type'            => 'checkbox'
 			),
+			'show_rememberme'  => array(
+				'label'           => __( 'Show "Remember me" checkbox', 'sidebar_login' ),
+				'default'         => 1,
+				'type'            => 'checkbox'
+			),
 			'login_redirect_url'  => array(
 				'label'           => __( 'Login Redirect URL', 'sidebar_login' ),
 				'default'         => '',
@@ -284,6 +289,8 @@ class Sidebar_Login_Widget extends WP_Widget {
 
 			$redirect = empty( $instance['login_redirect_url'] ) ? $this->current_url( 'nologout' ) : $instance['login_redirect_url'];
 
+			$show_rememberme = ( get_option('show_rememberme') && ! empty( $this->instance['show_rememberme'] ) && $this->instance['show_rememberme'] == 1 );
+
 			$login_form_args = apply_filters( 'sidebar_login_widget_form_args', array(
 		        'echo' 				=> true,
 		        'redirect' 			=> esc_url( apply_filters( 'sidebar_login_widget_login_redirect', $redirect ) ),
@@ -291,7 +298,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 		        'label_password' 	=> __( 'Password', 'sidebar_login' ),
 		        'label_remember' 	=> __( 'Remember Me', 'sidebar_login' ),
 		        'label_log_in' 		=> __( 'Login &rarr;', 'sidebar_login' ),
-		        'remember' 			=> true,
+		        'remember' 			=> $show_rememberme,
 		        'value_remember' 	=> true
 		    ) );
 
