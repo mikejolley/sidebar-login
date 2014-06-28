@@ -79,7 +79,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 * Moved translations to Transifex.
 * Added Grunt.
 * Removed deprecated sidebarlogin function.
-* Turkish translation
+* Option to show/hide the rememberme checkbox.
 
 = 2.6.0 =
 * Support for Buddypress Profile URL via %buddypress_profile_url%. Thanks Tim Reeves.
