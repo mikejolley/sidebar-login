@@ -6,18 +6,18 @@ msgstr ""
 "Project-Id-Version: Sidebar Login\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
 "POT-Creation-Date: 2014-06-28 09:56:14+00:00\n"
-"PO-Revision-Date: 2014-06-28 10:06+0000\n"
+"PO-Revision-Date: 2014-06-28 10:05+0000\n"
 "Last-Translator: Mike Jolley <mike.jolley@me.com>\n"
-"Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/sidebar-login/language/it_IT/)\n"
+"Language-Team: Estonian (http://www.transifex.com/projects/p/sidebar-login/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it_IT\n"
+"Language: et\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: includes/class-sidebar-login-widget.php:20
 msgid "Displays a login area in the sidebar."
-msgstr "Mostra una area di login nella barra laterale."
+msgstr "Näitab logimisakend külgmisel paanil."
 
 #. #-#-#-#-#  sidebar-login.pot (Sidebar Login 2.7.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
@@ -27,101 +27,101 @@ msgstr "Sidebar Login"
 
 #: includes/class-sidebar-login-widget.php:33
 msgid "Logged-out title"
-msgstr "Titolo per i non loggati"
+msgstr "Pealkiri välja logituna"
 
 #: includes/class-sidebar-login-widget.php:34
 #: includes/class-sidebar-login-widget.php:237
 msgid "Login"
-msgstr "Login"
+msgstr "Logi sisse"
 
 #: includes/class-sidebar-login-widget.php:38
 #: includes/class-sidebar-login-widget.php:68
 msgid "Links"
-msgstr "Links"
+msgstr "Lingid"
 
 #: includes/class-sidebar-login-widget.php:38
 msgid "Text | HREF"
-msgstr "Testo | HREF"
+msgstr "Tekst | HREF"
 
 #: includes/class-sidebar-login-widget.php:43
 msgid "Show lost password link"
-msgstr "Mostra link password persa"
+msgstr "Näita parooli kadumise linki"
 
 #: includes/class-sidebar-login-widget.php:48
 msgid "Show register link"
-msgstr "Mostra link registrazione"
+msgstr "Näita registreerimise linki"
 
 #: includes/class-sidebar-login-widget.php:50
 msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
-msgstr "<a href=\"%s\">Chiunque puo' registrarsi</a> deve essere attivato."
+msgstr "<a href=\"%s\">Igaüks võib registreeruda</a> peab olema lubatud."
 
 #: includes/class-sidebar-login-widget.php:54
 msgid "Login Redirect URL"
-msgstr "URL Reindirizzamento Login"
+msgstr "Ümbersuunamise URL peale sisse logimist"
 
 #: includes/class-sidebar-login-widget.php:63
 msgid "Logged-in title"
-msgstr "Titolo per i loggati"
+msgstr "Pealkiri sisse logituna"
 
 #: includes/class-sidebar-login-widget.php:64
 #: includes/class-sidebar-login-widget.php:236
 msgid "Welcome %username%"
-msgstr "Benvenuto %username%"
+msgstr "Tervitus %username%"
 
 #: includes/class-sidebar-login-widget.php:68
 msgid "Text | HREF | Capability"
-msgstr "testo | HREF | Permesso"
+msgstr "Tekst | HREF | Tase"
 
 #: includes/class-sidebar-login-widget.php:69
 msgid ""
 "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
 "view the link."
-msgstr "<a href=\"%s\">Permesso</a> (opzionale) si riferisce al tipo di utente che puo' vedere il link."
+msgstr "<a href=\"%s\">Tase</a> (valikuline) viitab kasutaja tasemele, kes saab linki näha."
 
 #: includes/class-sidebar-login-widget.php:74
 msgid "Show logged-in user avatar"
-msgstr "Mostra avatar dell'utente loggato"
+msgstr "Näita sisse loginud kasutaja avatar'i"
 
 #: includes/class-sidebar-login-widget.php:79
 msgid "Logout Redirect URL"
-msgstr "URL Reindirizzamento Logout"
+msgstr "Ümbersuunamise URL peale välja logimist"
 
 #: includes/class-sidebar-login-widget.php:175
 #: includes/class-sidebar-login-widget.php:182
 msgid "Register"
-msgstr "Registrati"
+msgstr "Registreeru"
 
 #: includes/class-sidebar-login-widget.php:192
 msgid "Lost Password"
-msgstr "Password Persa"
+msgstr "Parool kadunud"
 
 #: includes/class-sidebar-login-widget.php:286
 msgid "Username"
-msgstr "Nome Utente"
+msgstr "Kasutajanimi"
 
 #: includes/class-sidebar-login-widget.php:287
 msgid "Password"
-msgstr "Password"
+msgstr "Parool"
 
 #: includes/class-sidebar-login-widget.php:288
 msgid "Remember Me"
-msgstr "Ricordami"
+msgstr "Pea meeles"
 
 #: includes/class-sidebar-login-widget.php:289
 msgid "Login &rarr;"
-msgstr "Login &rarr;"
+msgstr "Logi sisse &rarr;"
 
 #: sidebar-login.php:80
 msgid "Please enter your username"
-msgstr "Prego, inserisci il nome utente"
+msgstr "Palun sisesta kasutajanimi"
 
 #: sidebar-login.php:81
 msgid "Please enter your password"
-msgstr "Prego, inserisci la password"
+msgstr "Palun sisesta parool"
 
 #: sidebar-login.php:169
 msgid "Please enter your username and password to login."
-msgstr "Prego, inserisci nome utente e password per effettuare il login."
+msgstr "Sisse logimiseks sisesta palun kasutajanimi ja parool."
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/sidebar-login/"

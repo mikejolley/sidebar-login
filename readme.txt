@@ -16,7 +16,9 @@ Sidebar-Login adds a useful login widget which you can use to login from in the 
 
 Once a user logs in it then redirects them back to the page they logged in from rather than the admin panel (this is configurable).
 
-If you'd like to contribute to the plugin you can find it on GitHub: https://github.com/mikejolley/sidebar-login.
+If you'd like to contribute code to the plugin you can do so via GitHub: https://github.com/mikejolley/sidebar-login.
+
+If you'd like to contribute a localisation, the project is hosted on Transifex: https://www.transifex.com/projects/p/sidebar-login/
 
 = Usage =
 

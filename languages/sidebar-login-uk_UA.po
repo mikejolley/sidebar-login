@@ -6,18 +6,18 @@ msgstr ""
 "Project-Id-Version: Sidebar Login\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
 "POT-Creation-Date: 2014-06-28 09:56:14+00:00\n"
-"PO-Revision-Date: 2014-06-28 10:06+0000\n"
+"PO-Revision-Date: 2014-06-28 10:09+0000\n"
 "Last-Translator: Mike Jolley <mike.jolley@me.com>\n"
-"Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/sidebar-login/language/it_IT/)\n"
+"Language-Team: Ukrainian (Ukraine) (http://www.transifex.com/projects/p/sidebar-login/language/uk_UA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it_IT\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: uk_UA\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: includes/class-sidebar-login-widget.php:20
 msgid "Displays a login area in the sidebar."
-msgstr "Mostra una area di login nella barra laterale."
+msgstr "Відображає поле для входу на сайт у боковій колонці."
 
 #. #-#-#-#-#  sidebar-login.pot (Sidebar Login 2.7.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
@@ -27,101 +27,101 @@ msgstr "Sidebar Login"
 
 #: includes/class-sidebar-login-widget.php:33
 msgid "Logged-out title"
-msgstr "Titolo per i non loggati"
+msgstr "Заголовок для незареєстрованого користувача"
 
 #: includes/class-sidebar-login-widget.php:34
 #: includes/class-sidebar-login-widget.php:237
 msgid "Login"
-msgstr "Login"
+msgstr "Логін"
 
 #: includes/class-sidebar-login-widget.php:38
 #: includes/class-sidebar-login-widget.php:68
 msgid "Links"
-msgstr "Links"
+msgstr "Посилання"
 
 #: includes/class-sidebar-login-widget.php:38
 msgid "Text | HREF"
-msgstr "Testo | HREF"
+msgstr "Текст | Посилання"
 
 #: includes/class-sidebar-login-widget.php:43
 msgid "Show lost password link"
-msgstr "Mostra link password persa"
+msgstr "Відображає посилання для отримання втраченного паролю"
 
 #: includes/class-sidebar-login-widget.php:48
 msgid "Show register link"
-msgstr "Mostra link registrazione"
+msgstr "Відображає посилання на реєстрацію"
 
 #: includes/class-sidebar-login-widget.php:50
 msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
-msgstr "<a href=\"%s\">Chiunque puo' registrarsi</a> deve essere attivato."
+msgstr "Опція <a href=\"%s\">Кожний може зареєструватися</a> повинна бути увімкнена."
 
 #: includes/class-sidebar-login-widget.php:54
 msgid "Login Redirect URL"
-msgstr "URL Reindirizzamento Login"
+msgstr "Куди перейти після входу"
 
 #: includes/class-sidebar-login-widget.php:63
 msgid "Logged-in title"
-msgstr "Titolo per i loggati"
+msgstr "Заголовок для зареєстрованого користувача"
 
 #: includes/class-sidebar-login-widget.php:64
 #: includes/class-sidebar-login-widget.php:236
 msgid "Welcome %username%"
-msgstr "Benvenuto %username%"
+msgstr "Ласкаво просимо, %username%"
 
 #: includes/class-sidebar-login-widget.php:68
 msgid "Text | HREF | Capability"
-msgstr "testo | HREF | Permesso"
+msgstr "Текст | Посилання | Можливості"
 
 #: includes/class-sidebar-login-widget.php:69
 msgid ""
 "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
 "view the link."
-msgstr "<a href=\"%s\">Permesso</a> (opzionale) si riferisce al tipo di utente che puo' vedere il link."
+msgstr "<a href=\"%s\">Можливості</a> (додатково) відносяться до користувачів, які можуть дивитися посилання."
 
 #: includes/class-sidebar-login-widget.php:74
 msgid "Show logged-in user avatar"
-msgstr "Mostra avatar dell'utente loggato"
+msgstr "Відображає аватар зареєстрованого користувача"
 
 #: includes/class-sidebar-login-widget.php:79
 msgid "Logout Redirect URL"
-msgstr "URL Reindirizzamento Logout"
+msgstr "Куди перейти після виходу"
 
 #: includes/class-sidebar-login-widget.php:175
 #: includes/class-sidebar-login-widget.php:182
 msgid "Register"
-msgstr "Registrati"
+msgstr "Реєстрація"
 
 #: includes/class-sidebar-login-widget.php:192
 msgid "Lost Password"
-msgstr "Password Persa"
+msgstr "Забули пароль?"
 
 #: includes/class-sidebar-login-widget.php:286
 msgid "Username"
-msgstr "Nome Utente"
+msgstr "Ім'я користувача"
 
 #: includes/class-sidebar-login-widget.php:287
 msgid "Password"
-msgstr "Password"
+msgstr "Пароль"
 
 #: includes/class-sidebar-login-widget.php:288
 msgid "Remember Me"
-msgstr "Ricordami"
+msgstr "Запом'ятати мене"
 
 #: includes/class-sidebar-login-widget.php:289
 msgid "Login &rarr;"
-msgstr "Login &rarr;"
+msgstr "Увійти &rarr;"
 
 #: sidebar-login.php:80
 msgid "Please enter your username"
-msgstr "Prego, inserisci il nome utente"
+msgstr "Будь ласка, введіть ім`користувача"
 
 #: sidebar-login.php:81
 msgid "Please enter your password"
-msgstr "Prego, inserisci la password"
+msgstr "Будь ласка, введіть пароль"
 
 #: sidebar-login.php:169
 msgid "Please enter your username and password to login."
-msgstr "Prego, inserisci nome utente e password per effettuare il login."
+msgstr "Будь ласка, введить ім'я користувача та пароль, щоб увійти."
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/sidebar-login/"
