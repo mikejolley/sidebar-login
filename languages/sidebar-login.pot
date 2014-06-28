@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sidebar Login 2.7.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
-"POT-Creation-Date: 2014-06-28 09:56:14+00:00\n"
+"POT-Creation-Date: 2014-06-28 10:11:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -126,8 +126,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Allows you to easily add an ajax-enhanced login widget to your WordPress "
-"blog sidebar."
+"Allows you to easily add an ajax-enhanced login widget to the sidebar on "
+"your WordPress site."
 msgstr ""
 
 #. Author of the plugin/theme

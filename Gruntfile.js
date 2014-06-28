@@ -109,8 +109,8 @@ module.exports = function( grunt ){
 
 	// Register tasks
 	grunt.registerTask( 'default', [
-		'less',
-		'cssmin',
+		//'less',
+		//'cssmin',
 		'uglify'
 	]);
 
