@@ -121,14 +121,21 @@ class Sidebar_Login {
 		$creds                  = array();
 		$creds['user_login']    = stripslashes( trim( $_POST['user_login'] ) );
 		$creds['user_password'] = stripslashes( trim( $_POST['user_password'] ) );
-		$creds['remember']      = sanitize_text_field( $_POST['remember'] );
+		$creds['remember']      = isset( $_POST['remember'] ) ? sanitize_text_field( $_POST['remember'] ) : '';
 		$redirect_to            = esc_url_raw( $_POST['redirect_to'] );
 		$secure_cookie          = null;
 
+		// If the user inputs an email address instead of a username, try to convert it
+		if ( is_email( $creds['user_login'] ) ) {
+			if ( $user = get_user_by( 'email', $creds['user_login'] ) ) {
+				$creds['user_login'] = $user->user_login;
+			}
+		}
+
 		// If the user wants ssl but the session is not ssl, force a secure cookie.
 		if ( ! force_ssl_admin() ) {
-			$user_name = sanitize_user( $_POST['user_login'] );
-			if ( $user = get_user_by('login',  $user_name ) ) {
+			$user_name = sanitize_user( $creds['user_login'] );
+			if ( $user = get_user_by( 'login',  $user_name ) ) {
 				if ( get_user_option( 'use_ssl', $user->ID ) ) {
 					$secure_cookie = true;
 					force_ssl_admin( true );
@@ -155,7 +162,7 @@ class Sidebar_Login {
 		// Result
 		$result = array();
 
-		if ( ! is_wp_error($user) ) {
+		if ( ! is_wp_error( $user ) ) {
 			$result['success']  = 1;
 			$result['redirect'] = $redirect_to;
 		} else {

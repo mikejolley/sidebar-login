@@ -80,6 +80,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 * Added Grunt.
 * Removed deprecated sidebarlogin function.
 * Option to show/hide the rememberme checkbox.
+* Allow login using an email address - username will be queried based on address given.
 
 = 2.6.0 =
 * Support for Buddypress Profile URL via %buddypress_profile_url%. Thanks Tim Reeves.
