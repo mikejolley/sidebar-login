@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[wp-job-manager.wp-job-managerpot]
+file_filter = languages/sidebar-login-<lang>.po
+source_file = languages/sidebar-login.pot
+source_lang = en_US
+type = PO

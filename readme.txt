@@ -4,11 +4,11 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jol
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 2.6.0
+Stable tag: 2.7.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Easily add an ajax-enhanced login widget to your site's sidebar.
+Easily add an ajax-enhanced login widget to your WordPress site sidebar.
 
 == Description ==
 
@@ -72,6 +72,11 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
+= 2.7.0 =
+* Renamed textdomain from sidebar_login to sidebar-login.
+* Moved translations to Transifex.
+* Added Grunt.
+* Removed deprecated sidebarlogin function.
 * Turkish translation
 
 = 2.6.0 =
@@ -192,8 +197,3 @@ These tags can be used in the widget settings for titles + links and will be rep
 * %username% can be used in your custom links shown when logged in (gets replaced with username)
 * WP-FacebookConnect (http://wordpress.org/extend/plugins/wp-facebookconnect/) integration (untested!)
 * Minor fixes (worked through a big list of em!)
-
-== Upgrade Notice ==
-
-= 2.5.0 =
-Since this is a rewrite, you will need to re-setup your widget via Appearance > Widgets after upgrading.

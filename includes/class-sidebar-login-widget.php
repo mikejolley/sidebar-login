@@ -9,55 +9,49 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class Sidebar_Login_Widget extends WP_Widget {
 
 	private $instance = '';
-	private $user = null;
-	private $options = array();
+	private $user     = null;
+	private $options  = array();
 
     /**
      * Sidebar_Login_Widget function.
-     *
-     * @access public
-     * @return void
      */
     public function Sidebar_Login_Widget() {
 		/* Widget settings. */
-		$widget_ops = array( 'description' => __( 'Displays a login area in the sidebar.', 'sidebar_login' ) );
+		$widget_ops = array( 'description' => __( 'Displays a login area in the sidebar.', 'sidebar-login' ) );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'wp_sidebarlogin', __( 'Sidebar Login', 'sidebar_login' ), $widget_ops );
+		$this->WP_Widget( 'wp_sidebarlogin', __( 'Sidebar Login', 'sidebar-login' ), $widget_ops );
     }
 
     /**
      * define_options function.
-     *
-     * @access public
-     * @return void
      */
     public function define_options() {
 	    // Define options for widget
 		$this->options       = array(
 			'logged_out_title' => array(
-				'label'           => __( 'Logged-out title', 'sidebar_login' ),
-				'default'         => __( 'Login', 'sidebar_login' ),
+				'label'           => __( 'Logged-out title', 'sidebar-login' ),
+				'default'         => __( 'Login', 'sidebar-login' ),
 				'type'            => 'text'
 			),
 			'logged_out_links'  => array(
-				'label'           => __( 'Links', 'sidebar_login' ) . ' (' . __( '<code>Text | HREF</code>', 'sidebar_login' ) . ')',
+				'label'           => __( 'Links', 'sidebar-login' ) . ' (<code>' . __( 'Text | HREF', 'sidebar-login' ) . '</code>)',
 				'default'         => '',
 				'type'            => 'textarea'
 			),
 			'show_lost_password_link'  => array(
-				'label'           => __( 'Show lost password link', 'sidebar_login' ),
+				'label'           => __( 'Show lost password link', 'sidebar-login' ),
 				'default'         => 1,
 				'type'            => 'checkbox'
 			),
 			'show_register_link'  => array(
-				'label'           => __( 'Show register link', 'sidebar_login' ),
+				'label'           => __( 'Show register link', 'sidebar-login' ),
 				'default'         => 1,
-				'description'     => sprintf( __( '<a href="%s">Anyone can register</a> must be enabled.', 'sidebar_login' ), admin_url('options-general.php') ),
+				'description'     => sprintf( __( '<a href="%s">Anyone can register</a> must be enabled.', 'sidebar-login' ), admin_url('options-general.php') ),
 				'type'            => 'checkbox'
 			),
 			'login_redirect_url'  => array(
-				'label'           => __( 'Login Redirect URL', 'sidebar_login' ),
+				'label'           => __( 'Login Redirect URL', 'sidebar-login' ),
 				'default'         => '',
 				'type'            => 'text',
 				'placeholder'     => 'Current page URL'
@@ -66,23 +60,23 @@ class Sidebar_Login_Widget extends WP_Widget {
 				'type'            => 'break'
 			),
 			'logged_in_title'  => array(
-				'label'           => __( 'Logged-in title', 'sidebar_login' ),
-				'default'         => __( 'Welcome %username%', 'sidebar_login' ),
+				'label'           => __( 'Logged-in title', 'sidebar-login' ),
+				'default'         => __( 'Welcome %username%', 'sidebar-login' ),
 				'type'            => 'text'
 			),
 			'logged_in_links'  => array(
-				'label'           => __( 'Links', 'sidebar_login' ) . ' (' . __( '<code>Text | HREF | Capability</code>', 'sidebar_login' ) . ')',
-				'description'     => sprintf( __( '<a href="%s">Capability</a> (optional) refers to the type of user who can view the link.', 'sidebar_login' ), 'http://codex.wordpress.org/Roles_and_Capabilities' ),
+				'label'           => __( 'Links', 'sidebar-login' ) . ' (<code>' . __( 'Text | HREF | Capability', 'sidebar-login' ) . '</code>)',
+				'description'     => sprintf( __( '<a href="%s">Capability</a> (optional) refers to the type of user who can view the link.', 'sidebar-login' ), 'http://codex.wordpress.org/Roles_and_Capabilities' ),
 				'default'         => "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%",
 				'type'            => 'textarea'
 			),
 			'show_avatar'  => array(
-				'label'           => __( 'Show logged-in user avatar', 'sidebar_login' ),
+				'label'           => __( 'Show logged-in user avatar', 'sidebar-login' ),
 				'default'         => 1,
 				'type'            => 'checkbox'
 			),
 			'logout_redirect_url'  => array(
-				'label'           => __( 'Logout Redirect URL', 'sidebar_login' ),
+				'label'           => __( 'Logout Redirect URL', 'sidebar-login' ),
 				'default'         => '',
 				'type'            => 'text',
 				'placeholder'     => 'Current page URL'
@@ -93,12 +87,9 @@ class Sidebar_Login_Widget extends WP_Widget {
     /**
      * replace_tags function.
      *
-     * @access public
      * @param mixed $text
-     * @return void
      */
     public function replace_tags( $text ) {
-
 	    if ( $this->user ) {
 		    $text = str_replace(
 		    	array( '%username%', '%userid%' ),
@@ -141,9 +132,7 @@ class Sidebar_Login_Widget extends WP_Widget {
     /**
      * show_links function.
      *
-     * @access public
      * @param string $show (default: 'logged_in')
-     * @return void
      */
     public function show_links( $show = 'logged_in', $links = array() ) {
 	    do_action( 'sidebar_login_widget_before_' . $show . '_links' );
@@ -155,17 +144,20 @@ class Sidebar_Login_Widget extends WP_Widget {
 		    	$link     = array_map( 'trim', explode( '|', $link ) );
 		    	$link_cap = '';
 
-		    	if ( sizeof( $link ) == 3 )
+		    	if ( sizeof( $link ) == 3 ) {
 					list( $link_text, $link_href, $link_cap ) = $link;
-				elseif ( sizeof( $link ) == 2 )
+		    	} elseif ( sizeof( $link ) == 2 ) {
 					list( $link_text, $link_href ) = $link;
-				else
+		    	} else {
 					continue;
+		    	}
 
 				// Check capability
-				if ( ! empty( $link_cap ) )
-					if ( ! current_user_can( strtolower( $link_cap ) ) )
+				if ( ! empty( $link_cap ) ) {
+					if ( ! current_user_can( strtolower( $link_cap ) ) ) {
 						continue;
+					}
+				}
 
 				$links[ sanitize_title( $link_text ) ] = array(
 					'text' => $link_text,
@@ -180,14 +172,14 @@ class Sidebar_Login_Widget extends WP_Widget {
 		    	if ( ! is_multisite() ) {
 
 		    		$links['register'] = array(
-		    			'text' => __( 'Register', 'sidebar_login' ),
+		    			'text' => __( 'Register', 'sidebar-login' ),
 		    			'href' => apply_filters( 'sidebar_login_widget_register_url', site_url( 'wp-login.php?action=register', 'login' ) )
 		    		);
 
 				} else {
 
 					$links['register'] = array(
-		    			'text' => __( 'Register', 'sidebar_login' ),
+		    			'text' => __( 'Register', 'sidebar-login' ),
 		    			'href' => apply_filters( 'sidebar_login_widget_register_url', site_url('wp-signup.php', 'login') )
 		    		);
 
@@ -197,7 +189,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 		    if ( ! empty( $this->instance['show_lost_password_link'] ) && $this->instance['show_lost_password_link'] == 1 ) {
 
 		    	$links['lost_password'] = array(
-	    			'text' => __( 'Lost Password', 'sidebar_login' ),
+	    			'text' => __( 'Lost Password', 'sidebar-login' ),
 	    			'href' => apply_filters( 'sidebar_login_widget_lost_password_url', wp_lostpassword_url() )
 	    		);
 
@@ -209,8 +201,9 @@ class Sidebar_Login_Widget extends WP_Widget {
 		if ( ! empty( $links ) && is_array( $links ) && sizeof( $links > 0 ) ) {
 			echo '<ul class="pagenav sidebar_login_links">';
 
-			foreach ( $links as $id => $link )
+			foreach ( $links as $id => $link ) {
 				echo '<li class="' . esc_attr( $id ) . '-link"><a href="' . esc_url( $this->replace_tags( $link['href'] ) ) . '">' . wp_kses_post( $this->replace_tags( $link['text'] ) ) . '</a></li>';
+			}
 
 			echo '</ul>';
 		}
@@ -221,27 +214,27 @@ class Sidebar_Login_Widget extends WP_Widget {
     /**
      * widget function.
      *
-     * @access public
      * @param mixed $args
      * @param mixed $instance
-     * @return void
      */
     public function widget( $args, $instance ) {
 
 		// Filter can be used to conditonally hide the widget
-		if ( ! apply_filters( 'sidebar_login_widget_display', true ) )
+		if ( ! apply_filters( 'sidebar_login_widget_display', true ) ) {
 			return;
+		}
 
 		// Record $instance
 		$this->instance = $instance;
 
 		// Get user
-		if ( is_user_logged_in() )
+		if ( is_user_logged_in() ) {
 			$this->user = get_user_by( 'id', get_current_user_id() );
+		}
 
 		$defaults = array(
-			'logged_in_title'  => ! empty( $instance['logged_in_title'] ) ? $instance['logged_in_title'] : __( 'Welcome %username%', 'sidebar_login' ),
-			'logged_out_title' => ! empty( $instance['logged_out_title'] ) ? $instance['logged_out_title'] : __( 'Login', 'sidebar_login' ),
+			'logged_in_title'  => ! empty( $instance['logged_in_title'] ) ? $instance['logged_in_title'] : __( 'Welcome %username%', 'sidebar-login' ),
+			'logged_out_title' => ! empty( $instance['logged_out_title'] ) ? $instance['logged_out_title'] : __( 'Login', 'sidebar-login' ),
 			'show_avatar'      => isset( $instance['show_avatar'] ) ? $instance['show_avatar'] : 1,
 			'logged_in_links'  => ! empty( $instance['logged_in_links'] ) ? $instance['logged_in_links'] : array(),
 			'logged_out_links' => ! empty( $instance['logged_out_links'] ) ? $instance['logged_out_links'] : array()
@@ -260,13 +253,15 @@ class Sidebar_Login_Widget extends WP_Widget {
 
 			$logged_in_title = $this->replace_tags( apply_filters( 'sidebar_login_widget_logged_in_title', $logged_in_title ) );
 
-			if ( $logged_in_title )
+			if ( $logged_in_title ) {
 				echo $before_title . $logged_in_title . $after_title;
+			}
 
 			do_action( 'sidebar_login_widget_logged_in_content_start' );
 
-			if ( $show_avatar == 1 )
+			if ( $show_avatar == 1 ) {
 				echo '<div class="avatar_container">' . get_avatar( $this->user->ID, apply_filters( 'sidebar_login_widget_avatar_size', 38 ) ) . '</div>';
+			}
 
 			$this->show_links( 'logged_in', $logged_in_links );
 
@@ -277,8 +272,9 @@ class Sidebar_Login_Widget extends WP_Widget {
 
 			$logged_out_title = $this->replace_tags( apply_filters( 'sidebar_login_widget_logged_out_title', $logged_out_title ) );
 
-			if ( $logged_out_title )
+			if ( $logged_out_title ) {
 				echo $before_title . $logged_out_title . $after_title;
+			}
 
 			do_action( 'sidebar_login_widget_logged_out_content_start' );
 
@@ -287,10 +283,10 @@ class Sidebar_Login_Widget extends WP_Widget {
 			$login_form_args = apply_filters( 'sidebar_login_widget_form_args', array(
 		        'echo' 				=> true,
 		        'redirect' 			=> esc_url( apply_filters( 'sidebar_login_widget_login_redirect', $redirect ) ),
-		        'label_username' 	=> __( 'Username', 'sidebar_login' ),
-		        'label_password' 	=> __( 'Password', 'sidebar_login' ),
-		        'label_remember' 	=> __( 'Remember Me', 'sidebar_login' ),
-		        'label_log_in' 		=> __( 'Login &rarr;', 'sidebar_login' ),
+		        'label_username' 	=> __( 'Username', 'sidebar-login' ),
+		        'label_password' 	=> __( 'Password', 'sidebar-login' ),
+		        'label_remember' 	=> __( 'Remember Me', 'sidebar-login' ),
+		        'label_log_in' 		=> __( 'Login &rarr;', 'sidebar-login' ),
 		        'remember' 			=> true,
 		        'value_remember' 	=> true
 		    ) );
@@ -310,9 +306,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 	/**
 	 * current_url function.
 	 *
-	 * @access public
 	 * @param string $url (default: '')
-	 * @return void
 	 */
 	private function current_url( $url = '' ) {
 		$pageURL  = force_ssl_admin() ? 'https://' : 'http://';
@@ -343,8 +337,9 @@ class Sidebar_Login_Widget extends WP_Widget {
 		$this->define_options();
 
 		foreach ( $this->options as $name => $option ) {
-			if ( $option['type'] == 'break' )
+			if ( $option['type'] == 'break' ) {
 				continue;
+			}
 
 			$instance[ $name ] = strip_tags( stripslashes( $new_instance[ $name ] ) );
 		}
@@ -355,9 +350,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 	 * form function.
 	 *
 	 * @see WP_Widget->form
-	 * @access public
 	 * @param array $instance
-	 * @return void
 	 */
 	function form( $instance ) {
 		$this->define_options();
@@ -369,11 +362,13 @@ class Sidebar_Login_Widget extends WP_Widget {
 				continue;
 			}
 
-			if ( ! isset( $instance[ $name ] ) )
+			if ( ! isset( $instance[ $name ] ) ) {
 				$instance[ $name ] = $option['default'];
+			}
 
-			if ( empty( $option['placeholder'] ) )
+			if ( empty( $option['placeholder'] ) ) {
 				$option['placeholder'] = '';
+			}
 
 			echo '<p>';
 
@@ -397,8 +392,9 @@ class Sidebar_Login_Widget extends WP_Widget {
 				break;
 			}
 
-			if ( ! empty( $option['description'] ) )
+			if ( ! empty( $option['description'] ) ) {
 				echo '<span class="description" style="display:block; padding-top:.25em">' . wp_kses_post( $option['description'] ) . '</span>';
+			}
 
 			echo '</p>';
 		}
