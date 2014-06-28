@@ -1,0 +1,142 @@
+# Copyright (C) 2014 Sidebar Login
+# This file is distributed under the same license as the Sidebar Login package.
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar Login\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
+"POT-Creation-Date: 2014-06-28 09:56:14+00:00\n"
+"PO-Revision-Date: 2014-06-28 10:20+0000\n"
+"Last-Translator: Mike Jolley <mike.jolley@me.com>\n"
+"Language-Team: Finnish (Finland) (http://www.transifex.com/projects/p/sidebar-login/language/fi_FI/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi_FI\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-sidebar-login-widget.php:20
+msgid "Displays a login area in the sidebar."
+msgstr "Näyttää kirjautumisalueen sidebarissa"
+
+#. #-#-#-#-#  sidebar-login.pot (Sidebar Login 2.7.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/class-sidebar-login-widget.php:23
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: includes/class-sidebar-login-widget.php:33
+msgid "Logged-out title"
+msgstr "Uloskirjautuneen otsikko"
+
+#: includes/class-sidebar-login-widget.php:34
+#: includes/class-sidebar-login-widget.php:237
+msgid "Login"
+msgstr "Kirjaudu sisään"
+
+#: includes/class-sidebar-login-widget.php:38
+#: includes/class-sidebar-login-widget.php:68
+msgid "Links"
+msgstr "Linkit"
+
+#: includes/class-sidebar-login-widget.php:38
+msgid "Text | HREF"
+msgstr "Text | HREF"
+
+#: includes/class-sidebar-login-widget.php:43
+msgid "Show lost password link"
+msgstr "Näytä hukkuneen salasanan linkki"
+
+#: includes/class-sidebar-login-widget.php:48
+msgid "Show register link"
+msgstr "Näytä rekisteröidy linkki"
+
+#: includes/class-sidebar-login-widget.php:50
+msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
+msgstr "<a href=\"%s\">Kukatahansa voi rekisteröityä</a> on pakko olla aktivoitu."
+
+#: includes/class-sidebar-login-widget.php:54
+msgid "Login Redirect URL"
+msgstr "Login uudelleenohjaus urli"
+
+#: includes/class-sidebar-login-widget.php:63
+msgid "Logged-in title"
+msgstr "Sisäänkirjautuneen otsikko"
+
+#: includes/class-sidebar-login-widget.php:64
+#: includes/class-sidebar-login-widget.php:236
+msgid "Welcome %username%"
+msgstr "Tervetuloa %username%"
+
+#: includes/class-sidebar-login-widget.php:68
+msgid "Text | HREF | Capability"
+msgstr "Text | HREF | Capabiliy"
+
+#: includes/class-sidebar-login-widget.php:69
+msgid ""
+"<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
+"view the link."
+msgstr "<a href=\"%s\">Capability</a> (valinnainen) viittaa käyttäjään joka voi nähdä linkin."
+
+#: includes/class-sidebar-login-widget.php:74
+msgid "Show logged-in user avatar"
+msgstr "Näytä kirjautuneen käyttäjän avatar"
+
+#: includes/class-sidebar-login-widget.php:79
+msgid "Logout Redirect URL"
+msgstr "Logout uudelleenohjaus URL"
+
+#: includes/class-sidebar-login-widget.php:175
+#: includes/class-sidebar-login-widget.php:182
+msgid "Register"
+msgstr "Rekisteröidy"
+
+#: includes/class-sidebar-login-widget.php:192
+msgid "Lost Password"
+msgstr "Unohtunut salasana"
+
+#: includes/class-sidebar-login-widget.php:286
+msgid "Username"
+msgstr "Tunnus"
+
+#: includes/class-sidebar-login-widget.php:287
+msgid "Password"
+msgstr "Salasana"
+
+#: includes/class-sidebar-login-widget.php:288
+msgid "Remember Me"
+msgstr "Muista minut"
+
+#: includes/class-sidebar-login-widget.php:289
+msgid "Login &rarr;"
+msgstr "Kirjaudu &rarr;"
+
+#: sidebar-login.php:80
+msgid "Please enter your username"
+msgstr "Syötä käyttäjätunnus"
+
+#: sidebar-login.php:81
+msgid "Please enter your password"
+msgstr "Ole hyvä ja syötä salasana"
+
+#: sidebar-login.php:169
+msgid "Please enter your username and password to login."
+msgstr "Ole hyvä ja syötä käyttäjätunnus ja salasana kirjautuaksesi"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/sidebar-login/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Allows you to easily add an ajax-enhanced login widget to your WordPress "
+"blog sidebar."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Mike Jolley"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://mikejolley.com"
+msgstr ""

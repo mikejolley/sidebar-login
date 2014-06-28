@@ -1,0 +1,142 @@
+# Copyright (C) 2014 Sidebar Login
+# This file is distributed under the same license as the Sidebar Login package.
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar Login\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
+"POT-Creation-Date: 2014-06-28 09:56:14+00:00\n"
+"PO-Revision-Date: 2014-06-28 10:20+0000\n"
+"Last-Translator: Mike Jolley <mike.jolley@me.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/sidebar-login/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: includes/class-sidebar-login-widget.php:20
+msgid "Displays a login area in the sidebar."
+msgstr "サイドバーにログインフォームを表示します"
+
+#. #-#-#-#-#  sidebar-login.pot (Sidebar Login 2.7.0)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/class-sidebar-login-widget.php:23
+msgid "Sidebar Login"
+msgstr "サイドバーログイン"
+
+#: includes/class-sidebar-login-widget.php:33
+msgid "Logged-out title"
+msgstr "非ログイン時に表示する見出し"
+
+#: includes/class-sidebar-login-widget.php:34
+#: includes/class-sidebar-login-widget.php:237
+msgid "Login"
+msgstr "ログインする"
+
+#: includes/class-sidebar-login-widget.php:38
+#: includes/class-sidebar-login-widget.php:68
+msgid "Links"
+msgstr "リンク先"
+
+#: includes/class-sidebar-login-widget.php:38
+msgid "Text | HREF"
+msgstr "リンクする文字 | リンク先URL"
+
+#: includes/class-sidebar-login-widget.php:43
+msgid "Show lost password link"
+msgstr "パスワード再発行のためのリンクを表示"
+
+#: includes/class-sidebar-login-widget.php:48
+msgid "Show register link"
+msgstr "新規ユーザー登録のためのリンクを表示"
+
+#: includes/class-sidebar-login-widget.php:50
+msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
+msgstr "<a href=\"%s\">一般設定</a>内、「メンバーシップ」の項目で「だれでもユーザー登録ができるようにする」へのチェックが必要です"
+
+#: includes/class-sidebar-login-widget.php:54
+msgid "Login Redirect URL"
+msgstr "ログイン後に表示するページURL"
+
+#: includes/class-sidebar-login-widget.php:63
+msgid "Logged-in title"
+msgstr "ログイン時に表示する見出し"
+
+#: includes/class-sidebar-login-widget.php:64
+#: includes/class-sidebar-login-widget.php:236
+msgid "Welcome %username%"
+msgstr "ようこそ、%username%さん"
+
+#: includes/class-sidebar-login-widget.php:68
+msgid "Text | HREF | Capability"
+msgstr "リンクする文字 | リンク先URL | 権限"
+
+#: includes/class-sidebar-login-widget.php:69
+msgid ""
+"<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
+"view the link."
+msgstr "<a href=\"%s\">権限</a> (オプションです) を指定すると、ログインしたユーザーの権限に応じてリンク先が表示されます"
+
+#: includes/class-sidebar-login-widget.php:74
+msgid "Show logged-in user avatar"
+msgstr "ログインユーザーのアバター画像を表示する"
+
+#: includes/class-sidebar-login-widget.php:79
+msgid "Logout Redirect URL"
+msgstr "ログアウト後に表示するページURL"
+
+#: includes/class-sidebar-login-widget.php:175
+#: includes/class-sidebar-login-widget.php:182
+msgid "Register"
+msgstr "新規会員登録"
+
+#: includes/class-sidebar-login-widget.php:192
+msgid "Lost Password"
+msgstr "パスワードをお忘れの方はこちら"
+
+#: includes/class-sidebar-login-widget.php:286
+msgid "Username"
+msgstr "ユーザー名"
+
+#: includes/class-sidebar-login-widget.php:287
+msgid "Password"
+msgstr "パスワード"
+
+#: includes/class-sidebar-login-widget.php:288
+msgid "Remember Me"
+msgstr "ログイン状態を保存"
+
+#: includes/class-sidebar-login-widget.php:289
+msgid "Login &rarr;"
+msgstr "→ログインする"
+
+#: sidebar-login.php:80
+msgid "Please enter your username"
+msgstr "ユーザー名を入力してください"
+
+#: sidebar-login.php:81
+msgid "Please enter your password"
+msgstr "パスワードを入力してください"
+
+#: sidebar-login.php:169
+msgid "Please enter your username and password to login."
+msgstr "ユーザー名とパスワードを入力してください"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/sidebar-login/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Allows you to easily add an ajax-enhanced login widget to your WordPress "
+"blog sidebar."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Mike Jolley"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://mikejolley.com"
+msgstr ""
