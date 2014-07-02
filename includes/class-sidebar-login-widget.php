@@ -284,7 +284,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 			do_action( 'sidebar_login_widget_logged_out_content_start' );
 
 			$redirect        = empty( $instance['login_redirect_url'] ) ? $this->current_url( 'nologout' ) : $instance['login_redirect_url'];
-			$show_rememberme = ! empty( $this->instance['show_rememberme'] );
+			$show_rememberme = ! isset( $this->instance['show_rememberme'] ) || ! empty( $this->instance['show_rememberme'] );
 
 			$login_form_args = apply_filters( 'sidebar_login_widget_form_args', array(
 		        'echo' 				=> true,
