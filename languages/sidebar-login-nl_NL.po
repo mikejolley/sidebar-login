@@ -93,7 +93,7 @@ msgstr "Registeren"
 
 #: includes/class-sidebar-login-widget.php:192
 msgid "Lost Password"
-msgstr "Wachtwoord vergeten? Klik dan hier."
+msgstr "Wachtwoord vergeten?"
 
 #: includes/class-sidebar-login-widget.php:286
 msgid "Username"
