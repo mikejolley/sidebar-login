@@ -1,4 +1,4 @@
-# Copyright (C) 2014 Sidebar Login
+# Copyright (C) 2015 Sidebar Login
 # This file is distributed under the same license as the Sidebar Login package.
 msgid ""
 msgstr ""
@@ -60,6 +60,11 @@ msgstr ""
 msgid "Login Redirect URL"
 msgstr ""
 
+#: includes/class-sidebar-login-widget.php:62
+#: includes/class-sidebar-login-widget.php:87
+msgid "Current page URL"
+msgstr ""
+
 #: includes/class-sidebar-login-widget.php:68
 msgid "Logged-in title"
 msgstr ""
@@ -77,6 +82,10 @@ msgstr ""
 msgid ""
 "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
 "view the link."
+msgstr ""
+
+#: includes/class-sidebar-login-widget.php:75
+msgid "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%"
 msgstr ""
 
 #: includes/class-sidebar-login-widget.php:79

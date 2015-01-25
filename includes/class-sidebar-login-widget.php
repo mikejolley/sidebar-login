@@ -59,7 +59,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 				'label'           => __( 'Login Redirect URL', 'sidebar-login' ),
 				'default'         => '',
 				'type'            => 'text',
-				'placeholder'     => 'Current page URL'
+				'placeholder'     => __( 'Current page URL', 'sidebar-login' )
 			),
 			'break-1'           => array(
 				'type'            => 'break'
@@ -72,7 +72,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 			'logged_in_links'  => array(
 				'label'           => __( 'Links', 'sidebar-login' ) . ' (<code>' . __( 'Text | HREF | Capability', 'sidebar-login' ) . '</code>)',
 				'description'     => sprintf( __( '<a href="%s">Capability</a> (optional) refers to the type of user who can view the link.', 'sidebar-login' ), 'http://codex.wordpress.org/Roles_and_Capabilities' ),
-				'default'         => "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%",
+				'default'         => __( "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%", 'sidebar-login' ),
 				'type'            => 'textarea'
 			),
 			'show_avatar'  => array(
@@ -84,7 +84,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 				'label'           => __( 'Logout Redirect URL', 'sidebar-login' ),
 				'default'         => '',
 				'type'            => 'text',
-				'placeholder'     => 'Current page URL'
+				'placeholder'     => __( 'Current page URL', 'sidebar-login' )
 			)
 		);
     }
