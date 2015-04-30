@@ -102,6 +102,15 @@ class Sidebar_Login_Widget extends WP_Widget {
 		    	$text
 		    );
 
+		    // Real name
+		    if (isset($this->user->first_name) && isset($this->user->last_name)) {
+			    $text = str_replace(
+			    	array( '%name%' ),
+			    	array( ucwords( $this->user->first_name.' '.$this->user->last_name ) ),
+			    	$text
+			    );
+				}
+
 		    // Buddypress
 	    	if ( function_exists( 'bp_loggedin_user_domain' ) ) {
 	    		$text = str_replace(

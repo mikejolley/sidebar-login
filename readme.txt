@@ -32,6 +32,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 * `%username%` - logged in users display name
 * `%userid%` - logged in users ID
+* `%name%` - logged in users firstname + lastname (don't use this if they are nil)
 * `%admin_url%` - url to WP admin
 * `%logout_url%` - logout url
 * `%buddypress_profile_url%` - Buddypress Profile URL
