@@ -32,7 +32,9 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 * `%username%` - logged in users display name
 * `%userid%` - logged in users ID
-* `%name%` - logged in users firstname + lastname (don't use this if they are nil)
+* `%firstname%` - logged in users firstname
+* `%lastname%` - logged in users lastname
+* `%name%` - logged in users firstname + lastname
 * `%admin_url%` - url to WP admin
 * `%logout_url%` - logout url
 * `%buddypress_profile_url%` - Buddypress Profile URL
@@ -75,7 +77,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
-= 2.7.1 = 
+= 2.7.1 =
 * Make rememberme show by default, without a widget save.
 
 = 2.7.0 =
