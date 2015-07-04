@@ -32,6 +32,9 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 * `%username%` - logged in users display name
 * `%userid%` - logged in users ID
+* `%firstname%` - logged in users firstname
+* `%lastname%` - logged in users lastname
+* `%name%` - logged in users firstname + lastname
 * `%admin_url%` - url to WP admin
 * `%logout_url%` - logout url
 * `%buddypress_profile_url%` - Buddypress Profile URL
@@ -77,6 +80,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 = 2.7.2 =
 * Fix - PHP4 widget contructors (https://gist.github.com/chriscct7/d7d077afb01011b1839d).
 * Fix - Missing strings in localisation.
+* Added firstname, lastname, name tags.
 
 = 2.7.1 =
 * Make rememberme show by default, without a widget save.

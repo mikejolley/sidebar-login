@@ -97,8 +97,14 @@ class Sidebar_Login_Widget extends WP_Widget {
     public function replace_tags( $text ) {
 	    if ( $this->user ) {
 		    $text = str_replace(
-		    	array( '%username%', '%userid%' ),
-		    	array( ucwords( $this->user->display_name ), $this->user->ID ),
+		    	array( '%username%', '%userid%', '%firstname%', '%lastname%', '%name%' ),
+		    	array(
+		    		ucwords( $this->user->display_name ),
+		    		$this->user->ID,
+		    		$this->user->first_name,
+		    		$this->user->last_name,
+		    		trim( $this->user->first_name . ' ' . $this->user->last_name )
+		    	),
 		    	$text
 		    );
 
