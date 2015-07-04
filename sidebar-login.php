@@ -32,6 +32,7 @@ class Sidebar_Login {
 		add_action( 'plugins_loaded', array( $this, 'i18n' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
+		add_action( 'wp_authenticate', array( $this, 'convert_email_to_username' ), 10, 2 );
 
 		// Ajax events
 		add_action( 'wp_ajax_sidebar_login_process', array( $this, 'ajax_handler' ) );
@@ -110,13 +111,24 @@ class Sidebar_Login {
 	}
 
 	/**
+	 * When posting an email, convert to a username
+	 */
+	public function convert_email_to_username( &$username, &$password ) {
+		// If the user inputs an email address instead of a username, try to convert it
+		if ( is_email( $username ) ) {
+			if ( $user = get_user_by( 'email', $username ) ) {
+				$username = $user->user_login;
+			}
+		}
+	}
+
+	/**
 	 * ajax_handler function.
 	 *
 	 * @access public
 	 * @return void
 	 */
 	public function ajax_handler() {
-
 		// Get post data
 		$creds                  = array();
 		$creds['user_login']    = stripslashes( trim( $_POST['user_login'] ) );
@@ -125,21 +137,13 @@ class Sidebar_Login {
 		$redirect_to            = esc_url_raw( $_POST['redirect_to'] );
 		$secure_cookie          = null;
 
-		// If the user inputs an email address instead of a username, try to convert it
-		if ( is_email( $creds['user_login'] ) ) {
-			if ( $user = get_user_by( 'email', $creds['user_login'] ) ) {
-				$creds['user_login'] = $user->user_login;
-			}
-		}
-
 		// If the user wants ssl but the session is not ssl, force a secure cookie.
 		if ( ! force_ssl_admin() ) {
-			$user_name = sanitize_user( $creds['user_login'] );
-			if ( $user = get_user_by( 'login',  $user_name ) ) {
-				if ( get_user_option( 'use_ssl', $user->ID ) ) {
-					$secure_cookie = true;
-					force_ssl_admin( true );
-				}
+			$user = is_email( $creds['user_login'] ) ? get_user_by( 'email', $creds['user_login'] ) : get_user_by( 'login', sanitize_user( $creds['user_login'] ) );
+
+			if ( $user && get_user_option( 'use_ssl', $user->ID ) ) {
+				$secure_cookie = true;
+				force_ssl_admin( true );
 			}
 		}
 

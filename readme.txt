@@ -78,9 +78,10 @@ These tags can be used in the widget settings for titles + links and will be rep
 == Changelog ==
 
 = 2.7.2 =
+* Feature - Added firstname, lastname, name tags.
 * Fix - PHP4 widget contructors (https://gist.github.com/chriscct7/d7d077afb01011b1839d).
 * Fix - Missing strings in localisation.
-* Added firstname, lastname, name tags.
+* Fix - Change email to username during wp_authenticate hook.
 
 = 2.7.1 =
 * Make rememberme show by default, without a widget save.
