@@ -56,13 +56,11 @@ class Sidebar_Login {
 	 * @return void
 	 */
 	public function enqueue() {
-
-		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
+		$suffix       = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		$js_in_footer = apply_filters( 'sidebar_login_js_in_footer', false );
 
 		// Register BLOCK UI
-		wp_register_script( 'jquery-blockui', plugins_url( 'assets/js/blockui.min.js', __FILE__ ), array( 'jquery' ), '2.57', $js_in_footer );
+		wp_register_script( 'jquery-blockui', plugins_url( 'assets/js/jquery.blockUI.min.js', __FILE__ ), array( 'jquery' ), '2.70', $js_in_footer );
 
 		// Enqueue Sidebar Login JS
 		wp_enqueue_script( 'sidebar-login', plugins_url( 'assets/js/sidebar-login' . $suffix . '.js', __FILE__ ), array( 'jquery', 'jquery-blockui' ), $this->version, $js_in_footer );
