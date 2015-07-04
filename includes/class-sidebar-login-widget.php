@@ -13,9 +13,9 @@ class Sidebar_Login_Widget extends WP_Widget {
 	private $options  = array();
 
     /**
-     * Sidebar_Login_Widget function.
+     * Constructor
      */
-    public function Sidebar_Login_Widget() {
+    public function __construct() {
 		/* Widget settings. */
 		$widget_ops = array( 'description' => __( 'Displays a login area in the sidebar.', 'sidebar-login' ) );
 
