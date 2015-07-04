@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sidebar Login\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
-"POT-Creation-Date: 2014-06-28 09:56:14+00:00\n"
-"PO-Revision-Date: 2014-06-28 10:06+0000\n"
+"POT-Creation-Date: 2014-06-28 11:09:40+00:00\n"
+"PO-Revision-Date: 2014-06-29 08:36+0000\n"
 "Last-Translator: Mike Jolley <mike.jolley@me.com>\n"
 "Language-Team: Latvian (Latvia) (http://www.transifex.com/projects/p/sidebar-login/language/lv_LV/)\n"
 "MIME-Version: 1.0\n"
@@ -30,12 +30,12 @@ msgid "Logged-out title"
 msgstr "Virsraksts (pēc izrakstīšanās)"
 
 #: includes/class-sidebar-login-widget.php:34
-#: includes/class-sidebar-login-widget.php:237
+#: includes/class-sidebar-login-widget.php:242
 msgid "Login"
 msgstr "Pierakstīties"
 
 #: includes/class-sidebar-login-widget.php:38
-#: includes/class-sidebar-login-widget.php:68
+#: includes/class-sidebar-login-widget.php:73
 msgid "Links"
 msgstr "Saites"
 
@@ -56,58 +56,62 @@ msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
 msgstr "WP uzstādījumos jābūt atzīmētam: <a href=\"%s\">Jebkurš var reģistrēties</a>"
 
 #: includes/class-sidebar-login-widget.php:54
+msgid "Show \"Remember me\" checkbox"
+msgstr ""
+
+#: includes/class-sidebar-login-widget.php:59
 msgid "Login Redirect URL"
 msgstr "Pēc pierakstīšanās pārsūtīt uz šo saiti"
 
-#: includes/class-sidebar-login-widget.php:63
+#: includes/class-sidebar-login-widget.php:68
 msgid "Logged-in title"
 msgstr "Virsraksts (pēc pierakstīšanās)"
 
-#: includes/class-sidebar-login-widget.php:64
-#: includes/class-sidebar-login-widget.php:236
+#: includes/class-sidebar-login-widget.php:69
+#: includes/class-sidebar-login-widget.php:241
 msgid "Welcome %username%"
 msgstr "Sveicināts, %username%"
 
-#: includes/class-sidebar-login-widget.php:68
+#: includes/class-sidebar-login-widget.php:73
 msgid "Text | HREF | Capability"
 msgstr "Teksts | HREF | Iespējas"
 
-#: includes/class-sidebar-login-widget.php:69
+#: includes/class-sidebar-login-widget.php:74
 msgid ""
 "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
 "view the link."
 msgstr "<a href=\"%s\">Iespējas</a> (nav obligātas) atiecas uz lietotājiem, kas redz saiti"
 
-#: includes/class-sidebar-login-widget.php:74
+#: includes/class-sidebar-login-widget.php:79
 msgid "Show logged-in user avatar"
 msgstr "Rādīt avataru (attēlu)"
 
-#: includes/class-sidebar-login-widget.php:79
+#: includes/class-sidebar-login-widget.php:84
 msgid "Logout Redirect URL"
 msgstr "Pēc izrakstīšanās pārsūtīt uz šo saiti:"
 
-#: includes/class-sidebar-login-widget.php:175
-#: includes/class-sidebar-login-widget.php:182
+#: includes/class-sidebar-login-widget.php:180
+#: includes/class-sidebar-login-widget.php:187
 msgid "Register"
 msgstr "Reģistrēties"
 
-#: includes/class-sidebar-login-widget.php:192
+#: includes/class-sidebar-login-widget.php:197
 msgid "Lost Password"
 msgstr "Pazaudēta parole"
 
-#: includes/class-sidebar-login-widget.php:286
+#: includes/class-sidebar-login-widget.php:292
 msgid "Username"
 msgstr "Vārds"
 
-#: includes/class-sidebar-login-widget.php:287
+#: includes/class-sidebar-login-widget.php:293
 msgid "Password"
 msgstr "Parole"
 
-#: includes/class-sidebar-login-widget.php:288
+#: includes/class-sidebar-login-widget.php:294
 msgid "Remember Me"
 msgstr "Atcerēties pierakstīšanās datus"
 
-#: includes/class-sidebar-login-widget.php:289
+#: includes/class-sidebar-login-widget.php:295
 msgid "Login &rarr;"
 msgstr "Pierakstīties &rarr;"
 
@@ -119,7 +123,7 @@ msgstr "Lūdzu, ierakstiet vārdu, ar kuru esat reģistrējies"
 msgid "Please enter your password"
 msgstr "Lūdzu, ierakstiet paroli"
 
-#: sidebar-login.php:169
+#: sidebar-login.php:176
 msgid "Please enter your username and password to login."
 msgstr "Lūdzu, ierakstiet vārdu un paroli, ar kuru esat reģistrējies"
 
@@ -129,8 +133,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Allows you to easily add an ajax-enhanced login widget to your WordPress "
-"blog sidebar."
+"Allows you to easily add an ajax-enhanced login widget to the sidebar on "
+"your WordPress site."
 msgstr ""
 
 #. Author of the plugin/theme

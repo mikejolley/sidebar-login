@@ -1,146 +1,147 @@
 # Copyright (C) 2014 Sidebar Login
 # This file is distributed under the same license as the Sidebar Login package.
 # Translators:
+# ivan botev <ivanbotevkre10@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Sidebar Login\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
 "POT-Creation-Date: 2014-06-28 11:09:40+00:00\n"
-"PO-Revision-Date: 2014-06-29 08:36+0000\n"
-"Last-Translator: Mike Jolley <mike.jolley@me.com>\n"
-"Language-Team: Czech (Czech Republic) (http://www.transifex.com/projects/p/sidebar-login/language/cs_CZ/)\n"
+"PO-Revision-Date: 2015-03-09 08:05+0000\n"
+"Last-Translator: ivan botev <ivanbotevkre10@gmail.com>\n"
+"Language-Team: Bulgarian (Bulgaria) (http://www.transifex.com/projects/p/sidebar-login/language/bg_BG/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs_CZ\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Language: bg_BG\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: includes/class-sidebar-login-widget.php:20
 msgid "Displays a login area in the sidebar."
-msgstr "Zobrazuje přihlašovací pole v postranní liště."
+msgstr "Показване на прозореца за вход на страничната лента"
 
 #. #-#-#-#-#  sidebar-login.pot (Sidebar Login 2.7.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/class-sidebar-login-widget.php:23
 msgid "Sidebar Login"
-msgstr "Sidebar Login"
+msgstr "Вход на страничната лента"
 
 #: includes/class-sidebar-login-widget.php:33
 msgid "Logged-out title"
-msgstr "Název při odhlášení"
+msgstr "Изход - Наименование"
 
 #: includes/class-sidebar-login-widget.php:34
 #: includes/class-sidebar-login-widget.php:242
 msgid "Login"
-msgstr "Přihlásit se"
+msgstr "Вход"
 
 #: includes/class-sidebar-login-widget.php:38
 #: includes/class-sidebar-login-widget.php:73
 msgid "Links"
-msgstr "Odkazy"
+msgstr "Препратки"
 
 #: includes/class-sidebar-login-widget.php:38
 msgid "Text | HREF"
-msgstr "Text | HREF"
+msgstr "Текст | HREF"
 
 #: includes/class-sidebar-login-widget.php:43
 msgid "Show lost password link"
-msgstr "Ukázat odkaz pro zapomenuté heslo"
+msgstr "Покажи препратка за забравена парола"
 
 #: includes/class-sidebar-login-widget.php:48
 msgid "Show register link"
-msgstr "Ukázat odkaz pro registraci"
+msgstr "Покажи препратка за регистрация"
 
 #: includes/class-sidebar-login-widget.php:50
 msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
-msgstr "<a href=\"%s\">Kdokoliv se může registrovat</a> musí být aktivní."
+msgstr "<a href=\"%s\">Всеки може да се регистрира</a>трябва да е включено"
 
 #: includes/class-sidebar-login-widget.php:54
 msgid "Show \"Remember me\" checkbox"
-msgstr ""
+msgstr "Показвай \"Запомни ме\" отметка"
 
 #: includes/class-sidebar-login-widget.php:59
 msgid "Login Redirect URL"
-msgstr "URL stránky po přihlášení"
+msgstr "Препратка при влизане URL"
 
 #: includes/class-sidebar-login-widget.php:68
 msgid "Logged-in title"
-msgstr "Název při přihlášení"
+msgstr "Вход - Наименование"
 
 #: includes/class-sidebar-login-widget.php:69
 #: includes/class-sidebar-login-widget.php:241
 msgid "Welcome %username%"
-msgstr "Vítejte %username%"
+msgstr "Здравейте, %username%"
 
 #: includes/class-sidebar-login-widget.php:73
 msgid "Text | HREF | Capability"
-msgstr "Text | HREF | Schopnost"
+msgstr "Текст | HREF | Достъпност"
 
 #: includes/class-sidebar-login-widget.php:74
 msgid ""
 "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
 "view the link."
-msgstr "<a href=\"%s\">Schopnost</a> (volitelně) odkazuje na typ uživatele, kterému je povoleno zobrazení odkazu."
+msgstr "<a href=\"%s\">Достъпност</a>(Опция) подходяща за потребители който не могат да видят препратката"
 
 #: includes/class-sidebar-login-widget.php:79
 msgid "Show logged-in user avatar"
-msgstr "Zobrazit avatar přihlášeného uživatele"
+msgstr "Показвай Аватар на потребителя"
 
 #: includes/class-sidebar-login-widget.php:84
 msgid "Logout Redirect URL"
-msgstr "URL stránky po odhlášení"
+msgstr "Препратка при излизане URL"
 
 #: includes/class-sidebar-login-widget.php:180
 #: includes/class-sidebar-login-widget.php:187
 msgid "Register"
-msgstr "Registrovat"
+msgstr "Грегистрация"
 
 #: includes/class-sidebar-login-widget.php:197
 msgid "Lost Password"
-msgstr "Zapomněli jste heslo?"
+msgstr "Загубена парола"
 
 #: includes/class-sidebar-login-widget.php:292
 msgid "Username"
-msgstr "Uživatelské jméno"
+msgstr "Потребител"
 
 #: includes/class-sidebar-login-widget.php:293
 msgid "Password"
-msgstr "Heslo"
+msgstr "Парола"
 
 #: includes/class-sidebar-login-widget.php:294
 msgid "Remember Me"
-msgstr "Uložit do paměti"
+msgstr "Запомни ме"
 
 #: includes/class-sidebar-login-widget.php:295
 msgid "Login &rarr;"
-msgstr "Přihlásit se &rarr;"
+msgstr "Вход &rarr;"
 
 #: sidebar-login.php:80
 msgid "Please enter your username"
-msgstr "Vložte prosím vaše uživatelské jméno"
+msgstr "Моля въведете Вашето потребителско име"
 
 #: sidebar-login.php:81
 msgid "Please enter your password"
-msgstr "Vložte prosím vaše heslo"
+msgstr "Моля въведете Вашата парола"
 
 #: sidebar-login.php:176
 msgid "Please enter your username and password to login."
-msgstr "Pro přihlášení vložte prosím vaše uživatelské jméno a heslo."
+msgstr "Моля въведте Вашето потребителско име и парола за вход"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/sidebar-login/"
-msgstr ""
+msgstr "http://wordpress.org/extend/plugins/sidebar-login/"
 
 #. Description of the plugin/theme
 msgid ""
 "Allows you to easily add an ajax-enhanced login widget to the sidebar on "
 "your WordPress site."
-msgstr ""
+msgstr "Позволява лесно да добавиете Ajax-enchanced аплет на страничния панел на вашия WordPress сайт"
 
 #. Author of the plugin/theme
 msgid "Mike Jolley"
-msgstr ""
+msgstr "Майк Джоли"
 
 #. Author URI of the plugin/theme
 msgid "http://mikejolley.com"
-msgstr ""
+msgstr "http://mikejolley.com"

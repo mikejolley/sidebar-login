@@ -5,15 +5,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sidebar Login\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
-"POT-Creation-Date: 2014-06-28 09:56:14+00:00\n"
-"PO-Revision-Date: 2014-06-28 10:07+0000\n"
+"POT-Creation-Date: 2014-06-28 11:09:40+00:00\n"
+"PO-Revision-Date: 2014-06-29 08:36+0000\n"
 "Last-Translator: Mike Jolley <mike.jolley@me.com>\n"
 "Language-Team: Russian (Russia) (http://www.transifex.com/projects/p/sidebar-login/language/ru_RU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru_RU\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: includes/class-sidebar-login-widget.php:20
 msgid "Displays a login area in the sidebar."
@@ -30,12 +30,12 @@ msgid "Logged-out title"
 msgstr "Заголовок для незарегистрированного пользователя"
 
 #: includes/class-sidebar-login-widget.php:34
-#: includes/class-sidebar-login-widget.php:237
+#: includes/class-sidebar-login-widget.php:242
 msgid "Login"
 msgstr "Логин"
 
 #: includes/class-sidebar-login-widget.php:38
-#: includes/class-sidebar-login-widget.php:68
+#: includes/class-sidebar-login-widget.php:73
 msgid "Links"
 msgstr "Ссылки"
 
@@ -56,58 +56,62 @@ msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
 msgstr "Опция <a href=\"%s\">Каждый может зарегистрироваться</a> должна быть включена."
 
 #: includes/class-sidebar-login-widget.php:54
+msgid "Show \"Remember me\" checkbox"
+msgstr ""
+
+#: includes/class-sidebar-login-widget.php:59
 msgid "Login Redirect URL"
 msgstr "Куда перейти после входа"
 
-#: includes/class-sidebar-login-widget.php:63
+#: includes/class-sidebar-login-widget.php:68
 msgid "Logged-in title"
 msgstr "Заголовок для вошедшего пользователя"
 
-#: includes/class-sidebar-login-widget.php:64
-#: includes/class-sidebar-login-widget.php:236
+#: includes/class-sidebar-login-widget.php:69
+#: includes/class-sidebar-login-widget.php:241
 msgid "Welcome %username%"
 msgstr "Добро пожаловать, %username%"
 
-#: includes/class-sidebar-login-widget.php:68
+#: includes/class-sidebar-login-widget.php:73
 msgid "Text | HREF | Capability"
 msgstr "Текст | Сссылка | Возможности"
 
-#: includes/class-sidebar-login-widget.php:69
+#: includes/class-sidebar-login-widget.php:74
 msgid ""
 "<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
 "view the link."
 msgstr "<a href=\"%s\">Возможности</a> (дополнительно) относятся к пользователям, которые могут просматривать ссылки."
 
-#: includes/class-sidebar-login-widget.php:74
+#: includes/class-sidebar-login-widget.php:79
 msgid "Show logged-in user avatar"
 msgstr "Показывать аватар зарегистрированного пользователя"
 
-#: includes/class-sidebar-login-widget.php:79
+#: includes/class-sidebar-login-widget.php:84
 msgid "Logout Redirect URL"
 msgstr "Куда перейти после выхода"
 
-#: includes/class-sidebar-login-widget.php:175
-#: includes/class-sidebar-login-widget.php:182
+#: includes/class-sidebar-login-widget.php:180
+#: includes/class-sidebar-login-widget.php:187
 msgid "Register"
 msgstr "Регистрация"
 
-#: includes/class-sidebar-login-widget.php:192
+#: includes/class-sidebar-login-widget.php:197
 msgid "Lost Password"
 msgstr "Забыли пароль?"
 
-#: includes/class-sidebar-login-widget.php:286
+#: includes/class-sidebar-login-widget.php:292
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: includes/class-sidebar-login-widget.php:287
+#: includes/class-sidebar-login-widget.php:293
 msgid "Password"
 msgstr "Пароль"
 
-#: includes/class-sidebar-login-widget.php:288
+#: includes/class-sidebar-login-widget.php:294
 msgid "Remember Me"
 msgstr "Запомнить меня"
 
-#: includes/class-sidebar-login-widget.php:289
+#: includes/class-sidebar-login-widget.php:295
 msgid "Login &rarr;"
 msgstr "Войти &rarr;"
 
@@ -119,7 +123,7 @@ msgstr "Пожалуйста, введите имя пользователя"
 msgid "Please enter your password"
 msgstr "Пожалуйста, введите пароль"
 
-#: sidebar-login.php:169
+#: sidebar-login.php:176
 msgid "Please enter your username and password to login."
 msgstr "Пожалуйста, введите имя пользователя и пароль для входа."
 
@@ -129,8 +133,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Allows you to easily add an ajax-enhanced login widget to your WordPress "
-"blog sidebar."
+"Allows you to easily add an ajax-enhanced login widget to the sidebar on "
+"your WordPress site."
 msgstr ""
 
 #. Author of the plugin/theme
