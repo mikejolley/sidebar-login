@@ -3,8 +3,8 @@ Contributors: mikejolley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jolley@me.com&currency_code=&amount=&return=&item_name=Donation+for+Sidebar+Login
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 2.7.1
+Tested up to: 4.2
+Stable tag: 2.7.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -74,7 +74,11 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
-= 2.7.1 = 
+= 2.7.2 =
+* Fix - PHP4 widget contructors (https://gist.github.com/chriscct7/d7d077afb01011b1839d).
+* Fix - Missing strings in localisation.
+
+= 2.7.1 =
 * Make rememberme show by default, without a widget save.
 
 = 2.7.0 =

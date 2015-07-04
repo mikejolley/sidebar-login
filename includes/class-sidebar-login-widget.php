@@ -20,7 +20,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 		$widget_ops = array( 'description' => __( 'Displays a login area in the sidebar.', 'sidebar-login' ) );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'wp_sidebarlogin', __( 'Sidebar Login', 'sidebar-login' ), $widget_ops );
+		parent::__construct( 'wp_sidebarlogin', __( 'Sidebar Login', 'sidebar-login' ), $widget_ops );
     }
 
     /**
