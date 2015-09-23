@@ -293,7 +293,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 			$show_rememberme = ! isset( $this->instance['show_rememberme'] ) || ! empty( $this->instance['show_rememberme'] );
 
 			$login_form_args = apply_filters( 'sidebar_login_widget_form_args', array(
-		        'echo' 				=> true,
+		        'echo' 				=> false,
 		        'redirect' 			=> esc_url( apply_filters( 'sidebar_login_widget_login_redirect', $redirect ) ),
 		        'label_username' 	=> __( 'Username', 'sidebar-login' ),
 		        'label_password' 	=> __( 'Password', 'sidebar-login' ),
@@ -303,7 +303,9 @@ class Sidebar_Login_Widget extends WP_Widget {
 		        'value_remember' 	=> true
 		    ) );
 
-			wp_login_form( $login_form_args );
+			$html = wp_login_form( $login_form_args );
+			
+			echo apply_filters( 'sidebar_login_widget_logged_out_wp_login_form', $html);
 
 			$this->show_links( 'logged_out', $logged_out_links );
 
