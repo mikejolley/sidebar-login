@@ -55,6 +55,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 * `sidebar_login_widget_logout_redirect` - the redirect after logging out.
 * `sidebar_login_widget_register_url` - The URL for registration links.
 * `sidebar_login_widget_lost_password_url` - The URL for lost password links.
+* `sidebar_login_widget_logged_out_wp_login_form` - The HTML of the Login form.
 
 = Action Reference =
 
