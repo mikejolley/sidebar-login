@@ -304,9 +304,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 		        'value_remember' 	=> true
 		    ) );
 
-			$html = wp_login_form( $login_form_args );
-			
-			echo apply_filters( 'sidebar_login_widget_logged_out_wp_login_form', $html, $login_form_args );
+			echo apply_filters( 'sidebar_login_widget_wp_login_form', wp_login_form( $login_form_args ), $login_form_args );
 
 			$this->show_links( 'logged_out', $logged_out_links );
 
