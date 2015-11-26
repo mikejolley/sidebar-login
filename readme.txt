@@ -69,7 +69,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 = Notes =
 
-* Due to AJAX not working across different domains (see [same_origin_policy](http://en.wikipedia.org/wiki/Same_origin_policy)), AJAX logins will be disabled if your site it non-SSL, but the FORCE_SSL_LOGIN constant is set to true. Instead it will fallback to a traditional POST.
+* Due to AJAX not working across different domains (see [same_origin_policy](http://en.wikipedia.org/wiki/Same_origin_policy)), AJAX logins will be disabled if your site it non-SSL, but the FORCE_SSL_ADMIN constant is set to true. Instead it will fallback to a traditional POST.
 
 == Screenshots ==
 
@@ -83,6 +83,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 * Tweak - %avatar% placeholder.
 * Tweak - Removed translations due to WordPress.org language packs.
 * Tweak - sidebar_login_widget_wp_login_form filter.
+* Fix - Removed force_ssl_login which is deprecated in 4.4 in favour of force_ssl_admin.
 
 = 2.7.2 =
 * Feature - Added firstname, lastname, name tags.

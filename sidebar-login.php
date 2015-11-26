@@ -75,7 +75,6 @@ class Sidebar_Login {
 		// Pass variables
 		$sidebar_login_params = array(
 			'ajax_url'         => $this->ajax_url(),
-			'force_ssl_login'  => force_ssl_login() ? 1 : 0,
 			'force_ssl_admin'  => force_ssl_admin() ? 1 : 0,
 			'is_ssl'           => is_ssl() ? 1 : 0,
 			'i18n_username_required' => __( 'Please enter your username', 'sidebar-login' ),
@@ -151,7 +150,7 @@ class Sidebar_Login {
 			$secure_cookie = true;
 		}
 
-		if ( is_null( $secure_cookie ) && force_ssl_login() ) {
+		if ( is_null( $secure_cookie ) && force_ssl_admin() ) {
 			$secure_cookie = false;
 		}
 

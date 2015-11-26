@@ -22,7 +22,7 @@ jQuery(function(){
 	    }
 
 		// Check for SSL/FORCE SSL LOGIN
-		if ( sidebar_login_params.force_ssl_login == 1 && sidebar_login_params.is_ssl == 0 )
+		if ( sidebar_login_params.force_ssl_admin == 1 && sidebar_login_params.is_ssl == 0 )
 			return true;
 
 		$thisform.block({ message: null, overlayCSS: {
