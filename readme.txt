@@ -39,6 +39,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 * `%logout_url%` - logout url
 * `%buddypress_profile_url%` - Buddypress Profile URL
 * `%bbpress_profile_url%` - Buddypress Profile URL
+* `%avatar%` - User Avatar
 
 = Filter Reference =
 
@@ -79,6 +80,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 == Changelog ==
 
 = 2.7.3 =
+* Tweak - %avatar% placeholder.
 * Tweak - Removed translations due to WordPress.org language packs.
 * Tweak - sidebar_login_widget_wp_login_form filter.
 
