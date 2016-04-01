@@ -7,7 +7,7 @@ Version: 2.7.3
 Author: Mike Jolley
 Author URI: http://mikejolley.com
 Requires at least: 3.5
-Tested up to: 4.4
+Tested up to: 4.5
 Text Domain: sidebar-login
 Domain Path: /languages/
 

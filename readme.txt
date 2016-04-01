@@ -3,7 +3,7 @@ Contributors: mikejolley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jolley@me.com&currency_code=&amount=&return=&item_name=Donation+for+Sidebar+Login
 Tags: login, sidebar, widget, sidebar login, meta, form, register
 Requires at least: 3.5
-Tested up to: 4.4
+Tested up to: 4.5
 Stable tag: 2.7.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html

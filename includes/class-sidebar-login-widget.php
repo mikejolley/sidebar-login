@@ -131,7 +131,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 	    $logout_redirect = wp_logout_url( empty( $this->instance['logout_redirect_url'] ) ? $this->current_url( 'nologout' ) : $this->instance['logout_redirect_url'] );
 
 	    $text = str_replace(
-	    	array('%site_url%', '%admin_url%', '%logout_url%' ),
+	    	array( '%site_url%', '%admin_url%', '%logout_url%' ),
 	    	array( untrailingslashit( site_url() ), untrailingslashit( admin_url() ), apply_filters( 'sidebar_login_widget_logout_redirect', $logout_redirect ) ),
 	    	$text
 	    );
