@@ -97,7 +97,7 @@ class Sidebar_Login_Widget extends WP_Widget {
     public function replace_tags( $text ) {
 	    if ( $this->user ) {
 				$text = str_replace(
- 		    	array( '%username%', '%userid%', '%firstname%', '%lastname%', '%name%', '%avatar%','%userlogin%' ),
+ 		    	array( '%username%', '%userid%', '%firstname%', '%lastname%', '%name%', '%avatar%','%user_nicename%' ),
  		    	array(
  		    		ucwords( $this->user->display_name ),
  		    		$this->user->ID,
@@ -105,7 +105,7 @@ class Sidebar_Login_Widget extends WP_Widget {
  		    		$this->user->last_name,
  		    		trim( $this->user->first_name . ' ' . $this->user->last_name ),
  		    		get_avatar( $this->user->ID, apply_filters( 'sidebar_login_widget_avatar_size', 38 ) ),
- 						$this->user->user_login
+ 						$this->user->user_nicename
  		    	),
  		    	$text
 		    );
