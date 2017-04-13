@@ -1,0 +1,166 @@
+# Copyright (C) 2015 Sidebar Login
+# This file is distributed under the same license as the Sidebar Login package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar Login 2.7.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/sidebar-login\n"
+"POT-Creation-Date: 2017-04-13 21:45+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-04-13 22:00+0200\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru_RU\n"
+
+#: includes/class-sidebar-login-widget.php:20
+msgid "Displays a login area in the sidebar."
+msgstr "Показывет область авторизации в сайдбаре."
+
+#. Plugin Name of the plugin/theme
+#: includes/class-sidebar-login-widget.php:23
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: includes/class-sidebar-login-widget.php:33
+msgid "Logged-out title"
+msgstr "Заголовок для неавторизованного"
+
+#: includes/class-sidebar-login-widget.php:34
+#: includes/class-sidebar-login-widget.php:249
+msgid "Login"
+msgstr "Войти"
+
+#: includes/class-sidebar-login-widget.php:38
+#: includes/class-sidebar-login-widget.php:73
+msgid "Links"
+msgstr "Ссылки"
+
+#: includes/class-sidebar-login-widget.php:38
+msgid "Text | HREF"
+msgstr "Текст | HREF"
+
+#: includes/class-sidebar-login-widget.php:43
+msgid "Show lost password link"
+msgstr "Показывать ссылку на восстановление пароля"
+
+#: includes/class-sidebar-login-widget.php:48
+msgid "Show register link"
+msgstr "Показывать ссылку на регистрацию"
+
+#: includes/class-sidebar-login-widget.php:50
+msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
+msgstr ""
+"<a href=\"%s\">Любой может зарегистрироваться</a> должно быть включено."
+
+#: includes/class-sidebar-login-widget.php:54
+msgid "Show \"Remember me\" checkbox"
+msgstr "Показывать чекбокс \"Запомнить меня\"."
+
+#: includes/class-sidebar-login-widget.php:59
+msgid "Login Redirect URL"
+msgstr "URL редиректа после авторизации"
+
+#: includes/class-sidebar-login-widget.php:62
+#: includes/class-sidebar-login-widget.php:87
+msgid "Current page URL"
+msgstr "URL текущей страницы"
+
+#: includes/class-sidebar-login-widget.php:68
+msgid "Logged-in title"
+msgstr "Заголовок для авторизованного"
+
+#: includes/class-sidebar-login-widget.php:69
+#: includes/class-sidebar-login-widget.php:248
+msgid "Welcome %username%"
+msgstr "Добро пожаловать %username%"
+
+#: includes/class-sidebar-login-widget.php:73
+msgid "Text | HREF | Capability"
+msgstr "Текст | HREF | разрешение"
+
+#: includes/class-sidebar-login-widget.php:74
+msgid ""
+"<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
+"view the link."
+msgstr ""
+"<a href=\"%s\">Разрешение</a> (опционально) роль пользователя, кто может "
+"видеть эту ссылку."
+
+#: includes/class-sidebar-login-widget.php:75
+msgid ""
+"Dashboard | %admin_url%\n"
+"Profile | %admin_url%/profile.php\n"
+"Logout | %logout_url%"
+msgstr ""
+"Консоль | %admin_url%\n"
+"Профиль | %admin_url%/profile.php\n"
+"Выйти | %logout_url%"
+
+#: includes/class-sidebar-login-widget.php:79
+msgid "Show logged-in user avatar"
+msgstr "Показывать аватар авторизованного пользователя"
+
+#: includes/class-sidebar-login-widget.php:84
+msgid "Logout Redirect URL"
+msgstr "URL редиректа при выходе"
+
+#: includes/class-sidebar-login-widget.php:187
+#: includes/class-sidebar-login-widget.php:194
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: includes/class-sidebar-login-widget.php:204
+msgid "Lost Password"
+msgstr "Забыл пароль"
+
+#: includes/class-sidebar-login-widget.php:299
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: includes/class-sidebar-login-widget.php:300
+msgid "Password"
+msgstr "Пароль"
+
+#: includes/class-sidebar-login-widget.php:301
+msgid "Remember Me"
+msgstr "Запомнить меня"
+
+#: includes/class-sidebar-login-widget.php:302
+msgid "Login &rarr;"
+msgstr "Войти &rarr;"
+
+#: sidebar-login.php:80
+msgid "Please enter your username"
+msgstr "Введите имя пользователя"
+
+#: sidebar-login.php:81
+msgid "Please enter your password"
+msgstr "Введите пароль"
+
+#: sidebar-login.php:179
+msgid "Please enter your username and password to login."
+msgstr "Для входа введите имя пользователя и пароль."
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/sidebar-login/"
+msgstr "http://wordpress.org/extend/plugins/sidebar-login/"
+
+#. Description of the plugin/theme
+msgid ""
+"Allows you to easily add an ajax-enhanced login widget to the sidebar on "
+"your WordPress site."
+msgstr ""
+"Добавляет работающий на ajax виджет авторизации в сайдбар сайта на "
+"Wordpress."
+
+#. Author of the plugin/theme
+msgid "Mike Jolley"
+msgstr "Mike Jolley"
+
+#. Author URI of the plugin/theme
+msgid "http://mikejolley.com"
+msgstr "http://mikejolley.com"
