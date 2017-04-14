@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sidebar-login\n"
+"POT-Creation-Date: 2014-01-20 10:11+0100\n"
+"PO-Revision-Date: 2014-01-20 16:18+0200\n"
+"Last-Translator: Antti Pohjola <summeli@summeli.fi>\n"
+"Language-Team: Antti Pohjola <summeli@summeli.fi>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-KeywordsList: _e;__;_n\n"
+"X-Poedit-Basepath: .\n"
+"Language: fi\n"
+"X-Poedit-SearchPath-0: ../.\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: .././sidebar-login.php:79
+msgid "Please enter your username"
+msgstr "Syötä käyttäjätunnus"
+
+#: .././sidebar-login.php:80
+msgid "Please enter your password"
+msgstr "Ole hyvä ja syötä salasana"
+
+#: .././sidebar-login.php:166
+msgid "Please enter your username and password to login."
+msgstr "Ole hyvä ja syötä käyttäjätunnus ja salasana kirjautuaksesi"
+
+#: .././includes/class-sidebar-login-widget.php:23
+msgid "Displays a login area in the sidebar."
+msgstr "Näyttää kirjautumisalueen sidebarissa"
+
+#: .././includes/class-sidebar-login-widget.php:26
+msgid "Sidebar Login"
+msgstr "Sidebar Login"
+
+#: .././includes/class-sidebar-login-widget.php:39
+msgid "Logged-out title"
+msgstr "Uloskirjautuneen otsikko"
+
+#: .././includes/class-sidebar-login-widget.php:40
+#: .././includes/class-sidebar-login-widget.php:225
+msgid "Login"
+msgstr "Kirjaudu sisään"
+
+#: .././includes/class-sidebar-login-widget.php:44
+#: .././includes/class-sidebar-login-widget.php:74
+msgid "Links"
+msgstr "Linkit"
+
+#: .././includes/class-sidebar-login-widget.php:44
+msgid "<code>Text | HREF</code>"
+msgstr "<code>Text | HREF</code>"
+
+#: .././includes/class-sidebar-login-widget.php:49
+msgid "Show lost password link"
+msgstr "Näytä hukkuneen salasanan linkki"
+
+#: .././includes/class-sidebar-login-widget.php:54
+msgid "Show register link"
+msgstr "Näytä rekisteröidy linkki"
+
+#: .././includes/class-sidebar-login-widget.php:56
+#, php-format
+msgid "<a href=\"%s\">Anyone can register</a> must be enabled."
+msgstr ""
+"<a href=\"%s\">Kukatahansa voi rekisteröityä</a> on pakko olla aktivoitu."
+
+#: .././includes/class-sidebar-login-widget.php:60
+msgid "Login Redirect URL"
+msgstr "Login uudelleenohjaus urli"
+
+#: .././includes/class-sidebar-login-widget.php:69
+msgid "Logged-in title"
+msgstr "Sisäänkirjautuneen otsikko"
+
+#: .././includes/class-sidebar-login-widget.php:70
+#: .././includes/class-sidebar-login-widget.php:224
+msgid "Welcome %username%"
+msgstr "Tervetuloa %username%"
+
+#: .././includes/class-sidebar-login-widget.php:74
+msgid "<code>Text | HREF | Capability</code>"
+msgstr "<code>Text | HREF | Capabiliy</code>"
+
+#: .././includes/class-sidebar-login-widget.php:75
+#, php-format
+msgid ""
+"<a href=\"%s\">Capability</a> (optional) refers to the type of user who can "
+"view the link."
+msgstr ""
+"<a href=\"%s\">Capability</a> (valinnainen) viittaa käyttäjään joka voi "
+"nähdä linkin."
+
+#: .././includes/class-sidebar-login-widget.php:80
+msgid "Show logged-in user avatar"
+msgstr "Näytä kirjautuneen käyttäjän avatar"
+
+#: .././includes/class-sidebar-login-widget.php:85
+msgid "Logout Redirect URL"
+msgstr "Logout uudelleenohjaus URL"
+
+#: .././includes/class-sidebar-login-widget.php:164
+#: .././includes/class-sidebar-login-widget.php:171
+msgid "Register"
+msgstr "Rekisteröidy"
+
+#: .././includes/class-sidebar-login-widget.php:181
+msgid "Lost Password"
+msgstr "Unohtunut salasana"
+
+#: .././includes/class-sidebar-login-widget.php:271
+msgid "Username"
+msgstr "Tunnus"
+
+#: .././includes/class-sidebar-login-widget.php:272
+msgid "Password"
+msgstr "Salasana"
+
+#: .././includes/class-sidebar-login-widget.php:273
+msgid "Remember Me"
+msgstr "Muista minut"
+
+#: .././includes/class-sidebar-login-widget.php:274
+msgid "Login &rarr;"
+msgstr "Kirjaudu &rarr;"
