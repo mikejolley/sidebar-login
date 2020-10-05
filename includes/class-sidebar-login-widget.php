@@ -210,7 +210,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 
 		$links = apply_filters( 'sidebar_login_widget_' . $show . '_links', $links );
 
-		if ( ! empty( $links ) && is_array( $links ) && sizeof( $links > 0 ) ) {
+		if ( ! empty( $links ) && is_array( $links ) && count( $links ) > 0 ) {
 			echo '<ul class="pagenav sidebar_login_links">';
 
 			foreach ( $links as $id => $link ) {
