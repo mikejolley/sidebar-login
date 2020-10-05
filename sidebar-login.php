@@ -31,7 +31,7 @@ class Sidebar_Login {
 	 */
 	public function __construct() {
 		// Hook-in
-		add_action( 'plugins_loaded', array( $this, 'i18n' ) );
+		add_action( 'init', array( $this, 'i18n' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
 		add_action( 'wp_authenticate', array( $this, 'convert_email_to_username' ), 10, 2 );
@@ -74,7 +74,7 @@ class Sidebar_Login {
 
 		// Pass variables
 		$sidebar_login_params = array(
-			'ajax_url'               => $this->ajax_url(),
+			'ajax_url'               => admin_url( 'admin-ajax.php', 'relative' ),
 			'force_ssl_admin'        => force_ssl_admin() ? 1 : 0,
 			'is_ssl'                 => is_ssl() ? 1 : 0,
 			'i18n_username_required' => __( 'Please enter your username', 'sidebar-login' ),
@@ -93,20 +93,6 @@ class Sidebar_Login {
 	 */
 	public function register_widget() {
 		include_once 'includes/class-sidebar-login-widget.php';
-	}
-
-	/**
-	 * ajax_url function.
-	 *
-	 * @access public
-	 * @return void
-	 */
-	private function ajax_url() {
-		if ( is_ssl() ) {
-			return str_replace( 'http:', 'https:', admin_url( 'admin-ajax.php' ) );
-		} else {
-			return str_replace( 'https:', 'http:', admin_url( 'admin-ajax.php' ) );
-		}
 	}
 
 	/**
