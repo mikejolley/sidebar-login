@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sidebar Login
 Plugin URI: http://wordpress.org/extend/plugins/sidebar-login/
-Description: Allows you to easily add an ajax-enhanced login widget to the sidebar on your WordPress site.
+Description: Easily add an ajax-enhanced login widget to the sidebar of your WordPress site.
 Version: 2.7.3
 Author: Mike Jolley
 Author URI: http://mikejolley.com
@@ -74,12 +74,12 @@ class Sidebar_Login {
 
 		// Pass variables
 		$sidebar_login_params = array(
-			'ajax_url'         => $this->ajax_url(),
-			'force_ssl_admin'  => force_ssl_admin() ? 1 : 0,
-			'is_ssl'           => is_ssl() ? 1 : 0,
+			'ajax_url'               => $this->ajax_url(),
+			'force_ssl_admin'        => force_ssl_admin() ? 1 : 0,
+			'is_ssl'                 => is_ssl() ? 1 : 0,
 			'i18n_username_required' => __( 'Please enter your username', 'sidebar-login' ),
 			'i18n_password_required' => __( 'Please enter your password', 'sidebar-login' ),
-			'error_class'      => apply_filters( 'sidebar_login_widget_error_class', 'sidebar_login_error' )
+			'error_class'            => apply_filters( 'sidebar_login_widget_error_class', 'sidebar_login_error' ),
 		);
 
 		wp_localize_script( 'sidebar-login', 'sidebar_login_params', $sidebar_login_params );
@@ -92,7 +92,7 @@ class Sidebar_Login {
 	 * @return void
 	 */
 	public function register_widget() {
-		include_once( 'includes/class-sidebar-login-widget.php' );
+		include_once 'includes/class-sidebar-login-widget.php';
 	}
 
 	/**
