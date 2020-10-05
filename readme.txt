@@ -79,6 +79,11 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
+= 2.8.0 =
+* Fix - Prevent notices due to incorrect sizeof usage.
+* Tweak - Removed jQuery dependency.
+* Tweak - Change how ajax_url is retrieved.
+
 = 2.7.3 =
 * Tweak - %avatar% placeholder.
 * Tweak - Removed translations due to WordPress.org language packs.

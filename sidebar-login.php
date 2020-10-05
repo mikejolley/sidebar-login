@@ -3,7 +3,7 @@
 Plugin Name: Sidebar Login
 Plugin URI: http://wordpress.org/extend/plugins/sidebar-login/
 Description: Easily add an ajax-enhanced login widget to the sidebar of your WordPress site.
-Version: 2.7.3
+Version: 2.8.0
 Author: Mike Jolley
 Author URI: http://mikejolley.com
 Requires at least: 3.5
@@ -21,89 +21,77 @@ Domain Path: /languages/
  */
 class Sidebar_Login {
 
-	private $version = '2.7.3';
+	/**
+	 * Plugin version.
+	 */
+	private const VERSION = '2.8.0';
 
 	/**
-	 * __construct function.
-	 *
-	 * @access public
-	 * @return void
+	 * Constructor. Bootstrap the plugin.
 	 */
 	public function __construct() {
-		// Hook-in
 		add_action( 'init', array( $this, 'i18n' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue' ) );
 		add_action( 'widgets_init', array( $this, 'register_widget' ) );
-		add_action( 'wp_authenticate', array( $this, 'convert_email_to_username' ), 10, 2 );
-
-		// Ajax events
+		add_action( 'wp_authenticate', array( $this, 'convert_email_to_username' ), 10 );
 		add_action( 'wp_ajax_sidebar_login_process', array( $this, 'ajax_handler' ) );
 		add_action( 'wp_ajax_nopriv_sidebar_login_process', array( $this, 'ajax_handler' ) );
 	}
 
 	/**
-	 * i18n function.
-	 *
-	 * @access public
-	 * @return void
+	 * Init localizations.
 	 */
 	public function i18n() {
 		load_plugin_textdomain( 'sidebar-login', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
-	 * enqueue function.
-	 *
-	 * @access public
-	 * @return void
+	 * Enqueue scripts and styles.
 	 */
 	public function enqueue() {
-		$suffix       = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		$js_in_footer = apply_filters( 'sidebar_login_js_in_footer', false );
-
-		// Register BLOCK UI
-		wp_register_script( 'jquery-blockui', plugins_url( 'assets/js/jquery.blockUI.min.js', __FILE__ ), array( 'jquery' ), '2.70', $js_in_footer );
-
-		// Enqueue Sidebar Login JS
-		wp_enqueue_script( 'sidebar-login', plugins_url( 'assets/js/sidebar-login' . $suffix . '.js', __FILE__ ), array( 'jquery', 'jquery-blockui' ), $this->version, $js_in_footer );
-
-		// Enqueue Styles
 		if ( apply_filters( 'sidebar_login_include_css', true ) ) {
-			wp_enqueue_style( 'sidebar-login', plugins_url( 'assets/css/sidebar-login.css', __FILE__ ), '', $this->version );
+			wp_enqueue_style( 'sidebar-login', plugins_url( 'assets/css/sidebar-login.css', __FILE__ ), '', self::VERSION );
 		}
 
-		// Pass variables
-		$sidebar_login_params = array(
-			'ajax_url'               => admin_url( 'admin-ajax.php', 'relative' ),
-			'force_ssl_admin'        => force_ssl_admin() ? 1 : 0,
-			'is_ssl'                 => is_ssl() ? 1 : 0,
-			'i18n_username_required' => __( 'Please enter your username', 'sidebar-login' ),
-			'i18n_password_required' => __( 'Please enter your password', 'sidebar-login' ),
-			'error_class'            => apply_filters( 'sidebar_login_widget_error_class', 'sidebar_login_error' ),
+		$asset        = require 'assets/js/frontend.asset.php';
+		$dependencies = isset( $asset['dependencies'] ) ? $asset['dependencies'] : array();
+		$version      = ! empty( $asset['version'] ) ? $asset['version'] : self::VERSION;
+		wp_register_script( 'sidebar-login', plugins_url( 'assets/js/frontend.js', __FILE__ ), $dependencies, $version, true );
+		wp_localize_script(
+			'sidebar-login',
+			'sidebar_login_params',
+			array(
+				'ajax_url'               => admin_url( 'admin-ajax.php', 'relative' ),
+				'force_ssl_admin'        => force_ssl_admin() ? 1 : 0,
+				'is_ssl'                 => is_ssl() ? 1 : 0,
+				'i18n_username_required' => __( 'Please enter your username', 'sidebar-login' ),
+				'i18n_password_required' => __( 'Please enter your password', 'sidebar-login' ),
+				'error_class'            => apply_filters( 'sidebar_login_widget_error_class', 'sidebar_login_error' ),
+			)
 		);
-
-		wp_localize_script( 'sidebar-login', 'sidebar_login_params', $sidebar_login_params );
 	}
 
 	/**
 	 * Include and register the widget class.
-	 *
-	 * @access public
-	 * @return void
 	 */
 	public function register_widget() {
 		include_once 'includes/class-sidebar-login-widget.php';
 	}
 
 	/**
-	 * When posting an email, convert to a username
+	 * When posting an email, convert to a username.
+	 *
+	 * @param string $username Posted username.
 	 */
-	public function convert_email_to_username( &$username, &$password ) {
-		// If the user inputs an email address instead of a username, try to convert it
-		if ( is_email( $username ) ) {
-			if ( $user = get_user_by( 'email', $username ) ) {
-				$username = $user->user_login;
-			}
+	public function convert_email_to_username( &$username ) {
+		if ( ! is_email( $username ) ) {
+			return;
+		}
+
+		$user = get_user_by( 'email', $username );
+
+		if ( $user ) {
+			$username = $user->user_login;
 		}
 	}
 
@@ -166,10 +154,7 @@ class Sidebar_Login {
 			}
 		}
 
-		echo '<!--SBL-->';
-		echo json_encode( $result );
-		echo '<!--SBL_END-->';
-
+		echo wp_json_encode( $result );
 		die();
 	}
 

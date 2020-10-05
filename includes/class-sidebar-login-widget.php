@@ -237,6 +237,8 @@ class Sidebar_Login_Widget extends WP_Widget {
 			return;
 		}
 
+		wp_enqueue_script( 'sidebar-login' );
+
 		// Record $instance
 		$this->instance = $instance;
 

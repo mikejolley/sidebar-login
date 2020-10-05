@@ -38,6 +38,10 @@
 .widget_wp_sidebarlogin form {
 	margin: 1em 0;
 }
+.widget_wp_sidebarlogin form.is-loading {
+	opacity: 0.6;
+	pointer-events: none;
+}
 .widget_wp_sidebarlogin form p {
 	margin: .5em 0;
 }
