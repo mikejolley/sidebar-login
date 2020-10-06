@@ -43,7 +43,6 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 = Filter Reference =
 
-* `sidebar_login_js_in_footer` - return true to show JS file in the footer instead of the header
 * `sidebar_login_include_css` - return false to not include the CSS stylesheet
 * `sidebar_login_widget_logged_in_links` - An array of links shown when logged in.
 * `sidebar_login_widget_logged_out_links` - An array of links shown when logged out.
@@ -83,6 +82,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 * Fix - Prevent notices due to incorrect sizeof usage.
 * Tweak - Removed jQuery dependency.
 * Tweak - Change how ajax_url is retrieved.
+* Tweak - Removed `sidebar_login_js_in_footer` filter - this is now true by default.
 
 = 2.7.3 =
 * Tweak - %avatar% placeholder.

@@ -1,1 +1,152 @@
-!function(e){var r={};function n(t){if(r[t])return r[t].exports;var o=r[t]={i:t,l:!1,exports:{}};return e[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=r,n.d=function(e,r,t){n.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,r){if(1&r&&(e=n(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(n.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)n.d(t,o,function(r){return e[r]}.bind(null,o));return t},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},n.p="",n(n.s=3)}([function(e,r){!function(){e.exports=this.regeneratorRuntime}()},function(e,r){function n(r){return"function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?e.exports=n=function(e){return typeof e}:e.exports=n=function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},n(r)}e.exports=n},function(e,r){function n(e,r,n,t,o,a,i){try{var u=e[a](i),c=u.value}catch(e){return void n(e)}u.done?r(c):Promise.resolve(c).then(t,o)}e.exports=function(e){return function(){var r=this,t=arguments;return new Promise((function(o,a){var i=e.apply(r,t);function u(e){n(i,o,a,u,c,"next",e)}function c(e){n(i,o,a,u,c,"throw",e)}u(void 0)}))}}},function(e,r,n){"use strict";n.r(r);var t,o=n(0),a=n.n(o),i=n(2),u=n.n(i),c=n(1),s=n.n(c);t=function(){document.querySelectorAll(".widget_wp_sidebarlogin form").forEach((function(r){r.addEventListener("submit",(function(n){e(r)||n.preventDefault(),1==sidebar_login_params.force_ssl_admin&&0==sidebar_login_params.is_ssl||(n.preventDefault(),t(r))}))}));var e=function(e){r(e,sidebar_login_params.error_class);var t=e.querySelector('input[name="log"]'),o=e.querySelector('input[name="pwd"]');return t.value?!!o.value||(n(e,sidebar_login_params.error_class,sidebar_login_params.i18n_password_required),!1):(n(e,sidebar_login_params.error_class,sidebar_login_params.i18n_username_required),!1)},r=function(e,r){e.querySelectorAll("."+r).forEach((function(e){e.parentNode.removeChild(e)}))},n=function(e,r,n){e.insertAdjacentHTML("afterbegin",'<p class="'+r+'">'+n+"</div>")},t=function(e){e.classList.add("is-loading");var r=new FormData;return r.append("action","sidebar_login_process"),r.append("user_login",e.querySelector('input[name="log"]').value||""),r.append("user_password",e.querySelector('input[name="pwd"]').value||""),r.append("remember",e.querySelector('input[name="rememberme"]:checked').value||""),r.append("redirect_to",e.querySelector('input[name="redirect_to"]').value||""),i(sidebar_login_params.ajax_url,r).then((function(r){1==r.success?window.location=r.redirect:(n(e,sidebar_login_params.error_class,r.error),e.classList.remove("is-loading"))})),!1},o=function(e){try{var r=JSON.parse(e);return r&&"object"===s()(r)}catch(e){return!1}},i=function(){var e=u()(a.a.mark((function e(r,n){return a.a.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,fetch(r,{method:"POST",cache:"no-cache",credentials:"same-origin",body:n}).then((function(e){return e.clone().json().catch((function(){return e.text()}))})).then((function(e){if("object"===s()(e))return e;var r=e.match(/{"success.*}/);return null!==r&&o(r[0])?(console.log("Fixed malformed JSON. Original:"+e),JSON.parse(r[0])):(console.log("Unable to fix malformed JSON"),{})}));case 2:return e.abrupt("return",e.sent);case 3:case"end":return e.stop()}}),e)})));return function(r,n){return e.apply(this,arguments)}}()},"complete"===document.readyState||"loading"!==document.readyState&&!document.documentElement.doScroll?t():document.addEventListener("DOMContentLoaded",t)}]);
+(function () {
+	const callback = () => {
+		const selector = '.widget_wp_sidebarlogin form';
+		const errorClassName = sidebar_login_params.error_class;
+		const forms = document.querySelectorAll(selector);
+
+		const maybeParseJson = function (text) {
+			try {
+				const json = JSON.parse(text);
+				if (json && 'object' === typeof json) {
+					return json;
+				}
+				return {};
+			} catch (e) {
+				return {};
+			}
+		};
+
+		const ajaxPost = async function (url, data) {
+			return await fetch(url, {
+				method: 'POST',
+				cache: 'no-cache',
+				credentials: 'same-origin',
+				body: data,
+			})
+				.then((response) =>
+					response
+						.clone()
+						.json()
+						.catch(() => response.text())
+				)
+				.then((data) => {
+					if ('object' === typeof data) {
+						return data;
+					} else {
+						const maybe_valid_json = data.match(/{"success.*}/);
+
+						if (maybe_valid_json !== null) {
+							console.log(
+								'Found malformed JSON. Original:' + data
+							);
+							return maybeParseJson(maybe_valid_json[0]);
+						} else {
+							console.log('Unable to fix malformed JSON');
+						}
+
+						return {};
+					}
+				});
+		};
+
+		const onSubmit = (event) => {
+			const form = event.target;
+			const addError = (errorText) => {
+				form.insertAdjacentHTML(
+					'afterbegin',
+					'<p class="' + errorClassName + '">' + errorText + '</div>'
+				);
+			};
+
+			const removeErrors = () => {
+				form.querySelectorAll('.' + errorClassName).forEach((notice) =>
+					notice.parentNode.removeChild(notice)
+				);
+			};
+
+			const validate = () => {
+				return (
+					validateInput(
+						'input[name="log"]',
+						sidebar_login_params.i18n_username_required
+					) &&
+					validateInput(
+						'input[name="pwd"]',
+						sidebar_login_params.i18n_password_required
+					)
+				);
+			};
+
+			const validateInput = (selector, errorText) => {
+				const value = form.querySelector(selector).value;
+
+				if (!value) {
+					addError(errorText);
+					return false;
+				}
+
+				return true;
+			};
+
+			removeErrors();
+
+			if (!validate()) {
+				event.preventDefault();
+				return;
+			}
+
+			if (
+				sidebar_login_params.force_ssl_admin == 1 &&
+				sidebar_login_params.is_ssl == 0
+			) {
+				return; // Prevent same_origin_policy errors.
+			}
+
+			event.preventDefault();
+			form.classList.add('is-loading');
+
+			const data = new FormData();
+			data.append('action', 'sidebar_login_process');
+			data.append(
+				'user_login',
+				form.querySelector('input[name="log"]').value || ''
+			);
+			data.append(
+				'user_password',
+				form.querySelector('input[name="pwd"]').value || ''
+			);
+			data.append(
+				'remember',
+				form.querySelector('input[name="rememberme"]:checked').value ||
+					''
+			);
+			data.append(
+				'redirect_to',
+				form.querySelector('input[name="redirect_to"]').value || ''
+			);
+
+			ajaxPost(sidebar_login_params.ajax_url, data).then((response) => {
+				if (response.success == 1) {
+					window.location = response.redirect;
+				} else {
+					addError(response.error);
+					form.classList.remove('is-loading');
+				}
+			});
+		};
+
+		forms.forEach((form) => {
+			form.addEventListener('submit', onSubmit);
+		});
+	};
+
+	if (
+		document.readyState === 'complete' ||
+		(document.readyState !== 'loading' &&
+			!document.documentElement.doScroll)
+	) {
+		callback();
+	} else {
+		document.addEventListener('DOMContentLoaded', callback);
+	}
+})();

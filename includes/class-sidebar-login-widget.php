@@ -1,7 +1,5 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Sidebar_Login_Widget class.
@@ -18,11 +16,7 @@ class Sidebar_Login_Widget extends WP_Widget {
 	 * Constructor
 	 */
 	public function __construct() {
-		/* Widget settings. */
-		$widget_ops = array( 'description' => __( 'Displays a login area in the sidebar.', 'sidebar-login' ) );
-
-		/* Create the widget. */
-		parent::__construct( 'wp_sidebarlogin', __( 'Sidebar Login', 'sidebar-login' ), $widget_ops );
+		parent::__construct( 'wp_sidebarlogin', __( 'Sidebar Login', 'sidebar-login' ), array( 'description' => __( 'Displays a login area in the sidebar.', 'sidebar-login' ) ) );
 	}
 
 	/**

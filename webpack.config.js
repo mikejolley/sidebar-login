@@ -1,38 +1,22 @@
 // Require path.
 const path = require('path');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
-const chalk = require('chalk');
-
-const getProgressBarPluginConfig = (name) => {
-	return {
-		format:
-			chalk.blue(`Building ${name}`) +
-			' [:bar] ' +
-			chalk.green(':percent') +
-			' :msg (:elapsed seconds)',
-		summary: false,
-		customSummary: (time) => {
-			console.log(
-				chalk.green.bold(`${name} assets build completed (${time})`)
-			);
-		},
-	};
-};
-
+const MinifyPlugin = require('babel-minify-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = {
+	mode: 'production',
 	entry: {
-		frontend: './assets/src/js/frontend.js',
+		frontend: './assets/js/frontend.js',
 	},
 	output: {
 		filename: '[name].js',
-		path: path.resolve(__dirname, 'assets/js'),
+		path: path.resolve(__dirname, 'build'),
 	},
 	module: {
 		rules: [
 			{
 				test: /\.js$/,
-				exclude: /node_modules/,
+				include: [path.resolve(__dirname, 'assets/js')],
 				use: {
 					loader: 'babel-loader?cacheDirectory',
 					options: {
@@ -49,20 +33,45 @@ const config = {
 								},
 							],
 						],
-						plugins: [
-							require.resolve('@babel/plugin-transform-runtime'),
-						].filter(Boolean),
 					},
 				},
 			},
 		],
 	},
 	plugins: [
-		new ProgressBarPlugin(getProgressBarPluginConfig('Frontend')),
 		new DependencyExtractionWebpackPlugin({
 			injectPolyfill: true,
 		}),
+		new MinifyPlugin(),
 	],
 };
+const styleConfig = {
+	mode: 'production',
+	entry: {
+		'sidebar-login': './assets/css/sidebar-login.scss',
+	},
+	output: {
+		path: path.resolve(__dirname, 'build'),
+		filename: `[name]-style.js`,
+	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: `[name].css`,
+		}),
+	],
+	module: {
+		rules: [
+			{
+				test: /\.s[ac]ss$/i,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{ loader: 'css-loader', options: { importLoaders: 1 } },
+					'postcss-loader',
+					'sass-loader',
+				],
+			},
+		],
+	},
+};
 
-module.exports = config;
+module.exports = [config, styleConfig];
