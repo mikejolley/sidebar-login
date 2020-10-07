@@ -83,6 +83,21 @@ class Widget extends WP_Widget {
 	 * @param array $instance Widget instance containing settings.
 	 */
 	public function form( $instance ) {
+		$defaults = array(
+			'logged_out_title'        => __( 'Login', 'sidebar-login' ),
+			'login_redirect_url'      => '',
+			'logged_out_links'        => '',
+			'show_rememberme'         => '1',
+			'show_lost_password_link' => '1',
+			'show_register_link'      => '1',
+			'logged_in_title'         => __( 'Welcome', 'sidebar-login' ) . ' %username%',
+			'logout_redirect_url'     => '',
+			'logged_in_links'         => __( "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%", 'sidebar-login' ),
+			'show_avatar'             => '1',
+		);
+		if ( empty( $instance ) ) {
+			$instance = $defaults;
+		}
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'logged_out_title' ) ); ?>"><?php esc_html_e( 'Login Form Title', 'sidebar-login' ); ?>:</label>
