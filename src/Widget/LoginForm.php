@@ -61,8 +61,7 @@ class LoginForm {
 			array(
 				'logged_out_title'   => __( 'Login', 'sidebar-login' ),
 				'logged_out_links'   => array(),
-				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
-				'login_redirect_url' => add_query_arg( '_login', substr( md5( uniqid( wp_rand(), true ) ), 0, 10 ), set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 'login' ) ),
+				'login_redirect_url' => '',
 				'show_rememberme'    => 0,
 			)
 		);
@@ -93,7 +92,13 @@ class LoginForm {
 			'sidebar_login_widget_form_args',
 			array(
 				'echo'           => false,
-				'redirect'       => esc_url( apply_filters( 'sidebar_login_widget_login_redirect', $this->settings['login_redirect_url'] ) ),
+				'redirect'       => esc_url(
+					apply_filters(
+						'sidebar_login_widget_login_redirect',
+						// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+						! empty( $this->settings['login_redirect_url'] ) ? $this->settings['login_redirect_url'] : add_query_arg( '_login', substr( md5( uniqid( wp_rand(), true ) ), 0, 10 ), set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 'login' ) )
+					)
+				),
 				'label_username' => __( 'Username', 'sidebar-login' ),
 				'label_password' => __( 'Password', 'sidebar-login' ),
 				'label_remember' => __( 'Remember Me', 'sidebar-login' ),
