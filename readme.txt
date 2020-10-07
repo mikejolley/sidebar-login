@@ -1,10 +1,11 @@
 === Sidebar Login ===
 Contributors: mikejolley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jolley@me.com&currency_code=&amount=&return=&item_name=Donation+for+Sidebar+Login
-Tags: login, sidebar, widget, sidebar login, meta, form, register
-Requires at least: 3.5
-Tested up to: 4.5
-Stable tag: 2.7.3
+Tags: login, sidebar, widget, sidebar login, login widget, login form
+Requires at least: 5.2
+Tested up to: 5.2
+Requires PHP: 5.6
+Stable tag: 3.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,9 +13,9 @@ Easily add an ajax-enhanced login widget to your WordPress site sidebar.
 
 == Description ==
 
-Sidebar-Login adds a useful login widget which you can use to login from in the sidebar of your WordPress powered blog.
+_Sidebar Login_ adds a useful login widget which you can use to login from in the sidebar of your WordPress powered blog.
 
-Once a user logs in it then redirects them back to the page they logged in from rather than the admin panel (this is configurable).
+Once a user logs in they are redirected back to the page they logged in from, rather than the admin panel (this is configurable).
 
 If you'd like to contribute code to the plugin you can do so via [GitHub](https://github.com/mikejolley/sidebar-login).
 
