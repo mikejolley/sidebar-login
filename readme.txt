@@ -36,6 +36,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 * `%firstname%` - logged in users firstname
 * `%lastname%` - logged in users lastname
 * `%name%` - logged in users firstname + lastname
+* `%nicename%` - user nice name
 * `%admin_url%` - url to WP admin
 * `%logout_url%` - logout url
 * `%buddypress_profile_url%` - Buddypress Profile URL
@@ -81,6 +82,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 = 3.0.0 =
 * Fix - Prevent notices due to incorrect sizeof usage.
+* Tweak - %nicename% placeholder.
 * Tweak - Improved default styling and included extra wrapping divs (.sidebar-login-form, .sidebar-login-profile, .sidebar-login-links).
 * Refactor - Removed email->username conversion since this is now supported natively.
 * Refactor - Rewritten majority of plugin using more up to date standards.

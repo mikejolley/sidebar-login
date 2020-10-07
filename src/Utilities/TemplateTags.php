@@ -51,6 +51,7 @@ class TemplateTags {
 			'display_name' => $this->user ? $this->user->display_name : '',
 			'first_name'   => $this->user ? $this->user->first_name : '',
 			'last_name'    => $this->user ? $this->user->last_name : '',
+			'nice_name'    => $this->user ? $this->user->user_nicename : '',
 			'avatar'       => get_avatar( $this->user ? $this->user->ID : 0, apply_filters( 'sidebar_login_widget_avatar_size', 48 ) ),
 		);
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
@@ -61,6 +62,7 @@ class TemplateTags {
 			'%firstname%'  => $user_data->first_name,
 			'%lastname%'   => $user_data->last_name,
 			'%name%'       => trim( $user_data->first_name . ' ' . $user_data->last_name ),
+			'%nicename%'   => $user_data->nice_name,
 			'%avatar%'     => $user_data->avatar,
 			'%site_url%'   => site_url(),
 			'%admin_url%'  => admin_url(),
