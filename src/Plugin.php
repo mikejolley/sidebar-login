@@ -52,7 +52,7 @@ class Plugin {
 	 * Register Widget classes with WordPress.
 	 */
 	public function register_widgets() {
-		include dirname( __DIR__ ) . '/legacy-widget.php';
+		include dirname( __DIR__ ) . '/class-sidebar-login-widget.php';
 		register_widget( '\MJ\SidebarLogin\Widget' );
 		register_widget( 'Sidebar_Login_Widget' );
 	}
