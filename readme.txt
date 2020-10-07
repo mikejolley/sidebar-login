@@ -78,11 +78,14 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 == Changelog ==
 
-= 2.8.0 =
+= 3.0.0 =
 * Fix - Prevent notices due to incorrect sizeof usage.
-* Tweak - Removed jQuery dependency.
-* Tweak - Change how ajax_url is retrieved.
-* Tweak - Removed `sidebar_login_js_in_footer` filter - this is now true by default.
+* Tweak - Improved default styling and included extra wrapping divs (.sidebar-login-form, .sidebar-login-profile, .sidebar-login-links).
+* Refactor - Removed email->username conversion since this is now supported natively.
+* Refactor - Rewritten majority of plugin using more up to date standards.
+* Refactor - Cleaned up the settings form.
+* Performance - Removed jQuery dependency and BlockUI script.
+* Performance - Removed `sidebar_login_js_in_footer` filter - this is now true by default.
 
 = 2.7.3 =
 * Tweak - %avatar% placeholder.

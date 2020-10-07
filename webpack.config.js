@@ -33,6 +33,9 @@ const config = {
 								},
 							],
 						],
+						plugins: [
+							require.resolve('@babel/plugin-transform-runtime'),
+						].filter(Boolean),
 					},
 				},
 			},

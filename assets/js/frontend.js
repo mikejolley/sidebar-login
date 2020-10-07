@@ -109,25 +109,29 @@
 			data.append('action', 'sidebar_login_process');
 			data.append(
 				'user_login',
-				form.querySelector('input[name="log"]').value || ''
+				form.querySelector('input[name="log"]')?.value || ''
 			);
 			data.append(
 				'user_password',
-				form.querySelector('input[name="pwd"]').value || ''
+				form.querySelector('input[name="pwd"]')?.value || ''
 			);
 			data.append(
 				'remember',
-				form.querySelector('input[name="rememberme"]:checked').value ||
+				form.querySelector('input[name="rememberme"]:checked')?.value ||
 					''
 			);
 			data.append(
 				'redirect_to',
-				form.querySelector('input[name="redirect_to"]').value || ''
+				form.querySelector('input[name="redirect_to"]')?.value || ''
 			);
 
 			ajaxPost(sidebar_login_params.ajax_url, data).then((response) => {
 				if (response.success == 1) {
-					window.location = response.redirect;
+					if (response.redirect) {
+						window.location.replace(response.redirect);
+					} else {
+						window.location.reload();
+					}
 				} else {
 					addError(response.error);
 					form.classList.remove('is-loading');

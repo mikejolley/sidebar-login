@@ -22,6 +22,11 @@
 			"phpcbf -p"
 		]
 	},
+	"autoload": {
+		"psr-4": {
+			"MJ\\SidebarLogin\\": "src"
+		}
+	},
 	"extra": {
 		"scripts-description": {
 			"phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",

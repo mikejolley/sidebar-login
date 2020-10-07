@@ -1,56 +1,41 @@
 /* Basic styling for login widget -- aligns the gravatar left and the links right.*/
 .widget_wp_sidebarlogin {
-	.avatar_container {
-		float:left;
-		img {
-			padding: 3px;
-			border: 1px solid #ddd;
-			margin-right: 8px;
-			margin-top: 5px;
+	.sidebar-login-profile {
+		display: flex;
+		.sidebar-login-profile__avatar {
+			img {
+				padding: 2px;
+				border: 1px solid #ddd;
+				margin-right: 10px;
+				border-radius: 50%;
+			}
 		}
 	}
-	ul {
+	.sidebar-login-links {
+		margin-left: 0 !important;
 		list-style: none outside !important;
 	}
-	ul.sidebar_login_links {
-		margin-left: 0 !important;
-	}
-	hr {
-		display: block;
-		clear: both;
-		border: 0;
-		border-top: 1px solid #999;
-		height: 1px;
-	}
-	.sidebar_login_error {
-		color: #ae121e;
-		background-color: #fbb1b7;
-		border: 1px solid;
-		margin: 1em 0;
-		padding: 1em;
-		font-size: 13px;
-
-		a {
-			color: #ae121e;
+	.sidebar-login-form {
+		form, p {
+			margin: 0 0 1em 0;
 		}
-	}
-	form {
-		margin: 1em 0;
-
-		p {
-			margin: .5em 0;
-		}
-
 		.input {
 			width: 100%;
-			margin: 2px;
 			box-sizing: border-box;
+			margin: 0;
 		}
-
-		&.is-loading {
+		form.is-loading {
 			opacity: 0.6;
 			pointer-events: none;
 		}
+		.sidebar-login-error {
+			color: #fff;
+			background-color: #ae121e;
+			margin: 1em 0;
+			padding: 1em;
+			a, > * {
+				color: #fff;
+			}
+		}
 	}
-
 }

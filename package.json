@@ -24,6 +24,7 @@
 	"devDependencies": {
 		"@babel/cli": "^7.11.6",
 		"@babel/core": "^7.11.6",
+		"@babel/plugin-transform-runtime": "^7.11.5",
 		"@babel/preset-env": "^7.11.5",
 		"@wordpress/browserslist-config": "^2.7.0",
 		"@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
