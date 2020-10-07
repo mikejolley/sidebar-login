@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon-256x256@1x</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 0 0.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="icon-256x256" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#27AE60" x="0" y="0" width="256" height="256"></rect>
+        <g filter="url(#filter-1)" id="Group" opacity="0.146344866">
+            <g transform="translate(53.000000, 55.000000)">
+                <rect id="Rectangle" stroke="#FFFFFF" stroke-width="4" x="2" y="2" width="146" height="146" rx="14"></rect>
+                <path d="M142,33 L142,135 C142,138.865993 138.865993,142 135,142 L16,142 C12.1340068,142 9,138.865993 9,135 L9,33 L142,33 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                <rect id="Rectangle" fill="#27AE60" x="17" y="46" width="117" height="25" rx="3"></rect>
+                <rect id="Rectangle" fill="#27AE60" x="17" y="75" width="117" height="25" rx="3"></rect>
+                <rect id="Rectangle" fill="#27AE60" x="17" y="104" width="54" height="25" rx="3"></rect>
+                <text id="******" font-family="FFFForward, FFF Forward" font-size="13" font-weight="normal" letter-spacing="1.73333336" fill="#FFFFFF">
+                    <tspan x="22" y="96">******</tspan>
+                </text>
+            </g>
+        </g>
+        <g id="Group" opacity="0.90062314" style="mix-blend-mode: lighten;" transform="translate(53.000000, 53.000000)">
+            <rect id="Rectangle" stroke="#FFFFFF" stroke-width="4" x="2" y="2" width="146" height="146" rx="14"></rect>
+            <path d="M142,33 L142,135 C142,138.865993 138.865993,142 135,142 L16,142 C12.1340068,142 9,138.865993 9,135 L9,33 L142,33 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            <rect id="Rectangle" fill="#27AE60" x="17" y="46" width="117" height="25" rx="3"></rect>
+            <rect id="Rectangle" fill="#27AE60" x="17" y="75" width="117" height="25" rx="3"></rect>
+            <rect id="Rectangle" fill="#27AE60" x="17" y="104" width="54" height="25" rx="3"></rect>
+            <text id="******" font-family="FFFForward, FFF Forward" font-size="13" font-weight="normal" letter-spacing="1.73333336" fill="#FFFFFF">
+                <tspan x="22" y="96">******</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
