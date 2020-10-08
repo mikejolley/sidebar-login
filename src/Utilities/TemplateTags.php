@@ -55,7 +55,7 @@ class TemplateTags {
 			'avatar'       => get_avatar( $this->user ? $this->user->ID : 0, apply_filters( 'sidebar_login_widget_avatar_size', 48 ) ),
 		);
 		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
-		$logout_redirect = wp_logout_url( empty( $this->widget_instance['logout_redirect_url'] ) ? set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ) : $this->widget_instance['logout_redirect_url'] );
+		$logout_redirect = wp_logout_url( empty( $this->widget_instance['logout_redirect_url'] ) ? remove_query_arg( '_login', set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ) ) : $this->widget_instance['logout_redirect_url'] );
 		$replacements    = array(
 			'%username%'   => ucwords( $user_data->display_name ),
 			'%userid%'     => $user_data->id,
