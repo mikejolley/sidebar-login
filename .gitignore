@@ -23,6 +23,7 @@ sftp-config.json
 # Directories
 /.wordpress-org export-ignore
 /.github export-ignore
+/tests export-ignore
 
 # Files
 /.gitattributes export-ignore
