@@ -1,5 +1,4 @@
 /nbproject/private/
-/node_modules/
 project.xml
 project.properties
 .DS_Store
@@ -8,11 +7,30 @@ Thumbs.db
 .project
 .settings*
 sftp-config.json
-/deploy/
 
 # Ignore all log files except for .htaccess
 /logs/*
 !/logs/.htaccess
 
-# Composer
-/vendor/
+# Composer/NPM
+/vendor
+/node_modules
+
+# Builds
+/build
+/deploy
+
+# Directories
+/.wordpress-org export-ignore
+/.github export-ignore
+
+# Files
+/.gitattributes export-ignore
+/.gitignore export-ignore
+/.* export-ignore
+/composer.json export-ignore
+/composer.lock export-ignore
+/package.json export-ignore
+/package-lock.json export-ignore
+/phpcs.xml export-ignore
+/webpack.config.js export-ignore
