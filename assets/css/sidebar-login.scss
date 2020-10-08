@@ -1,19 +1,29 @@
 /* Basic styling for login widget -- aligns the gravatar left and the links right.*/
+.widget-area .widget_wp_sidebarlogin,
 .widget_wp_sidebarlogin {
 	.sidebar-login-account {
 		display: flex;
 		.sidebar-login-account__avatar {
+			height: 0%;
 			img {
 				padding: 2px;
 				border: 1px solid #ddd;
 				margin-right: 10px;
 				border-radius: 50%;
+				vertical-align: top;
 			}
 		}
 	}
 	.sidebar-login-links {
-		margin-left: 0 !important;
+		margin-left: 0;
+		margin-top: 0;
+		padding: 0;
 		list-style: none outside !important;
+		align-self: center;
+		flex-grow: 1;
+		li {
+			margin: 0;
+		}
 	}
 	.sidebar-login-form {
 		form, p {
