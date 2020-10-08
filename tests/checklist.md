@@ -19,12 +19,12 @@
   - [x] Placeholders all replace text correctly
   - [x] Custom links are shown
 - [x] Multiple widgets on same page work independently
-- [ ] Upgrading from a legacy 2.7.x widget to the new 3.x version remains functional
-- [ ] Compatibility
+- [x] Upgrading from a legacy 2.7.x widget to the new 3.x version remains functional
+- [x] Compatibility
   - [x] Runs on WP 5.0
   - [x] Runs on PHP 5.6
-  - [ ] the_widget support
-  - [ ] legacy the_widget support
+  - [x] the_widget support
+  - [x] legacy the_widget support
   - [x] Appearance acceptable across default themes:
     - [x] Twenty Eleven
     - [x] Twenty Twelve
