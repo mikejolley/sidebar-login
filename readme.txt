@@ -5,7 +5,7 @@ Tags: login, sidebar, widget, sidebar login, login widget, login form
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 2.7.3
+Stable tag: 3.0.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -81,14 +81,14 @@ These tags can be used in the widget settings for titles + links and will be rep
 == Changelog ==
 
 = 3.0.0 =
-* Fix - Prevent notices due to incorrect sizeof usage.
-* Tweak - %nicename% placeholder.
+* Refactor - Rewritten majority of plugin using more up to date standards and namespaces.
+* Refactor - Cleaned up the widget settings form to make functionality clearer.
+* Refactor - Removed email->username conversion since this is supported natively.
+* Tweak - Added %nicename% placeholder.
 * Tweak - Improved default styling and included extra wrapping divs (.sidebar-login-form, .sidebar-login-account, .sidebar-login-links).
-* Refactor - Removed email->username conversion since this is now supported natively.
-* Refactor - Rewritten majority of plugin using more up to date standards.
-* Refactor - Cleaned up the settings form.
 * Performance - Removed jQuery dependency and BlockUI script.
 * Performance - Removed `sidebar_login_js_in_footer` filter - this is now true by default.
+* Fix - Prevent notices due to incorrect sizeof() usage.
 
 = 2.7.3 =
 * Tweak - %avatar% placeholder.
