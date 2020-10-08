@@ -1,8 +1,8 @@
 /* Basic styling for login widget -- aligns the gravatar left and the links right.*/
 .widget_wp_sidebarlogin {
-	.sidebar-login-profile {
+	.sidebar-login-account {
 		display: flex;
-		.sidebar-login-profile__avatar {
+		.sidebar-login-account__avatar {
 			img {
 				padding: 2px;
 				border: 1px solid #ddd;

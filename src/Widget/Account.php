@@ -1,6 +1,6 @@
 <?php
 /**
- * Renders the Profile and Logged In Display.
+ * Renders the account and Logged In Display.
  *
  * @package MJ\SidebarLogin\Widget
  */
@@ -13,9 +13,9 @@ use MJ\SidebarLogin\Utilities\TemplateTags;
 use MJ\SidebarLogin\Utilities\ListLinks;
 
 /**
- * Profile class.
+ * Account class.
  */
-class Profile {
+class Account {
 	/**
 	 * Stores instance of TemplateTags.
 	 *
@@ -84,10 +84,10 @@ class Profile {
 
 		do_action( 'sidebar_login_widget_logged_in_content_start' );
 
-		echo '<div class="sidebar-login-profile">';
+		echo '<div class="sidebar-login-account">';
 
 		if ( ! empty( $this->settings['show_avatar'] ) ) {
-			echo '<div class="sidebar-login-profile__avatar avatar_container">' . get_avatar( get_current_user_id(), apply_filters( 'sidebar_login_widget_avatar_size', 48 ) ) . '</div>';
+			echo '<div class="sidebar-login-account__avatar avatar_container">' . get_avatar( get_current_user_id(), apply_filters( 'sidebar_login_widget_avatar_size', 48 ) ) . '</div>';
 		}
 
 		$this->render_links();

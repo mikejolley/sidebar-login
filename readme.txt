@@ -83,7 +83,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 = 3.0.0 =
 * Fix - Prevent notices due to incorrect sizeof usage.
 * Tweak - %nicename% placeholder.
-* Tweak - Improved default styling and included extra wrapping divs (.sidebar-login-form, .sidebar-login-profile, .sidebar-login-links).
+* Tweak - Improved default styling and included extra wrapping divs (.sidebar-login-form, .sidebar-login-account, .sidebar-login-links).
 * Refactor - Removed email->username conversion since this is now supported natively.
 * Refactor - Rewritten majority of plugin using more up to date standards.
 * Refactor - Cleaned up the settings form.

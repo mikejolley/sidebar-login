@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 use \WP_Widget;
 use MJ\SidebarLogin\Utilities\TemplateTags;
 use MJ\SidebarLogin\Utilities\ListLinks;
-use MJ\SidebarLogin\Widget\Profile;
+use MJ\SidebarLogin\Widget\Account;
 use MJ\SidebarLogin\Widget\LoginForm;
 
 /**
@@ -60,8 +60,8 @@ class Widget extends WP_Widget {
 		$list_links    = new ListLinks( $template_tags );
 
 		if ( is_user_logged_in() ) {
-			$profile = new Profile( $template_tags, $list_links, $args, $instance );
-			$profile->render();
+			$account = new Account( $template_tags, $list_links, $args, $instance );
+			$account->render();
 		} else {
 			$login_form = new LoginForm( $template_tags, $list_links, $args, $instance );
 			$login_form->render();
@@ -134,9 +134,9 @@ class Widget extends WP_Widget {
 				?>
 			</label>
 		</p>
-		<h3><?php esc_html_e( 'Logged-in profile display', 'sidebar-login' ); ?></h3>
+		<h3><?php esc_html_e( 'Logged-in account display', 'sidebar-login' ); ?></h3>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'logged_in_title' ) ); ?>"><?php esc_html_e( 'Profile Title', 'sidebar-login' ); ?>:</label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'logged_in_title' ) ); ?>"><?php esc_html_e( 'Title', 'sidebar-login' ); ?>:</label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'logged_out_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'logged_in_title' ) ); ?>" value="<?php echo esc_attr( $instance['logged_in_title'] ); ?>" />
 		</p>
 		<p>
