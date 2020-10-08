@@ -2,10 +2,10 @@
 Contributors: mikejolley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jolley@me.com&currency_code=&amount=&return=&item_name=Donation+for+Sidebar+Login
 Tags: login, sidebar, widget, sidebar login, login widget, login form
-Requires at least: 5.2
-Tested up to: 5.2
+Requires at least: 5.0
+Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.0.0
+Stable tag: 2.7.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

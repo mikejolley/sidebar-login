@@ -4,17 +4,17 @@
  *
  * @package           SidebarLogin
  * @author            Mike Jolley
- * @copyright         2020 Mike Jolley.
+ * @copyright         2020 Mike Jolley
  * @license           GPL-3.0-or-later
  *
  * @wordpress-plugin
  * Plugin Name:       Sidebar Login
  * Plugin URI:        http://wordpress.org/extend/plugins/sidebar-login/
  * Description:       Easily add an ajax-enhanced login widget to the sidebar of your WordPress site.
- * Version:           3.0.0
+ * Version:           3.0.0.beta
  * Author:            Mike Jolley
  * Author URI:        http://mikejolley.com
- * Requires at least: 5.2
+ * Requires at least: 5.0
  * Tested up to:      5.5
  * Requires PHP:      5.6
  * Text Domain:       sidebar-login
@@ -22,6 +22,13 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+/**
+ * Bail early if PHP version dependency is not met.
+ */
+if ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
+	return;
+}
 
 /**
  * Require Autoloader, and ensure build is complete. Otherwise abort.
