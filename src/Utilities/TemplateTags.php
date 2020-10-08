@@ -90,6 +90,11 @@ class TemplateTags {
 	 */
 	public function replace( $string ) {
 		$replacements = $this->get_replacements();
-		return str_replace( array_keys( $replacements ), array_values( $replacements ), $string );
+		$keys         = array_keys( $replacements );
+		$values       = array_values( $replacements );
+		$new_string   = str_replace( $keys, $values, $string );
+
+		// Also replace URL encoded values so nested replacements in, for examples, links are replaced.
+		return str_replace( array_map( 'urlencode', $keys ), array_map( 'urlencode', $values ), $new_string );
 	}
 }
