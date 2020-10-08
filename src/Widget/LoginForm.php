@@ -56,15 +56,7 @@ class LoginForm {
 		$this->template_tags = $template_tags;
 		$this->list_links    = $list_links;
 		$this->widget_args   = $widget_args;
-		$this->settings      = wp_parse_args(
-			$settings,
-			array(
-				'logged_out_title'   => __( 'Login', 'sidebar-login' ),
-				'logged_out_links'   => array(),
-				'login_redirect_url' => '',
-				'show_rememberme'    => 0,
-			)
-		);
+		$this->settings      = $settings;
 	}
 
 	/**
@@ -75,7 +67,7 @@ class LoginForm {
 
 		$logged_out_title = do_shortcode(
 			$this->template_tags->replace(
-				apply_filters( 'sidebar_login_widget_logged_out_title', $this->settings['logged_out_title'] )
+				apply_filters( 'sidebar_login_widget_logged_out_title', ! empty( $this->settings['logged_out_title'] ) ? $this->settings['logged_out_title'] : '' )
 			)
 		);
 
@@ -103,7 +95,7 @@ class LoginForm {
 				'label_password' => __( 'Password', 'sidebar-login' ),
 				'label_remember' => __( 'Remember Me', 'sidebar-login' ),
 				'label_log_in'   => __( 'Log In', 'sidebar-login' ),
-				'remember'       => $this->settings['show_rememberme'],
+				'remember'       => ! empty( $this->settings['show_rememberme'] ),
 				'value_remember' => true,
 			)
 		);
@@ -126,7 +118,7 @@ class LoginForm {
 
 		$links = apply_filters(
 			'sidebar_login_widget_logged_out_links',
-			$this->list_links->parse_setting_value( $this->settings['logged_out_links'] )
+			! empty( $this->settings['logged_out_links'] ) ? $this->list_links->parse_setting_value( $this->settings['logged_out_links'] ) : array()
 		);
 
 		if ( get_option( 'users_can_register' ) && ! empty( $this->settings['show_register_link'] ) ) {

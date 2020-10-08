@@ -30,6 +30,31 @@ class Widget extends WP_Widget {
 	}
 
 	/**
+	 * Prepare the instance by inserting defaults if missing.
+	 *
+	 * @param array $instance Widget instance.
+	 * @return array
+	 */
+	protected function prepare_instance( $instance ) {
+		$defaults = array(
+			'logged_out_title'        => __( 'Login', 'sidebar-login' ),
+			'login_redirect_url'      => '',
+			'logged_out_links'        => '',
+			'show_rememberme'         => '1',
+			'show_lost_password_link' => '1',
+			'show_register_link'      => '1',
+			'logged_in_title'         => __( 'Welcome', 'sidebar-login' ) . ' %username%',
+			'logout_redirect_url'     => '',
+			'logged_in_links'         => __( "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%", 'sidebar-login' ),
+			'show_avatar'             => '1',
+		);
+		if ( empty( $instance ) ) {
+			$instance = $defaults;
+		}
+		return $instance;
+	}
+
+	/**
 	 * Render the widget on the frontend.
 	 *
 	 * @param array $args Widget args.
@@ -55,6 +80,7 @@ class Widget extends WP_Widget {
 		 */
 		do_action( 'sidebar_login_widget_start' );
 
+		$instance      = $this->prepare_instance( $instance );
 		$user          = is_user_logged_in() ? get_user_by( 'id', get_current_user_id() ) : null;
 		$template_tags = new TemplateTags( $user, $instance );
 		$list_links    = new ListLinks( $template_tags );
@@ -83,21 +109,7 @@ class Widget extends WP_Widget {
 	 * @param array $instance Widget instance containing settings.
 	 */
 	public function form( $instance ) {
-		$defaults = array(
-			'logged_out_title'        => __( 'Login', 'sidebar-login' ),
-			'login_redirect_url'      => '',
-			'logged_out_links'        => '',
-			'show_rememberme'         => '1',
-			'show_lost_password_link' => '1',
-			'show_register_link'      => '1',
-			'logged_in_title'         => __( 'Welcome', 'sidebar-login' ) . ' %username%',
-			'logout_redirect_url'     => '',
-			'logged_in_links'         => __( "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%", 'sidebar-login' ),
-			'show_avatar'             => '1',
-		);
-		if ( empty( $instance ) ) {
-			$instance = $defaults;
-		}
+		$instance = $this->prepare_instance( $instance );
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'logged_out_title' ) ); ?>"><?php esc_html_e( 'Login Form Title', 'sidebar-login' ); ?>:</label>

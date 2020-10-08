@@ -56,15 +56,7 @@ class Account {
 		$this->template_tags = $template_tags;
 		$this->list_links    = $list_links;
 		$this->widget_args   = $widget_args;
-		$this->settings      = wp_parse_args(
-			$settings,
-			array(
-				'logged_in_title'     => __( 'Welcome', 'sidebar-login' ) . ' %username%',
-				'logged_in_links'     => array(),
-				'logout_redirect_url' => '',
-				'show_avatar'         => 1,
-			)
-		);
+		$this->settings      = $settings;
 	}
 
 	/**
@@ -73,7 +65,7 @@ class Account {
 	public function render() {
 		$logged_in_title = do_shortcode(
 			$this->template_tags->replace(
-				apply_filters( 'sidebar_login_widget_logged_in_title', $this->settings['logged_in_title'] )
+				apply_filters( 'sidebar_login_widget_logged_in_title', ! empty( $this->settings['logged_in_title'] ) ? $this->settings['logged_in_title'] : '' )
 			)
 		);
 
@@ -95,7 +87,8 @@ class Account {
 		echo '</div>';
 
 		do_action( 'sidebar_login_widget_logged_in_content_end' );
-	}
+
+}
 
 	/**
 	 * Render logged in links setting.
@@ -105,7 +98,7 @@ class Account {
 
 		$links = apply_filters(
 			'sidebar_login_widget_logged_in_links',
-			$this->list_links->parse_setting_value( $this->settings['logged_in_links'] )
+			! empty( $this->settings['logged_in_links'] ) ? $this->list_links->parse_setting_value( $this->settings['logged_in_links'] ) : array()
 		);
 
 		$this->list_links->render( $links );
