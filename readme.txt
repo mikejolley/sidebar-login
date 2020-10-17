@@ -5,7 +5,7 @@ Tags: login, sidebar, widget, sidebar login, login widget, login form
 Requires at least: 5.0
 Tested up to: 5.5
 Requires PHP: 5.6
-Stable tag: 3.0.0
+Stable tag: 3.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -79,6 +79,9 @@ These tags can be used in the widget settings for titles + links and will be rep
 3. Widget settings
 
 == Changelog ==
+
+= 3.0.1 =
+* Fix - Fix rendering of additional links when using non-latin characters in the link text.
 
 = 3.0.0 =
 * Refactor - Rewritten majority of plugin using more up to date standards and namespaces.

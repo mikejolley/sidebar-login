@@ -54,8 +54,7 @@ class ListLinks {
 			if ( ! empty( $cap ) && ! current_user_can( $cap ) ) {
 				continue;
 			}
-
-			$links[ sanitize_key( $text ) ] = array(
+			$links[ sanitize_title( $text ) ] = array(
 				'text' => $text,
 				'href' => $href,
 			);
