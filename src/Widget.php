@@ -48,10 +48,7 @@ class Widget extends WP_Widget {
 			'logged_in_links'         => __( "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%", 'sidebar-login' ),
 			'show_avatar'             => '1',
 		);
-		if ( empty( $instance ) ) {
-			$instance = $defaults;
-		}
-		return $instance;
+		return wp_parse_args( $instance, $defaults );
 	}
 
 	/**
