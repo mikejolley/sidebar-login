@@ -30,7 +30,7 @@
 		"@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
 		"babel-loader": "^8.1.0",
 		"babel-minify-webpack-plugin": "^0.3.1",
-		"browserslist": "^4.14.5",
+		"browserslist": "^4.16.5",
 		"css-loader": "^4.3.0",
 		"mini-css-extract-plugin": "^0.11.3",
 		"postcss": "^8.1.1",
