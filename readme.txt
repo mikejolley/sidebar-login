@@ -1,7 +1,7 @@
 === Sidebar Login ===
 Contributors: mikejolley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jolley@me.com&currency_code=&amount=&return=&item_name=Donation+for+Sidebar+Login
-Tags: login, sidebar, widget, sidebar login, login widget, login form
+Tags: login, sidebar, widget, sidebar login, login widget
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
