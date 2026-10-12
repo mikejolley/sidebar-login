@@ -45,7 +45,7 @@ if ( is_readable( $autoloader ) && is_readable( $build ) ) {
 			sprintf(
 				/* translators: 1: composer command. 2: plugin directory */
 				esc_html__( 'Your installation of Sidebar Login is incomplete. Please run %1$s within the %2$s directory, or download the built plugin files from wordpress.org.', 'sidebar-login' ),
-				'`composer install && && npm install && npm run build`',
+				'`composer install && npm install && npm run build`',
 				'`' . esc_html( str_replace( ABSPATH, '', __DIR__ ) ) . '`'
 			)
 		);
@@ -63,7 +63,7 @@ if ( is_readable( $autoloader ) && is_readable( $build ) ) {
 					printf(
 						/* translators: 1: composer command. 2: plugin directory */
 						esc_html__( 'Your installation of Sidebar Login is incomplete. Please run %1$s within the %2$s directory, or download the built plugin files from wordpress.org.', 'sidebar-login' ),
-						'<code>composer install && && npm install && npm run build</code>',
+						'<code>composer install && npm install && npm run build</code>',
 						'<code>' . esc_html( str_replace( ABSPATH, '', __DIR__ ) ) . '</code>'
 					);
 					?>

@@ -57,7 +57,7 @@
 			const addError = ( errorText ) => {
 				form.insertAdjacentHTML(
 					'afterbegin',
-					'<p class="' + errorClassName + '">' + errorText + '</div>'
+					'<p class="' + errorClassName + '">' + errorText + '</p>'
 				);
 			};
 
@@ -108,38 +108,48 @@
 			event.preventDefault();
 			form.classList.add( 'is-loading' );
 
-			const data = new FormData();
-			data.append( 'action', 'sidebar_login_process' );
-			data.append(
+			// Post every field, so fields other plugins add to the form (such as a captcha) reach their checks.
+			const data = new FormData( form );
+			data.set( 'action', 'sidebar_login_process' );
+			data.set(
 				'user_login',
 				form.querySelector( 'input[name="log"]' )?.value || ''
 			);
-			data.append(
+			data.set(
 				'user_password',
 				form.querySelector( 'input[name="pwd"]' )?.value || ''
 			);
-			data.append(
+			data.set(
 				'remember',
 				form.querySelector( 'input[name="rememberme"]:checked' )
 					?.value || ''
 			);
-			data.append(
+			data.set(
 				'redirect_to',
 				form.querySelector( 'input[name="redirect_to"]' )?.value || ''
 			);
 
-			ajaxPost( params.ajax_url, data ).then( ( response ) => {
-				if ( Number( response.success ) === 1 ) {
-					if ( response.redirect ) {
-						window.location.replace( response.redirect );
+			// Without a usable response, for example when a two-factor plugin takes over the login, post the form to
+			// wp-login.php instead. Calling submit() directly doesn't fire this handler again.
+			const submitWithoutAjax = () =>
+				window.HTMLFormElement.prototype.submit.call( form );
+
+			ajaxPost( params.ajax_url, data )
+				.then( ( response ) => {
+					if ( Number( response.success ) === 1 ) {
+						if ( response.redirect ) {
+							window.location.replace( response.redirect );
+						} else {
+							window.location.reload();
+						}
+					} else if ( response.error ) {
+						addError( response.error );
+						form.classList.remove( 'is-loading' );
 					} else {
-						window.location.reload();
+						submitWithoutAjax();
 					}
-				} else {
-					addError( response.error );
-					form.classList.remove( 'is-loading' );
-				}
-			} );
+				} )
+				.catch( submitWithoutAjax );
 		};
 
 		forms.forEach( ( form ) => {

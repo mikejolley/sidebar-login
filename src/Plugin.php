@@ -63,6 +63,7 @@ class Plugin {
 	public function enqueue_scripts() {
 		if ( apply_filters( 'sidebar_login_include_css', true ) ) {
 			wp_enqueue_style( 'sidebar-login', plugins_url( 'build/sidebar-login.css', $this->file ), '', filemtime( dirname( __DIR__ ) . '/build/sidebar-login.css' ) );
+			wp_style_add_data( 'sidebar-login', 'rtl', 'replace' );
 		}
 
 		$asset_path   = dirname( __DIR__ ) . '/build/frontend.asset.php';
@@ -86,15 +87,18 @@ class Plugin {
 
 	/**
 	 * Process the form when using AJAX post.
+	 *
+	 * Mirrors the login handling in wp-login.php, which the form posts to when JavaScript is unavailable.
 	 */
 	public function ajax_handler() {
-		$credentials   = array(
-			'user_login'    => isset( $_POST['user_login'] ) ? trim( wp_unslash( $_POST['user_login'] ) ) : '', // phpcs:ignore
-			'user_password' => isset( $_POST['user_password'] ) ? trim( $_POST['user_password'] ) : '', // phpcs:ignore
-			'remember'      => isset( $_POST['remember'] ) ? sanitize_text_field( wp_unslash( $_POST['remember'] ) ) : '', // phpcs:ignore
+		$credentials           = array(
+			'user_login'    => trim( wp_unslash( $this->get_posted_string( 'user_login' ) ) ),
+			// Left slashed, as wp-login.php does.
+			'user_password' => trim( $this->get_posted_string( 'user_password' ) ),
+			'remember'      => sanitize_text_field( wp_unslash( $this->get_posted_string( 'remember' ) ) ),
 		);
-		$redirect_to   = isset( $_POST['redirect_to'] ) ? esc_url_raw( trim( wp_unslash( $_POST['redirect_to'] ) ) ) : ''; // phpcs:ignore
-		$secure_cookie = null;
+		$requested_redirect_to = esc_url_raw( trim( wp_unslash( $this->get_posted_string( 'redirect_to' ) ) ) );
+		$secure_cookie         = '';
 
 		// If the user wants ssl but the session is not ssl, force a secure cookie.
 		if ( ! force_ssl_admin() ) {
@@ -110,6 +114,13 @@ class Plugin {
 
 		$user = wp_signon( $credentials, $secure_cookie );
 
+		/** This filter is documented in wp-login.php */
+		$redirect_to = apply_filters( 'login_redirect', $requested_redirect_to, $requested_redirect_to, $user );
+
+		// Only redirect within this site, or to hosts allowed with the allowed_redirect_hosts filter. Otherwise the
+		// page reloads.
+		$redirect_to = wp_validate_redirect( $redirect_to, '' );
+
 		if ( $secure_cookie && strstr( $redirect_to, 'wp-admin' ) ) {
 			$redirect_to = str_replace( 'http:', 'https:', $redirect_to );
 		}
@@ -118,8 +129,20 @@ class Plugin {
 			array(
 				'success'  => is_wp_error( $user ) ? 0 : 1,
 				'redirect' => $redirect_to,
-				'error'    => is_wp_error( $user ) ? current( current( $user->errors ) ) : '',
+				/** This filter is documented in wp-login.php */
+				'error'    => is_wp_error( $user ) ? apply_filters( 'login_errors', $user->get_error_message() ) : '',
 			)
 		);
+	}
+
+	/**
+	 * Get a posted login form field. Values that aren't strings, such as arrays, are ignored.
+	 *
+	 * @param string $key Field name.
+	 * @return string Raw, slashed value.
+	 */
+	private function get_posted_string( $key ) {
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing, WordPress.Security.ValidatedSanitizedInput -- Login form, like wp-login.php; the caller sanitises.
+		return isset( $_POST[ $key ] ) && is_string( $_POST[ $key ] ) ? $_POST[ $key ] : '';
 	}
 }

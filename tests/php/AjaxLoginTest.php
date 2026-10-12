@@ -58,14 +58,14 @@ class AjaxLoginTest extends WP_Ajax_UnitTestCase {
 			array(
 				'user_login'    => 'sidebar_user',
 				'user_password' => 'correct horse',
-				'redirect_to'   => 'http://example.org/after-login/',
+				'redirect_to'   => home_url( '/after-login/' ),
 			)
 		);
 
 		$this->assertSame(
 			array(
 				'success'  => 1,
-				'redirect' => 'http://example.org/after-login/',
+				'redirect' => home_url( '/after-login/' ),
 				'error'    => '',
 			),
 			$response
@@ -102,5 +102,112 @@ class AjaxLoginTest extends WP_Ajax_UnitTestCase {
 
 		$this->assertSame( 0, $response['success'] );
 		$this->assertNotEmpty( $response['error'] );
+	}
+
+	public function test_redirect_to_another_site_is_dropped() {
+		$response = $this->post_login(
+			array(
+				'user_login'    => 'sidebar_user',
+				'user_password' => 'correct horse',
+				'redirect_to'   => 'https://attacker.example/phishing-page',
+			)
+		);
+
+		$this->assertSame( 1, $response['success'] );
+		$this->assertSame( '', $response['redirect'], 'An empty redirect makes the page reload instead.' );
+	}
+
+	public function test_redirect_to_an_allowed_host_is_kept() {
+		add_filter(
+			'allowed_redirect_hosts',
+			static function ( $hosts ) {
+				return array_merge( $hosts, array( 'partner.example' ) );
+			}
+		);
+
+		$response = $this->post_login(
+			array(
+				'user_login'    => 'sidebar_user',
+				'user_password' => 'correct horse',
+				'redirect_to'   => 'https://partner.example/welcome/',
+			)
+		);
+
+		$this->assertSame( 'https://partner.example/welcome/', $response['redirect'] );
+	}
+
+	public function test_login_redirect_filter_is_applied() {
+		add_filter(
+			'login_redirect',
+			static function ( $redirect_to, $requested_redirect_to, $user ) {
+				return $user instanceof \WP_User ? home_url( '/members/' ) : $redirect_to;
+			},
+			10,
+			3
+		);
+
+		$response = $this->post_login(
+			array(
+				'user_login'    => 'sidebar_user',
+				'user_password' => 'correct horse',
+				'redirect_to'   => home_url( '/page/' ),
+			)
+		);
+
+		$this->assertSame( home_url( '/members/' ), $response['redirect'] );
+	}
+
+	public function test_login_errors_filter_is_applied() {
+		add_filter(
+			'login_errors',
+			static function () {
+				return 'Login failed.';
+			}
+		);
+
+		$response = $this->post_login(
+			array(
+				'user_login'    => 'nobody',
+				'user_password' => 'wrong',
+			)
+		);
+
+		$this->assertSame( 'Login failed.', $response['error'] );
+	}
+
+	public function test_non_string_fields_are_ignored() {
+		$response = $this->post_login(
+			array(
+				'user_login'    => array( 'sidebar_user' ),
+				'user_password' => array( 'correct horse' ),
+				'remember'      => array( '1' ),
+				'redirect_to'   => array( 'https://attacker.example/' ),
+			)
+		);
+
+		$this->assertSame( 0, $response['success'] );
+		$this->assertSame( '', $response['redirect'] );
+	}
+
+	public function test_secure_cookie_defaults_to_the_connection_scheme() {
+		$_SERVER['HTTPS'] = 'on';
+		$secure           = 'not called';
+		add_filter(
+			'secure_signon_cookie',
+			static function ( $secure_cookie ) use ( &$secure ) {
+				$secure = $secure_cookie;
+				return $secure_cookie;
+			}
+		);
+
+		$this->post_login(
+			array(
+				'user_login'    => 'sidebar_user',
+				'user_password' => 'correct horse',
+			)
+		);
+		unset( $_SERVER['HTTPS'] );
+
+		$this->assertTrue( $secure );
 	}
 }

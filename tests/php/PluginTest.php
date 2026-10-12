@@ -44,9 +44,11 @@ class PluginTest extends TestCase {
 		$this->assertTrue( wp_script_is( 'sidebar-login', 'registered' ) );
 		$this->assertFalse( wp_script_is( 'sidebar-login', 'enqueued' ), 'The script is only enqueued when the login form renders.' );
 
-		$params = wp_scripts()->get_data( 'sidebar-login', 'data' );
-		$this->assertStringContainsString( '"ajax_url":"/wp-admin/admin-ajax.php"', $params );
-		$this->assertStringContainsString( '"error_class":"sidebar-login-error"', $params );
+		$data = wp_scripts()->get_data( 'sidebar-login', 'data' );
+		$this->assertSame( 1, preg_match( '/^var sidebar_login_params = (.*);$/', $data, $matches ) );
+		$params = json_decode( $matches[1], true );
+		$this->assertSame( '/wp-admin/admin-ajax.php', $params['ajax_url'] );
+		$this->assertSame( 'sidebar-login-error', $params['error_class'] );
 	}
 
 	public function test_stylesheet_can_be_disabled() {
@@ -69,5 +71,11 @@ class PluginTest extends TestCase {
 		$this->render_widget();
 
 		$this->assertFalse( wp_script_is( 'sidebar-login', 'enqueued' ) );
+	}
+
+	public function test_rtl_stylesheet_replaces_the_default_in_rtl_languages() {
+		do_action( 'wp_enqueue_scripts' );
+
+		$this->assertSame( 'replace', wp_styles()->get_data( 'sidebar-login', 'rtl' ) );
 	}
 }

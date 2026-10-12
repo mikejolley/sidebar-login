@@ -31,7 +31,13 @@ const USER = {
 };
 
 test.describe( 'Sidebar Login widget', () => {
+	let previousTheme;
+
 	test.beforeAll( async ( { requestUtils } ) => {
+		[ previousTheme ] = await requestUtils.rest( {
+			path: '/wp/v2/themes',
+			params: { status: 'active' },
+		} );
 		await requestUtils.activatePlugin( 'sidebar-login' );
 		await requestUtils.deleteAllUsers();
 		await requestUtils.createUser( USER );
@@ -46,7 +52,7 @@ test.describe( 'Sidebar Login widget', () => {
 	test.afterAll( async ( { requestUtils } ) => {
 		wpCli( 'widget reset sidebar-1' );
 		await requestUtils.deleteAllUsers();
-		await requestUtils.activateTheme( 'twentytwentyfive' );
+		wpCli( `theme activate ${ previousTheme.stylesheet }` );
 	} );
 
 	test.describe( 'logged out', () => {
@@ -103,6 +109,10 @@ test.describe( 'Sidebar Login widget', () => {
 			const response = page.waitForResponse( /admin-ajax\.php/ );
 			await widget.getByRole( 'button', { name: 'Log In' } ).click();
 			expect( ( await response ).ok() ).toBe( true );
+			// The whole form is posted, so fields added by other plugins reach their checks.
+			expect( ( await response ).request().postData() ).toContain(
+				'name="log"'
+			);
 
 			await expect( page ).toHaveURL( /[?&]_login=[0-9a-f]{10}/ );
 			await expect(
@@ -110,6 +120,29 @@ test.describe( 'Sidebar Login widget', () => {
 			).toBeVisible();
 			await expect(
 				widget.getByRole( 'link', { name: 'Logout' } )
+			).toBeVisible();
+		} );
+
+		test( 'falls back to wp-login.php when the AJAX response is unusable', async ( {
+			page,
+		} ) => {
+			// For example, a two-factor plugin that prints its own form.
+			await page.route( /admin-ajax\.php/, ( route ) =>
+				route.fulfill( {
+					contentType: 'text/html',
+					body: '<p>Enter your code</p>',
+				} )
+			);
+			await page.goto( '/' );
+			const widget = page.locator( '.widget_wp_sidebarlogin' );
+
+			await widget.getByLabel( 'Username' ).fill( USER.username );
+			await widget.getByLabel( 'Password' ).fill( USER.password );
+			await widget.getByRole( 'button', { name: 'Log In' } ).click();
+
+			await expect( page ).toHaveURL( /[?&]_login=[0-9a-f]{10}/ );
+			await expect(
+				widget.getByRole( 'heading', { name: 'Welcome Widget User' } )
 			).toBeVisible();
 		} );
 

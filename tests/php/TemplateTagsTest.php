@@ -70,4 +70,44 @@ class TemplateTagsTest extends TestCase {
 		$this->assertStringContainsString( 'redirect_to=' . rawurlencode( home_url( '/?p=5' ) ), $logout_url );
 		$this->assertStringNotContainsString( '_login', $logout_url );
 	}
+
+	public function test_admin_url_tag_is_not_followed_by_a_second_slash() {
+		$tags = new TemplateTags( null, array() );
+
+		$this->assertSame( admin_url( 'profile.php' ), $tags->replace( '%admin_url%/profile.php' ) );
+		$this->assertSame( admin_url( 'profile.php' ), $tags->replace( '%admin_url%profile.php' ) );
+	}
+
+	public function test_replacements_are_built_once() {
+		$calls = 0;
+		add_filter(
+			'sidebar_login_widget_avatar_size',
+			static function ( $size ) use ( &$calls ) {
+				++$calls;
+				return $size;
+			}
+		);
+		$tags = new TemplateTags( null, array() );
+
+		$tags->replace( '%username%' );
+		$tags->replace( '%site_url%' );
+		$tags->replace_in_title( '%name%' );
+
+		$this->assertSame( 1, $calls );
+	}
+
+	public function test_title_replacements_encode_square_brackets() {
+		$user = $this->log_in_as( 'subscriber', array( 'first_name' => '[gallery]' ) );
+		$tags = new TemplateTags( $user, array() );
+
+		$this->assertSame( '[b]&#91;gallery&#93;', $tags->replace_in_title( '[b]%firstname%' ) );
+		$this->assertSame( '[gallery]', $tags->replace( '%firstname%' ), 'Links are not passed through do_shortcode().' );
+	}
+
+	public function test_tags_inside_replaced_values_are_not_expanded() {
+		$user = $this->log_in_as( 'subscriber', array( 'display_name' => '%logout_url%' ) );
+		$tags = new TemplateTags( $user, array() );
+
+		$this->assertSame( '%logout_url%', $tags->replace( '%username%' ) );
+	}
 }

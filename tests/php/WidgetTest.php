@@ -155,4 +155,139 @@ class WidgetTest extends TestCase {
 		$this->assertStringContainsString( 'value="Login"', $html );
 		$this->assertStringContainsString( 'value="Welcome %username%"', $html );
 	}
+
+	public function test_shortcodes_in_profile_fields_do_not_run_in_the_title() {
+		add_shortcode(
+			'sl_test',
+			static function () {
+				return 'SHORTCODE RAN';
+			}
+		);
+		$this->log_in_as( 'subscriber', array( 'display_name' => '[sl_test]' ) );
+
+		$html = $this->render_widget();
+
+		$this->assertStringNotContainsString( 'SHORTCODE RAN', $html );
+		$this->assertStringContainsString( '<h2 class="widget-title">Welcome &#091;sl_test&#093;</h2>', $html );
+	}
+
+	public function test_shortcodes_in_the_title_setting_still_run() {
+		add_shortcode(
+			'sl_test',
+			static function ( $atts ) {
+				return 'Shortcode for user ' . $atts['id'];
+			}
+		);
+		$user = $this->log_in_as();
+
+		$html = $this->render_widget(
+			array(
+				'logged_in_title' => '[sl_test id="%userid%"]',
+				'logged_in_links' => '',
+			)
+		);
+
+		$this->assertStringContainsString( '<h2 class="widget-title">Shortcode for user ' . $user->ID . '</h2>', $html );
+	}
+
+	public function test_default_redirect_uses_the_site_address_not_the_host_header() {
+		$host                 = $_SERVER['HTTP_HOST']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- Restored below.
+		$_SERVER['HTTP_HOST'] = 'attacker.example';
+		$html                 = $this->render_widget();
+		$_SERVER['HTTP_HOST'] = $host;
+
+		$this->assertStringContainsString( 'name="redirect_to" value="' . home_url( '/' ), $html );
+		$this->assertStringNotContainsString( 'attacker.example', $html );
+	}
+
+	public function test_widget_renders_without_a_host_header() {
+		$host = $_SERVER['HTTP_HOST']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput -- Restored below.
+		unset( $_SERVER['HTTP_HOST'] );
+		$this->log_in_as();
+		$html                 = $this->render_widget();
+		$_SERVER['HTTP_HOST'] = $host;
+
+		$this->assertStringContainsString( 'action=logout', $html );
+	}
+
+	public function test_settings_saved_without_unticked_checkboxes_keep_them_off() {
+		// Before 3.1.0, unticked checkboxes were left out of the saved settings.
+		$html = $this->render_widget(
+			array(
+				'logged_out_title'   => 'Login',
+				'login_redirect_url' => '',
+				'logged_out_links'   => '',
+			)
+		);
+
+		$this->assertStringNotContainsString( 'name="rememberme"', $html );
+		$this->assertStringNotContainsString( 'lost_password-link', $html );
+	}
+
+	public function test_settings_form_handles_partial_settings() {
+		$widget = new Widget();
+		$widget->_set( 1 );
+
+		ob_start();
+		$widget->form( array( 'logged_out_title' => 'Sign in' ) );
+		$html = ob_get_clean();
+
+		$this->assertStringContainsString( 'value="Sign in"', $html );
+		$this->assertStringNotContainsString( 'checked=', $html );
+	}
+
+	public function test_settings_form_fields_have_unique_ids() {
+		$widget = new Widget();
+		$widget->_set( 1 );
+
+		ob_start();
+		$widget->form( array() );
+		$html = ob_get_clean();
+
+		$this->assertSame( 1, substr_count( $html, 'id="widget-wp_sidebarlogin-1-logged_out_title"' ) );
+		$this->assertSame( 1, substr_count( $html, 'id="widget-wp_sidebarlogin-1-logged_in_title"' ) );
+	}
+
+	public function test_saved_settings_are_sanitized() {
+		$this->log_in_as( 'author' );
+
+		$instance = ( new Widget() )->update(
+			array(
+				'logged_out_title'   => 'Hi <script>alert(1)</script><em>there</em>',
+				'logged_in_links'    => array( 'not a string' ),
+				'login_redirect_url' => '<b>%site_url%/welcome/</b>',
+				'show_avatar'        => 'on',
+			),
+			array()
+		);
+
+		$this->assertSame( 'Hi alert(1)<em>there</em>', $instance['logged_out_title'] );
+		$this->assertSame( '', $instance['logged_in_links'] );
+		$this->assertSame( '%site_url%/welcome/', $instance['login_redirect_url'] );
+		$this->assertSame( '1', $instance['show_avatar'] );
+		$this->assertSame( '', $instance['show_rememberme'], 'Unticked checkboxes are saved as empty.' );
+	}
+
+	public function test_saving_no_settings_keeps_the_defaults() {
+		$this->assertSame( array(), ( new Widget() )->update( array(), array() ) );
+	}
+
+	public function test_saved_settings_keep_html_for_users_who_can_post_it() {
+		$this->log_in_as( 'administrator' );
+		$title = '<span onclick="go()">Login</span>';
+
+		$instance = ( new Widget() )->update( array( 'logged_out_title' => $title ), array() );
+
+		$this->assertSame( current_user_can( 'unfiltered_html' ) ? $title : wp_kses_post( $title ), $instance['logged_out_title'] );
+	}
+
+	public function test_each_login_form_on_a_page_gets_its_own_field_ids() {
+		$first  = $this->render_widget();
+		$second = $this->render_widget();
+
+		preg_match( '#<input type="text" name="log" id="([^"]+)"#', $first, $first_id );
+		preg_match( '#<input type="text" name="log" id="([^"]+)"#', $second, $second_id );
+		$this->assertNotSame( $first_id[1], $second_id[1] );
+		$this->assertStringContainsString( 'for="' . $second_id[1] . '"', $second );
+	}
 }
