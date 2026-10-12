@@ -87,8 +87,7 @@ class Account {
 		echo '</div>';
 
 		do_action( 'sidebar_login_widget_logged_in_content_end' );
-
-}
+	}
 
 	/**
 	 * Render logged in links setting.

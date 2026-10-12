@@ -9,7 +9,7 @@ namespace MJ\SidebarLogin;
 
 defined( 'ABSPATH' ) || exit;
 
-use \WP_Widget;
+use WP_Widget;
 use MJ\SidebarLogin\Utilities\TemplateTags;
 use MJ\SidebarLogin\Utilities\ListLinks;
 use MJ\SidebarLogin\Widget\Account;

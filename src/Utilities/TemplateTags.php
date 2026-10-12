@@ -85,14 +85,14 @@ class TemplateTags {
 	/**
 	 * Replace template tags in a string with user data.
 	 *
-	 * @param string $string Text to replace tags within.
+	 * @param string $text Text to replace tags within.
 	 * @return string The updated string.
 	 */
-	public function replace( $string ) {
+	public function replace( $text ) {
 		$replacements = $this->get_replacements();
 		$keys         = array_keys( $replacements );
 		$values       = array_values( $replacements );
-		$new_string   = str_replace( $keys, $values, $string );
+		$new_string   = str_replace( $keys, $values, $text );
 
 		// Also replace URL encoded values so nested replacements in, for examples, links are replaced.
 		return str_replace( array_map( 'urlencode', $keys ), array_map( 'urlencode', $values ), $new_string );

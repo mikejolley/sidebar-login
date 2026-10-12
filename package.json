@@ -1,11 +1,11 @@
 {
 	"name": "sidebar-login",
 	"title": "Sidebar Login",
-	"homepage": "https://github.com/mikejolley/sidebar-login#readme",
+	"homepage": "https://wordpress.org/plugins/sidebar-login/",
 	"description": "Easily add an ajax-enhanced login widget to the sidebar of your WordPress site.",
 	"author": "Mike Jolley",
 	"license": "GPL-3.0-or-later",
-	"version": "2.8.0",
+	"version": "3.0.1",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/mikejolley/sidebar-login.git"
@@ -13,36 +13,23 @@
 	"bugs": {
 		"url": "https://github.com/mikejolley/sidebar-login/issues"
 	},
-	"babel": {
-		"presets": [
-			"@babel/preset-env"
-		]
-	},
-	"browserslist": [
-		"extends @wordpress/browserslist-config"
-	],
 	"devDependencies": {
-		"@babel/cli": "^7.11.6",
-		"@babel/core": "^7.11.6",
-		"@babel/plugin-transform-runtime": "^7.11.5",
-		"@babel/preset-env": "^7.11.5",
-		"@wordpress/browserslist-config": "^2.7.0",
-		"@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
-		"babel-loader": "^8.1.0",
-		"babel-minify-webpack-plugin": "^0.3.1",
-		"browserslist": "^4.14.5",
-		"css-loader": "^4.3.0",
-		"mini-css-extract-plugin": "^0.11.3",
-		"postcss": "^8.1.1",
-		"postcss-loader": "^4.0.3",
-		"rimraf": "^3.0.2",
-		"sass": "^1.26.12",
-		"sass-loader": "^10.0.2",
-		"webpack": "^4.44.2",
-		"webpack-cli": "^3.3.12"
+		"@playwright/test": "^1.63.0",
+		"@wordpress/e2e-test-utils-playwright": "^2.1.0",
+		"@wordpress/env": "^11.16.0",
+		"@wordpress/scripts": "^36.0.0",
+		"webpack-remove-empty-scripts": "^1.1.1"
 	},
 	"scripts": {
-		"watch": "rimraf build/* && webpack --mode=development --watch --config webpack.config.js",
-		"build": "rimraf build/* && webpack --mode=production --config webpack.config.js"
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"format": "wp-scripts format",
+		"lint:js": "wp-scripts lint-js assets/js tests/e2e",
+		"lint:css": "wp-scripts lint-style \"assets/**/*.scss\"",
+		"lint:php": "composer run-script phpcs",
+		"lint": "npm run lint:js && npm run lint:css && npm run lint:php",
+		"wp-env": "wp-env",
+		"test:php": "wp-env run cli --env-cwd=wp-content/plugins/sidebar-login env WORDPRESS_TABLE_PREFIX=wptests_ vendor/bin/phpunit",
+		"test:e2e": "wp-scripts test-playwright --config tests/e2e/playwright.config.js"
 	}
 }

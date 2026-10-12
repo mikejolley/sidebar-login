@@ -9,16 +9,18 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Sidebar Login
- * Plugin URI:        http://wordpress.org/extend/plugins/sidebar-login/
+ * Plugin URI:        https://wordpress.org/plugins/sidebar-login/
  * Description:       Easily add an ajax-enhanced login widget to the sidebar of your WordPress site.
  * Version:           3.0.1
  * Author:            Mike Jolley
  * Author URI:        http://mikejolley.com
- * Requires at least: 5.0
- * Tested up to:      5.5
- * Requires PHP:      5.6
+ * Requires at least: 6.6
+ * Tested up to:      7.1
+ * Requires PHP:      7.4
  * Text Domain:       sidebar-login
  * Domain Path:       /languages/
+ * License:           GPLv3 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -26,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Bail early if PHP version dependency is not met.
  */
-if ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
+if ( version_compare( PHP_VERSION, '7.4', '<' ) ) {
 	return;
 }
 
@@ -53,7 +55,7 @@ if ( is_readable( $autoloader ) && is_readable( $build ) ) {
 	 */
 	add_action(
 		'admin_notices',
-		function() {
+		function () {
 			?>
 			<div class="notice notice-error">
 				<p>
