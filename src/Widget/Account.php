@@ -64,7 +64,7 @@ class Account {
 	 */
 	public function render() {
 		$logged_in_title = do_shortcode(
-			$this->template_tags->replace(
+			$this->template_tags->replace_in_title(
 				apply_filters( 'sidebar_login_widget_logged_in_title', ! empty( $this->settings['logged_in_title'] ) ? $this->settings['logged_in_title'] : '' )
 			)
 		);
@@ -87,8 +87,7 @@ class Account {
 		echo '</div>';
 
 		do_action( 'sidebar_login_widget_logged_in_content_end' );
-
-}
+	}
 
 	/**
 	 * Render logged in links setting.

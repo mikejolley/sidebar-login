@@ -1,80 +1,16 @@
-// Require path.
-const path = require('path');
-const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const config = {
-	mode: 'production',
+/**
+ * Extends the @wordpress/scripts config with the frontend script and the widget stylesheet. The output file names
+ * (build/frontend.js, build/frontend.asset.php, build/sidebar-login.css) are what Plugin::enqueue_scripts() loads.
+ */
+const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+
+module.exports = {
+	...defaultConfig,
 	entry: {
 		frontend: './assets/js/frontend.js',
-	},
-	output: {
-		filename: '[name].js',
-		path: path.resolve(__dirname, 'build'),
-	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				include: [path.resolve(__dirname, 'assets/js')],
-				use: {
-					loader: 'babel-loader?cacheDirectory',
-					options: {
-						presets: [
-							[
-								'@babel/preset-env',
-								{
-									modules: false,
-									targets: {
-										browsers: [
-											'extends @wordpress/browserslist-config',
-										],
-									},
-								},
-							],
-						],
-						plugins: [
-							require.resolve('@babel/plugin-transform-runtime'),
-						].filter(Boolean),
-					},
-				},
-			},
-		],
-	},
-	plugins: [
-		new DependencyExtractionWebpackPlugin({
-			injectPolyfill: true,
-		}),
-		new MinifyPlugin(),
-	],
-};
-const styleConfig = {
-	mode: 'production',
-	entry: {
 		'sidebar-login': './assets/css/sidebar-login.scss',
 	},
-	output: {
-		path: path.resolve(__dirname, 'build'),
-		filename: `[name]-style.js`,
-	},
-	plugins: [
-		new MiniCssExtractPlugin({
-			filename: `[name].css`,
-		}),
-	],
-	module: {
-		rules: [
-			{
-				test: /\.s[ac]ss$/i,
-				use: [
-					MiniCssExtractPlugin.loader,
-					{ loader: 'css-loader', options: { importLoaders: 1 } },
-					'postcss-loader',
-					'sass-loader',
-				],
-			},
-		],
-	},
+	// Drop the empty JS file webpack emits for the stylesheet-only entry.
+	plugins: [ ...defaultConfig.plugins, new RemoveEmptyScriptsPlugin() ],
 };
-
-module.exports = [config, styleConfig];

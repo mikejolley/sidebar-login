@@ -18,22 +18,29 @@ class TemplateTags {
 	/**
 	 * User object.
 	 *
-	 * @var array|null
+	 * @var \WP_User|null
 	 */
 	private $user;
 
 	/**
 	 * Widget instance.
 	 *
-	 * @var TemplateTags
+	 * @var array
 	 */
 	private $widget_instance;
 
 	/**
+	 * Replacement values, built on first use.
+	 *
+	 * @var array|null
+	 */
+	private $replacements;
+
+	/**
 	 * Constructor.
 	 *
-	 * @param array|null $user User object, or null.
-	 * @param array      $widget_instance Widget instance.
+	 * @param \WP_User|null $user User object, or null.
+	 * @param array         $widget_instance Widget instance.
 	 */
 	public function __construct( $user, $widget_instance ) {
 		$this->user            = $user;
@@ -46,7 +53,11 @@ class TemplateTags {
 	 * @return array
 	 */
 	protected function get_replacements() {
-		$user_data = (object) array(
+		if ( isset( $this->replacements ) ) {
+			return $this->replacements;
+		}
+
+		$user_data       = (object) array(
 			'id'           => $this->user ? $this->user->ID : 0,
 			'display_name' => $this->user ? $this->user->display_name : '',
 			'first_name'   => $this->user ? $this->user->first_name : '',
@@ -54,8 +65,7 @@ class TemplateTags {
 			'nice_name'    => $this->user ? $this->user->user_nicename : '',
 			'avatar'       => get_avatar( $this->user ? $this->user->ID : 0, apply_filters( 'sidebar_login_widget_avatar_size', 48 ) ),
 		);
-		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
-		$logout_redirect = wp_logout_url( empty( $this->widget_instance['logout_redirect_url'] ) ? remove_query_arg( '_login', set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ) ) : $this->widget_instance['logout_redirect_url'] );
+		$logout_redirect = wp_logout_url( empty( $this->widget_instance['logout_redirect_url'] ) ? remove_query_arg( '_login', Request::current_url() ) : $this->widget_instance['logout_redirect_url'] );
 		$replacements    = array(
 			'%username%'   => ucwords( $user_data->display_name ),
 			'%userid%'     => $user_data->id,
@@ -79,22 +89,57 @@ class TemplateTags {
 			$replacements['%bbpress_profile_url%'] = bbp_get_user_profile_url( $this->user ? $this->user->ID : 0 );
 		}
 
+		$this->replacements = $replacements;
+
 		return $replacements;
 	}
 
 	/**
 	 * Replace template tags in a string with user data.
 	 *
-	 * @param string $string Text to replace tags within.
+	 * @param string $text Text to replace tags within.
 	 * @return string The updated string.
 	 */
-	public function replace( $string ) {
-		$replacements = $this->get_replacements();
-		$keys         = array_keys( $replacements );
-		$values       = array_values( $replacements );
-		$new_string   = str_replace( $keys, $values, $string );
+	public function replace( $text ) {
+		return $this->replace_with( $text, $this->get_replacements() );
+	}
+
+	/**
+	 * Replace template tags in a widget title, which is passed through do_shortcode() afterwards.
+	 *
+	 * Square brackets in the replaced values are encoded so that values users control, such as their display name,
+	 * can't add shortcodes. Shortcodes typed into the title setting still run.
+	 *
+	 * @param string $text Title to replace tags within.
+	 * @return string The updated title.
+	 */
+	public function replace_in_title( $text ) {
+		$replacements = array_map(
+			static function ( $value ) {
+				return str_replace( array( '[', ']' ), array( '&#91;', '&#93;' ), (string) $value );
+			},
+			$this->get_replacements()
+		);
+
+		return $this->replace_with( $text, $replacements );
+	}
+
+	/**
+	 * Replace template tags in a string with the given values.
+	 *
+	 * @param string $text Text to replace tags within.
+	 * @param array  $replacements Values keyed by tag.
+	 * @return string The updated string.
+	 */
+	private function replace_with( $text, $replacements ) {
+		// %admin_url% ends in a slash, so drop the extra one from settings like the default "%admin_url%/profile.php".
+		$text         = str_replace( '%admin_url%/', '%admin_url%', $text );
+		$replacements = array_map( 'strval', $replacements );
+
+		// strtr() replaces in one pass, so tags inside replaced values, such as a display name, aren't expanded.
+		$new_string = strtr( $text, $replacements );
 
 		// Also replace URL encoded values so nested replacements in, for examples, links are replaced.
-		return str_replace( array_map( 'urlencode', $keys ), array_map( 'urlencode', $values ), $new_string );
+		return strtr( $new_string, array_combine( array_map( 'urlencode', array_keys( $replacements ) ), array_map( 'urlencode', $replacements ) ) );
 	}
 }

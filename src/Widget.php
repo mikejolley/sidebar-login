@@ -9,7 +9,7 @@ namespace MJ\SidebarLogin;
 
 defined( 'ABSPATH' ) || exit;
 
-use \WP_Widget;
+use WP_Widget;
 use MJ\SidebarLogin\Utilities\TemplateTags;
 use MJ\SidebarLogin\Utilities\ListLinks;
 use MJ\SidebarLogin\Widget\Account;
@@ -48,9 +48,46 @@ class Widget extends WP_Widget {
 			'logged_in_links'         => __( "Dashboard | %admin_url%\nProfile | %admin_url%/profile.php\nLogout | %logout_url%", 'sidebar-login' ),
 			'show_avatar'             => '1',
 		);
+
+		// A new widget has no settings yet, so it gets the defaults.
 		if ( empty( $instance ) ) {
-			$instance = $defaults;
+			return $defaults;
 		}
+
+		// Settings saved before 3.1.0 leave out unticked checkboxes, so a missing setting is empty, not its default.
+		return wp_parse_args( $instance, array_fill_keys( array_keys( $defaults ), '' ) );
+	}
+
+	/**
+	 * Sanitize the settings form when it's saved. Unticked checkboxes are saved as empty values.
+	 *
+	 * @see WP_Widget->update
+	 * @param array $new_instance Settings submitted from the form.
+	 * @param array $old_instance Previously saved settings.
+	 * @return array
+	 */
+	public function update( $new_instance, $old_instance ) {
+		// Nothing was submitted, for example `wp widget add` without options, so keep using the defaults.
+		if ( empty( $new_instance ) ) {
+			return array();
+		}
+
+		$instance = array();
+
+		foreach ( array( 'logged_out_title', 'logged_out_links', 'logged_in_title', 'logged_in_links' ) as $field ) {
+			$value              = isset( $new_instance[ $field ] ) && is_string( $new_instance[ $field ] ) ? $new_instance[ $field ] : '';
+			$instance[ $field ] = current_user_can( 'unfiltered_html' ) ? $value : wp_kses_post( $value );
+		}
+
+		// Not esc_url_raw(), which would break template tags such as %site_url%.
+		foreach ( array( 'login_redirect_url', 'logout_redirect_url' ) as $field ) {
+			$instance[ $field ] = isset( $new_instance[ $field ] ) && is_string( $new_instance[ $field ] ) ? wp_strip_all_tags( $new_instance[ $field ] ) : '';
+		}
+
+		foreach ( array( 'show_rememberme', 'show_lost_password_link', 'show_register_link', 'show_avatar' ) as $field ) {
+			$instance[ $field ] = empty( $new_instance[ $field ] ) ? '' : '1';
+		}
+
 		return $instance;
 	}
 
@@ -149,7 +186,7 @@ class Widget extends WP_Widget {
 		<h3><?php esc_html_e( 'Logged-in account display', 'sidebar-login' ); ?></h3>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'logged_in_title' ) ); ?>"><?php esc_html_e( 'Title', 'sidebar-login' ); ?>:</label>
-			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'logged_out_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'logged_in_title' ) ); ?>" value="<?php echo esc_attr( $instance['logged_in_title'] ); ?>" />
+			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'logged_in_title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'logged_in_title' ) ); ?>" value="<?php echo esc_attr( $instance['logged_in_title'] ); ?>" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'logout_redirect_url' ) ); ?>"><?php esc_html_e( 'Redirect After Logging Out', 'sidebar-login' ); ?>:</label>

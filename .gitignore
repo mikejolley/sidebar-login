@@ -1,21 +1,15 @@
-/nbproject/private/
-project.xml
-project.properties
+# OS
 .DS_Store
 Thumbs.db
-.buildpath
-.project
-.settings*
-sftp-config.json
 
-# Ignore all log files except for .htaccess
-/logs/*
-!/logs/.htaccess
-
-# Composer/NPM
+# Dependencies
 /vendor
 /node_modules
 
-# Builds
+# Build output
 /build
-/deploy
+
+# Tests
+/artifacts
+.phpunit.result.cache
+.wp-env.override.json

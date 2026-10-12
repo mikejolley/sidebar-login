@@ -11,6 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 use MJ\SidebarLogin\Utilities\TemplateTags;
 use MJ\SidebarLogin\Utilities\ListLinks;
+use MJ\SidebarLogin\Utilities\Request;
 
 /**
  * LoginForm class.
@@ -45,6 +46,13 @@ class LoginForm {
 	private $settings = array();
 
 	/**
+	 * Number of login forms rendered on this page.
+	 *
+	 * @var int
+	 */
+	private static $form_count = 0;
+
+	/**
 	 * Constructor.
 	 *
 	 * @param TemplateTags $template_tags Instance of TemplateTags utility class.
@@ -66,7 +74,7 @@ class LoginForm {
 		wp_enqueue_script( 'sidebar-login' );
 
 		$logged_out_title = do_shortcode(
-			$this->template_tags->replace(
+			$this->template_tags->replace_in_title(
 				apply_filters( 'sidebar_login_widget_logged_out_title', ! empty( $this->settings['logged_out_title'] ) ? $this->settings['logged_out_title'] : '' )
 			)
 		);
@@ -80,6 +88,10 @@ class LoginForm {
 
 		echo '<div class="sidebar-login-form">';
 
+		// Each form on the page needs its own field IDs so its labels work. The first keeps the IDs themes may style.
+		++self::$form_count;
+		$id_suffix = self::$form_count > 1 ? '-' . self::$form_count : '';
+
 		$login_form_args = apply_filters(
 			'sidebar_login_widget_form_args',
 			array(
@@ -87,8 +99,7 @@ class LoginForm {
 				'redirect'       => esc_url(
 					apply_filters(
 						'sidebar_login_widget_login_redirect',
-						// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.ValidatedSanitizedInput.MissingUnslash
-						! empty( $this->settings['login_redirect_url'] ) ? $this->settings['login_redirect_url'] : add_query_arg( '_login', substr( md5( uniqid( wp_rand(), true ) ), 0, 10 ), set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 'login' ) )
+						! empty( $this->settings['login_redirect_url'] ) ? $this->settings['login_redirect_url'] : add_query_arg( '_login', substr( md5( uniqid( wp_rand(), true ) ), 0, 10 ), Request::current_url( 'login' ) )
 					)
 				),
 				'label_username' => __( 'Username', 'sidebar-login' ),
@@ -97,6 +108,11 @@ class LoginForm {
 				'label_log_in'   => __( 'Log In', 'sidebar-login' ),
 				'remember'       => ! empty( $this->settings['show_rememberme'] ),
 				'value_remember' => true,
+				'form_id'        => 'loginform' . $id_suffix,
+				'id_username'    => 'user_login' . $id_suffix,
+				'id_password'    => 'user_pass' . $id_suffix,
+				'id_remember'    => 'rememberme' . $id_suffix,
+				'id_submit'      => 'wp-submit' . $id_suffix,
 			)
 		);
 

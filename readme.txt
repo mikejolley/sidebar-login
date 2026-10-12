@@ -2,12 +2,12 @@
 Contributors: mikejolley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=mike.jolley@me.com&currency_code=&amount=&return=&item_name=Donation+for+Sidebar+Login
 Tags: login, sidebar, widget, sidebar login, login widget, login form
-Requires at least: 5.0
-Tested up to: 5.5
-Requires PHP: 5.6
-Stable tag: 3.0.1
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Requires at least: 6.6
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 3.1.0
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Easily add an ajax-enhanced login widget to your WordPress site sidebar.
 
@@ -25,7 +25,7 @@ If you'd like to contribute a translation, [the project is hosted on WordPress.o
 
 Simply go to `Appearance > Widgets` and drag "sidebar login" to the sidebar of your choice. Within the widget are several options you can use for changing the titles or the links displayed to the user.
 
-To use this widget in a template, use [the `the_widget()` function](http://codex.wordpress.org/Function_Reference/the_widget) which WordPress provides.
+To use this widget in a template, call [`the_widget()`](https://developer.wordpress.org/reference/functions/the_widget/) with the `Sidebar_Login_Widget` class, for example `the_widget( 'Sidebar_Login_Widget' );`.
 
 = Tags for titles + links =
 
@@ -37,10 +37,11 @@ These tags can be used in the widget settings for titles + links and will be rep
 * `%lastname%` - logged in users lastname
 * `%name%` - logged in users firstname + lastname
 * `%nicename%` - user nice name
+* `%site_url%` - url of your site
 * `%admin_url%` - url to WP admin
 * `%logout_url%` - logout url
-* `%buddypress_profile_url%` - Buddypress Profile URL
-* `%bbpress_profile_url%` - Buddypress Profile URL
+* `%buddypress_profile_url%` - BuddyPress Profile URL
+* `%bbpress_profile_url%` - bbPress Profile URL
 * `%avatar%` - User Avatar
 
 = Filter Reference =
@@ -50,7 +51,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 * `sidebar_login_widget_logged_out_links` - An array of links shown when logged out.
 * `sidebar_login_widget_display` - Return false to hide the widget.
 * `sidebar_login_widget_logged_in_title` - The widget title shown when logged in.
-* `sidebar_login_widget_avatar_size` - The avatar size - defaulted to 38 (thats in px)
+* `sidebar_login_widget_avatar_size` - The avatar size - defaulted to 48 (thats in px)
 * `sidebar_login_widget_logged_out_title` - The widget title shown when logged out.
 * `sidebar_login_widget_form_args` - Arguments for the wp_login_form function.
 * `sidebar_login_widget_login_redirect` - Redirect URL after login.
@@ -70,6 +71,7 @@ These tags can be used in the widget settings for titles + links and will be rep
 
 = Notes =
 
+* After logging in, users are only redirected to pages on your site. To allow other hosts, use the `allowed_redirect_hosts` filter.
 * Due to AJAX not working across different domains (see [same_origin_policy](http://en.wikipedia.org/wiki/Same_origin_policy)), AJAX logins will be disabled if your site it non-SSL, but the FORCE_SSL_ADMIN constant is set to true. Instead it will fallback to a traditional POST.
 
 == Screenshots ==
@@ -79,6 +81,25 @@ These tags can be used in the widget settings for titles + links and will be rep
 3. Widget settings
 
 == Changelog ==
+
+= 3.1.0 =
+* Security - After an AJAX login, only redirect to pages on this site (or hosts allowed with the `allowed_redirect_hosts` filter), as wp-login.php does. Props Chiranj Damasiya (Chiru) for reporting this responsibly.
+* Security - The default login and logout redirects use the site address rather than the request's Host header.
+* Security - Shortcodes in a user's profile fields, such as their display name, no longer run in the widget title.
+* Security - AJAX logins apply the `login_errors` filter and post every form field, so login hardening and captcha plugins work with the widget.
+* Security - Widget settings are sanitized when saved, and AJAX logins ignore non-string values.
+* Fix - Set a secure login cookie on HTTPS pages when the site address uses HTTP, as wp-login.php does.
+* Fix - Undefined index notices in the widget settings form. Props @JoryHogeveen.
+* Fix - When an AJAX login can't complete, for example with a two-factor plugin, the form is posted to wp-login.php instead.
+* Fix - Each login form on a page gets its own field IDs, so the labels work.
+* Fix - Double slash in the default Profile link.
+* Fix - Field ID of the logged-in title setting, and the closing tag of login error messages.
+* Fix - Warnings when the widget renders without a Host header, such as in widget editor previews.
+* Tweak - AJAX logins apply the `login_redirect` filter, as wp-login.php does.
+* Tweak - Load a right-to-left stylesheet for RTL languages.
+* Performance - Template tag values, including the avatar, are built once per widget.
+* Dev - Build tooling moved to `@wordpress/scripts`, with PHPUnit and end-to-end tests run in CI.
+* Dev - Requires WordPress 6.6 and PHP 7.4.
 
 = 3.0.1 =
 * Fix - Fix rendering of additional links when using non-latin characters in the link text.
